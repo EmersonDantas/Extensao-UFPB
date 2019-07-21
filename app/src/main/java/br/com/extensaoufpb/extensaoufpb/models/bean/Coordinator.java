@@ -1,14 +1,9 @@
 package br.com.extensaoufpb.extensaoufpb.models.bean;
 
-public class Coordinator {
+public class Coordinator extends User implements FeedbackMananger {
+
 
     public void registerProject(){}
-
-    public void viewSuggestions(){}
-
-    public void answerSuggestion(){}
-
-    public void answerQuestions(){}
 
     public void disclosureProjectSelectionProcess(){}
 
@@ -23,4 +18,26 @@ public class Coordinator {
     public void viewProjectParticipants(){}
 
     public void registerActivityOrEvent(){}
+
+
+    @Override
+    public void viewSuggestions() {
+
+    }
+
+    @Override
+    public void answerSuggestion() {
+
+    }
+
+    @Override
+    public void viewQuestions() {
+
+    }
+
+    @Override
+    public void answerQuestions() {
+
+    }
+    
 }
