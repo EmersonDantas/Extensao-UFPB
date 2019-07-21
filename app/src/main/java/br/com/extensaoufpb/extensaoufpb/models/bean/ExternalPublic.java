@@ -10,4 +10,8 @@ public class ExternalPublic {
 
     }
 
+    public void enviarSugestoes(){
+
+    }
+
 }
