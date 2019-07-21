@@ -1,4 +1,4 @@
 package br.com.extensaoufpb.extensaoufpb.models.bean;
 
-public class Student {
+public class InternalPublic {
 }
