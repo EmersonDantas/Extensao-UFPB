@@ -1,9 +1,15 @@
 package br.com.extensaoufpb.extensaoufpb.models.bean;
 
-public class ExternalPublic {
+public class ExternalPublic extends User {
 
-    public void realizarLogin(){
+    @Override
+    public void login() {
+        super.login();
+    }
 
+    @Override
+    public void logout() {
+        super.logout();
     }
 
     public void enviarPerguntas(){
