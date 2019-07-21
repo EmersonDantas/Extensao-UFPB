@@ -1,23 +1,17 @@
 package br.com.extensaoufpb.extensaoufpb.models.bean;
 
-public class ExternalPublic extends User {
+import br.com.extensaoufpb.extensaoufpb.models.bean.interfaces.IssuerOfQuestions;
 
+public class ExternalPublic extends User implements IssuerOfQuestions {
+
+    
     @Override
-    public void login() {
-        super.login();
-    }
-
-    @Override
-    public void logout() {
-        super.logout();
-    }
-
     public void sendQuestions() {
 
     }
 
-    public void sendSuggestions() {
+    @Override
+    public void sendSuggestionsNewProjects() {
 
     }
-
 }
