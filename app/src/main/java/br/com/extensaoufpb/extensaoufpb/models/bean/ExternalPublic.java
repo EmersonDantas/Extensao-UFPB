@@ -12,11 +12,11 @@ public class ExternalPublic extends User {
         super.logout();
     }
 
-    public void enviarPerguntas(){
+    public void sendQuestions() {
 
     }
 
-    public void enviarSugestoes(){
+    public void sendSuggestions() {
 
     }
 
