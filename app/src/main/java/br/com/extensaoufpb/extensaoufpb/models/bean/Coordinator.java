@@ -1,5 +1,7 @@
 package br.com.extensaoufpb.extensaoufpb.models.bean;
 
+import br.com.extensaoufpb.extensaoufpb.models.bean.interfaces.FeedbackMananger;
+
 public class Coordinator extends User implements FeedbackMananger {
 
 
@@ -39,5 +41,5 @@ public class Coordinator extends User implements FeedbackMananger {
     public void answerQuestions() {
 
     }
-    
+
 }
