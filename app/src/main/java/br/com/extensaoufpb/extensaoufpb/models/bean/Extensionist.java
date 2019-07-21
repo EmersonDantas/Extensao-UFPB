@@ -1,5 +1,7 @@
 package br.com.extensaoufpb.extensaoufpb.models.bean;
 
+import br.com.extensaoufpb.extensaoufpb.models.bean.interfaces.FeedbackMananger;
+
 public class Extensionist extends User implements FeedbackMananger {
 
 
