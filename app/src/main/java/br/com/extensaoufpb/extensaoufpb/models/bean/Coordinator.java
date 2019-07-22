@@ -9,8 +9,6 @@ public class Coordinator extends User implements FeedbackMananger {
 
     public void disclosureProjectSelectionProcess(){}
 
-    public void viewAllProjects(){}
-
     public void editMyProject(){}
 
     public void viewCandidatesEnrolledInSelection(){}
