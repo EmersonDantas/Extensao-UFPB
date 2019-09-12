@@ -25,19 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
         progressBarTime();
 
-
-
-
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                final Intent startLogin = new Intent(MainActivity.this, LoginActivity.class);
-//                ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeCustomAnimation(getApplicationContext(),R.anim.fade_in , R.anim.fade_out);
-//                ActivityCompat.startActivity(MainActivity.this, startLogin,activityOptionsCompat.toBundle());
-//                finish();
-//            }
-//        },TIME_SLEEP);
-
     }
 
 
@@ -49,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 int barStatus = 0;
 
                 while(barStatus < LIMITE_BAR){
-                    barStatus += 20;
+                    barStatus += 25;
 
                     try {
 
@@ -63,9 +50,9 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 }
-                
+
                 final Intent startLogin = new Intent(MainActivity.this, LoginActivity.class);
-                ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeCustomAnimation(getApplicationContext(),R.anim.fade_in , R.anim.fade_out);
+                ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeCustomAnimation(MainActivity.this,R.anim.item_animation_slide_from_bottom , R.anim.item_animation_fall_down);
                 ActivityCompat.startActivity(MainActivity.this, startLogin,activityOptionsCompat.toBundle());
                 finish();
 
