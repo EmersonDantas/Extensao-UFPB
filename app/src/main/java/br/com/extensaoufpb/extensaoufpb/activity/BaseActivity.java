@@ -8,10 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -35,19 +31,12 @@ public class BaseActivity extends AppCompatActivity {
 
         init();
 
-        bottomSheet.closeBottomSheeet();
+        findViews();
 
-        navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_menu, R.id.navigation_inicio, R.id.navigation_perfil)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(navView, navController);
+        initializeFirstTabNavigation();
 
         setNavigation();
+
     }
 
     private void init(){
@@ -57,6 +46,11 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
+    private void findViews(){
+
+        navView = findViewById(R.id.nav_view);
+
+    }
     private void setNavigation(){
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -84,6 +78,14 @@ public class BaseActivity extends AppCompatActivity {
         final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.replace(R.id.nav_host_fragment, actualFragment).commit();
+    }
+
+    private void initializeFirstTabNavigation(){
+
+        bottomSheet.closeBottomSheeet();
+        actualFragment = new InicioFragment();
+        repliceFragment();
+
     }
 
 }
