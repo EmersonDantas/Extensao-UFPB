@@ -36,7 +36,11 @@ public class BottomSheet {
 
     public void closeBottomSheeet(){
 
-        myBottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+        if(myBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_COLLAPSED){
+
+            myBottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+
+        }
 
     }
 
