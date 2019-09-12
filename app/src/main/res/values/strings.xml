@@ -13,6 +13,12 @@
     <string name="inicio">Inicio</string>
     <string name="perfil">Perfil</string>
 
+    <string name="proSeletivo">Processos seletivos</string>
+    <string name="novosprojetos">Sugestões de novos projetos</string>
+    <string name="abrirProcesso">Abrir processo seletivo</string>
+    <string name="cadastarproj">Cadastrar projetos</string>
+    <string name="projetos">Projetos</string>
+
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
@@ -22,4 +28,8 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="description">Description</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
 </resources>
