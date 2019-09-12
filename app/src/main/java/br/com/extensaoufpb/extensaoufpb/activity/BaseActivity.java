@@ -65,7 +65,6 @@ public class BaseActivity extends AppCompatActivity {
                 switch(menuItem.getItemId()){
                     case R.id.navigation_menu:
                         bottomSheet.changeStateBottom();
-                      //  actualFragment = new MenuFragment();
                         break;
                     case R.id.navigation_inicio:
                         actualFragment = new InicioFragment();
