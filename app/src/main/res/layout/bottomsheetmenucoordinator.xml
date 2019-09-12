@@ -9,65 +9,8 @@
     app:elevation="32dp"
     app:layout_behavior="@string/bottom_sheet_behavior">
 
-    <!--    <com.google.android.material.tabs.TabLayout-->
-    <!--        android:id="@+id/first"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content">-->
-
-    <!--        <com.google.android.material.tabs.TabItem-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_gravity="center"-->
-    <!--            android:icon="@drawable/abrirprocesso"-->
-    <!--            android:text="Abrir processo seletivo" />-->
-
-    <!--        <com.google.android.material.tabs.TabItem-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:icon="@drawable/cadastrarprojeto"-->
-    <!--            android:text="Cadastrar  projeto" />-->
-
-    <!--        <com.google.android.material.tabs.TabItem-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:icon="@drawable/processos"-->
-    <!--            android:text="Projetos" />-->
-
-    <!--    </com.google.android.material.tabs.TabLayout>-->
-
-    <!--    <com.google.android.material.tabs.TabLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_below="@+id/first"-->
-    <!--        android:layout_alignParentStart="true"-->
-    <!--        android:layout_marginStart="0dp"-->
-    <!--        android:layout_marginTop="0dp"-->
-    <!--        android:layout_marginLeft="0dp"-->
-    <!--        android:layout_alignParentLeft="true">-->
-
-    <!--        <com.google.android.material.tabs.TabItem-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_gravity="center"-->
-    <!--            android:icon="@drawable/abrirprocesso"-->
-    <!--            android:text="Abrir processo seletivo" />-->
-
-    <!--        <com.google.android.material.tabs.TabItem-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:icon="@drawable/cadastrarprojeto"-->
-    <!--            android:text="Cadastrar  projeto" />-->
-
-    <!--        <com.google.android.material.tabs.TabItem-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:icon="@drawable/processos"-->
-    <!--            android:text="Projetos" />-->
-
-    <!--    </com.google.android.material.tabs.TabLayout>-->
-
-
     <LinearLayout
+        android:id="@+id/linearlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -75,6 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="false"
         android:layout_centerHorizontal="true"
+        android:background="@drawable/backgroundbottomsheet"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginBottom="0dp"
@@ -250,4 +194,5 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
 </RelativeLayout>
