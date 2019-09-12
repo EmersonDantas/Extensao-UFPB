@@ -61,9 +61,11 @@ public class BaseActivity extends AppCompatActivity {
                         bottomSheet.changeStateBottom();
                         break;
                     case R.id.navigation_inicio:
+                        bottomSheet.closeBottomSheeet();
                         actualFragment = new InicioFragment();
                         break;
                     case R.id.navigation_perfil:
+                        bottomSheet.closeBottomSheeet();
                         actualFragment = new PerfilFragment();
                         break;
                 }
