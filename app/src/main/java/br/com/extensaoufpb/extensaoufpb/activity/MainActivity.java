@@ -13,7 +13,7 @@ import br.com.extensaoufpb.extensaoufpb.R;
 public class MainActivity extends AppCompatActivity {
 
     private final int TIME_SLEEP = 1500;
-    private final int LIMITE_BAR = 2000;
+    private final int LIMITE_BAR = 1500;
     private ProgressBar progressBar;
 
     @Override
