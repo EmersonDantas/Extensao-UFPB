@@ -33,4 +33,10 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="descriptionLogo">logo do curso do aplicativo</string>
+    <string name="Cadastrar_Dados">Cadastrar Dados</string>
+    <string name="nome">Nome</string>
+    <string name="sobrenome">Sobrenome</string>
+    <string name="cre">CRE</string>
+    <string name="matricula">Matricula</string>
+    <string name="cadastrar">Cadastrar</string>
 </resources>

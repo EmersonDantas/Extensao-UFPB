@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import br.com.extensaoufpb.extensaoufpb.R;
+
 public class RegisterDataActivity extends AppCompatActivity {
 
     @Override
