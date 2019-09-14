@@ -33,4 +33,7 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="descriptionLogo">logo do curso do aplicativo</string>
+    <string name="facebook_app_id">414127435908289</string> <string name="fb_login_protocol_scheme">fb414127435908289</string>
+    <string name="senha">Senha</string>
+
 </resources>
