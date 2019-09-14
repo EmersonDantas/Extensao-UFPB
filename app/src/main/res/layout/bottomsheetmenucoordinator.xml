@@ -58,7 +58,7 @@
                     android:gravity="center"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="@string/proSeletivo"
+                    android:text="@string/processselection"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -85,7 +85,7 @@
                     android:gravity="center"
                     android:paddingLeft="15dp"
                     android:paddingRight="20dp"
-                    android:text="@string/novosprojetos"
+                    android:text="@string/newprojects"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -137,7 +137,7 @@
                     android:gravity="center"
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
-                    android:text="@string/abrirProcesso"
+                    android:text="@string/openprocess"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -164,7 +164,7 @@
                     android:gravity="center"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="@string/cadastarproj"
+                    android:text="@string/regitsterproject"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -189,7 +189,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="@string/projetos"
+                    android:text="@string/projects"
                     android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
