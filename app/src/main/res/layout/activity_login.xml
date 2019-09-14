@@ -113,7 +113,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:foregroundGravity="center"
             android:gravity="center"
             android:text="OU"
@@ -124,25 +124,14 @@
             app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/login_button"
             app:layout_constraintVertical_bias="0.0">
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="22dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="8dp"
-                android:layout_weight="1  "
-                android:gravity="center|right"
-                android:paddingTop="2dp"
-                android:text="Não tem uma conta ainda?"
-                android:textSize="12sp" />
 
             <Button
                 android:id="@+id/button2"
@@ -150,10 +139,20 @@
                 android:layout_width="119dp"
                 android:layout_height="22dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="8dp"
                 android:layout_weight="1  "
                 android:gravity="center|left"
                 android:text="Criar uma conta"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:layout_weight="1  "
+                android:gravity="center|right"
+                android:paddingTop="2dp"
+                android:text="Não tem uma conta ainda?"
                 android:textSize="12sp" />
 
         </LinearLayout>
@@ -200,7 +199,7 @@
             android:layout_gravity="center"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             app:layout_constraintEnd_toEndOf="parent"
