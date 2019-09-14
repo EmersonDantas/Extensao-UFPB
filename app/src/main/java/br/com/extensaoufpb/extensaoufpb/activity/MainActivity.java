@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.ActivityOptionsCompat;
 
-
 import br.com.extensaoufpb.extensaoufpb.R;
 
 public class MainActivity extends AppCompatActivity {
