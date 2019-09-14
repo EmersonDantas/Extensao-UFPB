@@ -13,11 +13,11 @@
     <string name="inicio">Inicio</string>
     <string name="perfil">Perfil</string>
 
-    <string name="proSeletivo">Processos seletivos</string>
-    <string name="novosprojetos">Sugestões de novos projetos</string>
-    <string name="abrirProcesso">Abrir processo seletivo</string>
-    <string name="cadastarproj">Cadastrar projetos</string>
-    <string name="projetos">Projetos</string>
+    <string name="processselection">Processos seletivos</string>
+    <string name="newprojects">Sugestões de novos projetos</string>
+    <string name="openprocess">Abrir processo seletivo</string>
+    <string name="regitsterproject">Cadastrar projetos</string>
+    <string name="projects">Projetos</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
@@ -33,4 +33,20 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="descriptionLogo">logo do curso do aplicativo</string>
+    <string name="title_open_process">Abrir Processo Seletivo</string>
+    <string name="projetctselection">Projeto Selecionado:</string>
+    <string name="amountvacancies">Quantidade vagas</string>
+    <string name="amountbags">Quantidade bolsas</string>
+    <string name="openingDate">Data abertura</string>
+    <string name="closeningDate">Data fechamento</string>
+    <string name="craMinimum">CRA mínimo</string>
+    <string name="limitiCampus">Limitar ao campus IV?</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
+    <string name="desiredQualifications">Qualificações desejadas</string>
+    <string name="differences">Diferenciais</string>
+    <string name="insertNewField">Inserir novos campos</string>
+    <string name="ready">PRONTO</string>
+    <string name="add">ADICIONAR</string>
+    <string name="newfield">Novo campo:</string>
 </resources>
