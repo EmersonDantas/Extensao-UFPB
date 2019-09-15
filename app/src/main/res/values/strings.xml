@@ -50,6 +50,19 @@
     <string name="add">ADICIONAR</string>
     <string name="newfield">Novo campo:</string>
 
+    <string name="nameField">Nome do campo</string>
+    <string name="characterAmount">Quantidade de caractere</string>
+    <string name="cancel">Cancelar</string>
+    <string name="addField">Adicionar</string>
+    <string name="question01">Alternativa 01</string>
+    <string name="question02">Alternativa 02</string>
+    <string name="question03">Alternativa 03</string>
+    <string name="question04">Alternativa 04</string>
+    <string name="question05">Alternativa 05</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
     <string-array name="listNewFields">
         <item>Selecione</item>
         <item>Múltipla Escolha</item>
@@ -58,6 +71,7 @@
         <item>Numérico</item>
     </string-array>
 
+    <!-- TODO: Remove or change this placeholder text -->
     <string-array name="listCRAMinimum">
         <item>1</item>
         <item>2</item>
