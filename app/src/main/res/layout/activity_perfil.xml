@@ -31,12 +31,15 @@
             android:layout_margin="20dp"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="24dp"
             android:textColorHint="@color/colorPrimary"
             app:boxBackgroundColor="@color/colorAccent"
             app:boxStrokeColor="@color/colorPrimary"
             app:layout_constraintBottom_toTopOf="@+id/guideline5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+            app:layout_constraintVertical_bias="0.0">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtEmail"
@@ -59,7 +62,6 @@
             android:textColorHint="@color/colorPrimary"
             app:boxBackgroundColor="@color/colorAccent"
             app:boxStrokeColor="@color/colorPrimary"
-            app:layout_constraintBottom_toTopOf="@+id/textInput"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline6">
 
@@ -84,7 +86,6 @@
             android:textColorHint="@color/colorPrimary"
             app:boxBackgroundColor="@color/colorAccent"
             app:boxStrokeColor="@color/colorPrimary"
-            app:layout_constraintBottom_toTopOf="@+id/textInput"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline6">
 
@@ -100,6 +101,8 @@
 
         <Button
             android:id="@+id/btnSair"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:textSize="14sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -114,11 +117,13 @@
 
         <Button
             android:id="@+id/btnEditSenha"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/editar_senha"
             android:textColor="@android:color/white"
+            android:textSize="14sp"
             app:backgroundTint="@color/colorPrimary"
             app:layout_constraintEnd_toStartOf="@+id/guideline9"
             app:layout_constraintHorizontal_bias="0.0"

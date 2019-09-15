@@ -22,7 +22,7 @@ import br.com.extensaoufpb.extensaoufpb.R;
 
 public class EditProjectActivity extends AppCompatActivity {
 
-    private Spinner spinnerStatusProjeto, spinnerPeriodoInicio, spinnerPeriodoFim;
+    private Spinner spinnerStatusProjeto;
     private TextInputEditText txtCoordenador, initialProjectDate, finishProjectDate;
     private TextView txtNomeProjeto;
     private ImageView imgProjetoLogo;

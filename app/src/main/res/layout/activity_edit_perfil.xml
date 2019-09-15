@@ -24,9 +24,11 @@
         app:layout_constraintVertical_bias="1.0">
 
         <Button
-            android:id="@+id/btnSalvar"
+            android:id="@+id/btnSalvarEditPerfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:textSize="14sp"
             android:layout_marginBottom="16dp"
             android:padding="10dp"
             android:text="@string/salvar"
@@ -145,7 +147,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <ImageButton
-            android:id="@+id/btnVoltar"
+            android:id="@+id/btnVoltarEditPerfil"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="16dp"

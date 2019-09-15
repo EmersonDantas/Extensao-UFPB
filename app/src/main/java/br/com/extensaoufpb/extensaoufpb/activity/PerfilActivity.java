@@ -7,7 +7,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import br.com.extensaoufpb.extensaoufpb.R;
@@ -19,6 +21,9 @@ public class PerfilActivity extends AppCompatActivity {
     private EditText nomeUser;
     private EditText sobreNomeUser;
     private EditText emailUser;
+    private ImageButton btnVoltar, btnEditarPerfil;
+    private Button btnEditarSenha, btnSair;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,26 +40,41 @@ public class PerfilActivity extends AppCompatActivity {
         sobreNomeUser.setText("Napoleão");
         emailUser.setText("francivaldo.napoleao@dcx.ufpb.br");
 
-        findViewById(R.id.btnSair).setOnClickListener(new View.OnClickListener() {
+        btnVoltar = findViewById(R.id.btnVoltar);
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(PerfilActivity.this, BaseActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnEditarPerfil = findViewById(R.id.btnEditPerfil);
+        btnEditarPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(PerfilActivity.this, EditPerfilActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnEditarSenha = findViewById(R.id.btnEditSenha);
+        btnEditarSenha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(PerfilActivity.this, EditPasswordActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnSair = findViewById(R.id.btnSair);
+        btnSair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 exibirConfirmacao();
-            }
-        });
-
-        findViewById(R.id.btnEditPerfil).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(PerfilActivity.this, EditPerfilActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        findViewById(R.id.btnEditSenha).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(PerfilActivity.this, EditPasswordActivity.class);
-                startActivity(intent);
             }
         });
     }
