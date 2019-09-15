@@ -61,11 +61,12 @@
     <string name="question05">Alternativa 05</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="input">input</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string-array name="listNewFields">
         <item>Selecione</item>
-        <item>Multipla Escolha</item>
+        <item>Múltipla Escolha</item>
         <item>Seleção</item>
         <item>Texto</item>
         <item>Numérico</item>
