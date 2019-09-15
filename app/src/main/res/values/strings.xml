@@ -47,9 +47,14 @@
     <string name="cadastrar">Cadastrar</string>
     <string name="cadastro_projeto">Cadastro de Projeto</string>
     <string name="situacao">Situação</string>
-    <string name="coordenador">Coordenador:</string>
+    <string name="coordenador_text">Coordenador:</string>
     <string name="status_projeto">Status do projeto:</string>
     <string name="descricao">Descricão:</string>
     <string name="ano">Ano:</string>
+    <string name="editar_projeto">Editar Projeto</string>
+    <string name="coordenador">Coordenador(a)</string>
+    <string name="projeto_selecionado">Projeto selecionado:</string>
+    <string name="final_text">Final</string>
+    <string name="periodo">Período:</string>
 
 </resources>
