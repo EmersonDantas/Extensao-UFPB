@@ -55,7 +55,6 @@ public class AdapterViewQuestions extends RecyclerView.Adapter<AdapterViewQuesti
     }
 
     private void clickButtons(final MyViewHolder myViewHolder){
-        Log.i("log","clicou");
 
         myViewHolder.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,7 +86,7 @@ public class AdapterViewQuestions extends RecyclerView.Adapter<AdapterViewQuesti
 
                         questionsList.remove(getItemRemove(myViewHolder.textQuestion.getText().toString()));
                         OpenSelectionProcessActivity openSelectionProcessActivity = new OpenSelectionProcessActivity();
-                        openSelectionProcessActivity.updateAdapter();
+                        openSelectionProcessActivity.updateLimitQuestionAdapter();
                     }
                 });
 
