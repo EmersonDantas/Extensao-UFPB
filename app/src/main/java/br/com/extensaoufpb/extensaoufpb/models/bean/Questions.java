@@ -8,6 +8,9 @@ public class Questions {
     private String type;
     private Answer answer;
 
+    public Questions() {
+    }
+
     public Questions(String question, String type) {
         this.question = question;
         this.type = type;
