@@ -33,4 +33,23 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="descriptionLogo">logo do curso do aplicativo</string>
+
+    <string name="salvar">Salvar</string>
+    <string name="editar_perfil">Editar Perfil</string>
+    <string name="nome">Nome</string>
+    <string name="sobrenome">Sobrenome</string>
+    <string name="voltar">Voltar</string>
+    <string name="editar_senha">Editar Senha</string>
+    <string name="senha_atual">Senha atual</string>
+    <string name="nova_senha">Nova Senha</string>
+    <string name="confirmar_nova_senha">Confirmar nova senha</string>
+    <string name="sair">Sair</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="cadastro_projeto">Cadastro de Projeto</string>
+    <string name="situacao">Situação</string>
+    <string name="coordenador">Coordenador:</string>
+    <string name="status_projeto">Status do projeto:</string>
+    <string name="descricao">Descricão:</string>
+    <string name="ano">Ano:</string>
+
 </resources>
