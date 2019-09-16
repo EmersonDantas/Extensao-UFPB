@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="12dp"
-    android:layout_marginBottom="12dp"
+    android:layout_marginLeft="12dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginRight="12dp"
+    android:layout_marginBottom="4dp"
     android:background="@drawable/recycler_view"
     android:orientation="vertical"
     android:padding="2dp">
@@ -57,7 +59,7 @@
     <TextView
         android:id="@+id/description"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginTop="0dp"
         android:paddingLeft="8sp"
         android:text="Projeto de extensão criado na UFPB - Campus IV (Rio Tinto), com o propósito de estimular o pensamento computacional em meninas do ensino fundamental."
