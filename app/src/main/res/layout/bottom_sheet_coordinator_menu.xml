@@ -58,7 +58,7 @@
                     android:gravity="center"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="@string/proSeletivo"
+                    android:text="@string/processo_seletivo"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -85,7 +85,7 @@
                     android:gravity="center"
                     android:paddingLeft="15dp"
                     android:paddingRight="20dp"
-                    android:text="@string/novosprojetos"
+                    android:text="@string/ver_sugestoes_novos"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -154,7 +154,7 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
-                    app:srcCompat="@drawable/cadastrarprojeto" />
+                    app:srcCompat="@drawable/cadastrar_projeto" />
 
                 <TextView
                     android:id="@+id/textView7"
@@ -164,7 +164,7 @@
                     android:gravity="center"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="@string/cadastarproj"
+                    android:text="@string/cadastrar_projeto"
                     android:textSize="12sp" />
             </LinearLayout>
 
