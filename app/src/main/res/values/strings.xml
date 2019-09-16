@@ -39,4 +39,22 @@
     <string name="cre">CRE</string>
     <string name="matricula">Matricula</string>
     <string name="cadastrar">Cadastrar</string>
+    <string name="periodo">Período:</string>
+    <string name="curso">Curso:</string>
+    <string name="save" color="FF08D487">Sim</string>
+    <string name="cancel" color="">Não</string>
+    <string name="confirmacao">Confirmação</string>
+    <string name="dialogMenssegeDadosAcademicos">Você quer mesmo cadastrar esses dados acadêmicos?</string>
+    <string-array name="selecione">
+        <item>Selecione</item>
+        <item>SI</item>
+        <item>LCC</item>
+        <item>ECO</item>
+    </string-array>
+    <string-array name="periodo">
+        <item>Selecione</item>
+        <item>1º</item>
+        <item>2º</item>
+        <item>3º</item>
+    </string-array>
 </resources>
