@@ -1,6 +1,7 @@
 package br.com.extensaoufpb.extensaoufpb.activity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,10 @@ public class BaseActivity extends AppCompatActivity {
 
     private BottomNavigationView navView;
     private BottomSheet bottomSheet;
+
+    private Bundle emailRecovery;
+    private String userEmail;
+
     private Fragment actualFragment;
     private FragmentManager fragmentManager;
 
@@ -39,19 +44,21 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
-    private void init(){
+    private void init() {
 
         bottomSheet = BottomSheet.getInstance(getWindow().getDecorView().findViewById(android.R.id.content));
         fragmentManager = getSupportFragmentManager();
 
+        emailRecovery = getIntent().getExtras();
+
+        userEmail = emailRecovery.getString("email");
     }
 
-    private void findViews(){
-
+    private void findViews() {
         navView = findViewById(R.id.nav_view);
-
     }
-    private void setNavigation(){
+
+    private void setNavigation() {
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -60,23 +67,25 @@ public class BaseActivity extends AppCompatActivity {
                     case R.id.navigation_menu:
                         bottomSheet.changeStateBottom();
                         break;
+
                     case R.id.navigation_inicio:
                         bottomSheet.closeBottomSheeet();
                         actualFragment = new InicioFragment();
                         break;
+
                     case R.id.navigation_perfil:
                         bottomSheet.closeBottomSheeet();
                         actualFragment = new PerfilFragment();
                         break;
                 }
 
-                repliceFragment();
+                replaceFragment();
                 return true;
             }
         });
     }
 
-    private void repliceFragment(){
+    private void replaceFragment() {
         final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.replace(R.id.nav_host_fragment, actualFragment).commit();
@@ -86,8 +95,25 @@ public class BaseActivity extends AppCompatActivity {
 
         bottomSheet.closeBottomSheeet();
         actualFragment = new InicioFragment();
-        repliceFragment();
+        replaceFragment();
+    }
 
+    private int getUserID(String email) {
+        int userID;
+
+        if (email.equals("coordenador@gmail.com")) {
+            userID = R.layout.bottom_sheet_coordinator_menu;
+
+        } else if (email.equals("externo@gmail.com")) {
+            userID = R.layout.bottom_sheet_menu_extern;
+
+
+        } else {
+            userID = R.layout.bottom_sheet_menu_extern;
+
+        }
+
+        return userID;
     }
 
 }
