@@ -23,7 +23,7 @@
 
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:scaleType="fitCenter"
@@ -83,15 +83,15 @@
     <Button
         android:id="@+id/btnMenu2"
         style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="45dp"
-        android:layout_height="20dp"
+        android:layout_width="55dp"
+        android:layout_height="23dp"
         android:layout_gravity="center|left"
         android:layout_weight="1"
         android:foregroundGravity="center"
         android:gravity="center"
         android:text="mais ..."
-        android:textColor="@android:color/secondary_text_light"
-        android:textSize="8sp"
+        android:textColor="@color/textColorNameFeed"
+        android:textSize="12sp"
         app:backgroundTint="@color/colorAccent" />
 
     <ImageView
