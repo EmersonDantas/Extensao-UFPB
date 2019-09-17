@@ -33,6 +33,29 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="descriptionLogo">logo do curso do aplicativo</string>
+    <string name="salvar">Salvar</string>
+    <string name="editar_perfil">Editar Perfil</string>
+    <string name="nome">Nome</string>
+    <string name="sobrenome">Sobrenome</string>
+    <string name="voltar">Voltar</string>
+    <string name="editar_senha">Editar Senha</string>
+    <string name="senha_atual">Senha atual</string>
+    <string name="nova_senha">Nova Senha</string>
+    <string name="confirmar_nova_senha">Confirmar nova senha</string>
+    <string name="sair">Sair</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="cadastro_projeto">Cadastro de Projeto</string>
+    <string name="situacao">Situação</string>
+    <string name="coordenador_text">Coordenador:</string>
+    <string name="status_projeto">Status do projeto:</string>
+    <string name="descricao">Descricão:</string>
+    <string name="ano">Ano:</string>
+    <string name="editar_projeto">Editar Projeto</string>
+    <string name="coordenador">Coordenador(a)</string>
+    <string name="projeto_selecionado">Projeto selecionado:</string>
+    <string name="final_text">Final</string>
+    <string name="periodo">Período:</string>
+
     <string name="Cadastrar_Dados">Cadastrar Dados</string>
     <string name="nome">Nome</string>
     <string name="sobrenome">Sobrenome</string>
@@ -59,4 +82,5 @@
     </string-array>
     <string name="facebook_app_id">414127435908289</string> <string name="fb_login_protocol_scheme">fb414127435908289</string>
     <string name="senha">Senha</string>
+
 </resources>

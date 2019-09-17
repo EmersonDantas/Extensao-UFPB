@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="status_project_array">
+        <item>Selecione</item>
+        <item>Em execução</item>
+        <item>Inativo</item>
+    </string-array>
+</resources>
