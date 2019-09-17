@@ -33,7 +33,6 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="descriptionLogo">logo do curso do aplicativo</string>
-
     <string name="salvar">Salvar</string>
     <string name="editar_perfil">Editar Perfil</string>
     <string name="nome">Nome</string>
@@ -56,5 +55,32 @@
     <string name="projeto_selecionado">Projeto selecionado:</string>
     <string name="final_text">Final</string>
     <string name="periodo">Período:</string>
+
+    <string name="Cadastrar_Dados">Cadastrar Dados</string>
+    <string name="nome">Nome</string>
+    <string name="sobrenome">Sobrenome</string>
+    <string name="cre">CRE</string>
+    <string name="matricula">Matricula</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="periodo">Período:</string>
+    <string name="curso">Curso:</string>
+    <string name="save" color="FF08D487">Sim</string>
+    <string name="cancel" color="">Não</string>
+    <string name="confirmacao">Confirmação</string>
+    <string name="dialogMenssegeDadosAcademicos">Você quer mesmo cadastrar esses dados acadêmicos?</string>
+    <string-array name="selecione">
+        <item>Selecione</item>
+        <item>SI</item>
+        <item>LCC</item>
+        <item>ECO</item>
+    </string-array>
+    <string-array name="periodo">
+        <item>Selecione</item>
+        <item>1º</item>
+        <item>2º</item>
+        <item>3º</item>
+    </string-array>
+    <string name="facebook_app_id">414127435908289</string> <string name="fb_login_protocol_scheme">fb414127435908289</string>
+    <string name="senha">Senha</string>
 
 </resources>
