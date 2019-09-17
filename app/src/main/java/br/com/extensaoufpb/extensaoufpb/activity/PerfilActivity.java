@@ -21,8 +21,7 @@ public class PerfilActivity extends AppCompatActivity {
     private EditText nomeUser;
     private EditText sobreNomeUser;
     private EditText emailUser;
-    private ImageButton btnVoltar, btnEditarPerfil;
-    private Button btnEditarSenha, btnSair;
+    private Button btnEditarSenha, btnSair, btnVoltar, btnEditarPerfil;
     private Intent intent;
 
     @Override
