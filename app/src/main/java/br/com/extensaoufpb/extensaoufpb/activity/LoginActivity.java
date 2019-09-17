@@ -13,7 +13,7 @@ import br.com.extensaoufpb.extensaoufpb.R;
 public class LoginActivity extends AppCompatActivity {
 
     private Button buttonLogin;
-    private ImageButton buttonBack;
+    private Button buttonBack;
     private Intent startIntent;
 
     private String emailCoordenetor = "coffeedevorg@gmail.com";
