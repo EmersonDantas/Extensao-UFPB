@@ -19,7 +19,7 @@
         android:background="@drawable/backgroundradio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:layout_constraintVertical_bias="1.0">
@@ -29,25 +29,28 @@
             style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:text="@string/cadastrar"
             android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@+id/fim"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageButton
+        <Button
+
             android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="24dp"
-            android:background="@android:color/transparent"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="30dp"
             android:contentDescription="TODO"
+            android:drawableTop="@drawable/ic_arrow_back_black_24dp"
+            android:foregroundGravity="left|center"
+            app:backgroundTint="@color/colorAccent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
             android:id="@+id/spinner01"
@@ -56,18 +59,21 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
             app:layout_constraintEnd_toEndOf="@+id/cursos"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cursos" />
+            app:layout_constraintTop_toBottomOf="@+id/cursos"
+            app:layout_constraintVertical_bias="0.0" />
 
         <Spinner
             android:id="@+id/spinner02"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/Periodo"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner01"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/Periodo"
             app:layout_constraintTop_toBottomOf="@+id/Periodo" />
 
@@ -118,81 +124,35 @@
             app:layout_constraintStart_toEndOf="@+id/cursos"
             app:layout_constraintTop_toBottomOf="@+id/btnCRE" />
 
+
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/inicio"
+            android:id="@+id/guideline3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.2" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/fim"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.83" />
-
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.2" />
+            app:layout_constraintGuide_percent="0.25" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/btnCRE"
+            android:id="@+id/btnNome"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:foregroundGravity="center"
-            android:gravity="center"
             app:boxBackgroundColor="@color/colorAccent"
             app:boxStrokeColor="@color/colorButton"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnSobrenome"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btnMatricula"
-            app:layout_constraintTop_toBottomOf="@+id/btnEmail">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/cre"
-                android:imeOptions="normal|actionGo|actionNext"
-                android:inputType="text"
-                android:textColor="@color/textColor"
-                android:textColorHighlight="@color/textColor"
-                android:textColorHint="@color/textColor" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/btnMatricula"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            app:boxBackgroundColor="@color/colorAccent"
-            app:boxStrokeColor="@color/colorButton"
-            app:layout_constraintEnd_toStartOf="@+id/btnCRE"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnEmail">
+            app:layout_constraintTop_toTopOf="@+id/guideline3">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/matricula"
-                android:imeOptions="normal|actionGo|actionNext"
+                android:hint="@string/nome"
+                android:imeOptions="actionNext"
                 android:inputType="text"
                 android:textColor="@color/textColor"
                 android:textColorHighlight="@color/textColor"
@@ -207,7 +167,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="76dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             app:boxBackgroundColor="@color/colorAccent"
@@ -215,42 +174,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/btnNome"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
+            app:layout_constraintTop_toTopOf="@+id/guideline3">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/sobrenome"
-                android:imeOptions="normal|actionGo|actionNext"
-                android:inputType="text"
-                android:textColor="@color/textColor"
-                android:textColorHighlight="@color/textColor"
-                android:textColorHint="@color/textColor" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/btnNome"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="76dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            app:boxBackgroundColor="@color/colorAccent"
-            app:boxStrokeColor="@color/colorButton"
-            app:layout_constraintEnd_toStartOf="@+id/btnSobrenome"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/nome"
-                android:imeOptions="normal|actionGo|actionNext"
+                android:imeOptions="actionNext"
                 android:inputType="text"
                 android:textColor="@color/textColor"
                 android:textColorHighlight="@color/textColor"
@@ -279,8 +209,68 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/email"
-                android:imeOptions="normal|actionGo|actionNext"
-                android:inputType="text"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/textColor"
+                android:textColorHighlight="@color/textColor"
+                android:textColorHint="@color/textColor" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/btnMatricula"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:boxBackgroundColor="@color/colorAccent"
+            app:boxStrokeColor="@color/colorButton"
+            app:layout_constraintEnd_toStartOf="@+id/btnCRE"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnEmail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/matricula"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:textColor="@color/textColor"
+                android:textColorHighlight="@color/textColor"
+                android:textColorHint="@color/textColor" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/btnCRE"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            app:boxBackgroundColor="@color/colorAccent"
+            app:boxStrokeColor="@color/colorButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnMatricula"
+            app:layout_constraintTop_toBottomOf="@+id/btnEmail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/cre"
+                android:imeOptions="actionGo"
+                android:inputType="none|numberDecimal"
                 android:textColor="@color/textColor"
                 android:textColorHighlight="@color/textColor"
                 android:textColorHint="@color/textColor" />
