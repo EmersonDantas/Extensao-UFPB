@@ -1,7 +1,6 @@
 package br.com.extensaoufpb.extensaoufpb.activity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -46,12 +45,15 @@ public class BaseActivity extends AppCompatActivity {
 
     private void init() {
 
-        bottomSheet = BottomSheet.getInstance(getWindow().getDecorView().findViewById(android.R.id.content));
+        emailRecovery = getIntent().getExtras();
+        userEmail = emailRecovery.getString("email");
+
+        bottomSheet = BottomSheet.getInstance(getWindow().getDecorView().findViewById(android.R.id.content), userEmail);
         fragmentManager = getSupportFragmentManager();
 
         emailRecovery = getIntent().getExtras();
 
-        userEmail = emailRecovery.getString("email");
+
     }
 
     private void findViews() {
