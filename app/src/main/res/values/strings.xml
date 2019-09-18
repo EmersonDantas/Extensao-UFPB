@@ -13,10 +13,11 @@
     <string name="inicio">Inicio</string>
     <string name="perfil">Perfil</string>
 
-    <string name="proSeletivo">Processos seletivos</string>
-    <string name="novosprojetos">Sugestões de novos projetos</string>
+    <string name="processo_seletivo">Processos seletivos</string>
+    <string name="ver_sugestoes_novos">Sugestões de novos projetos</string>
+    <string name="enviar_sugestoes_novos">Envie sugestões de novos projetos</string>
     <string name="abrirProcesso">Abrir processo seletivo</string>
-    <string name="cadastarproj">Cadastrar projetos</string>
+    <string name="cadastrar_projeto">Cadastrar projetos</string>
     <string name="projetos">Projetos</string>
 
     <string name="menu_home">Home</string>
@@ -33,6 +34,8 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="descriptionLogo">logo do curso do aplicativo</string>
+    <string name="facebook_app_id">414127435908289</string>
+    <string name="fb_login_protocol_scheme">fb414127435908289</string>
     <string name="salvar">Salvar</string>
     <string name="editar_perfil">Editar Perfil</string>
     <string name="nome">Nome</string>
@@ -82,5 +85,6 @@
     </string-array>
     <string name="facebook_app_id">414127435908289</string> <string name="fb_login_protocol_scheme">fb414127435908289</string>
     <string name="senha">Senha</string>
+    <string name="user_name">Olá, usuário. Acompanhe as novidades!</string>
 
 </resources>
