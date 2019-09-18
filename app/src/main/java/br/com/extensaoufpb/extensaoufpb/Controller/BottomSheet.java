@@ -11,7 +11,7 @@ public class BottomSheet {
     private static BottomSheet instance = null;
     private static BottomSheetBehavior myBottomSheetBehavior;
     private static View myView = null;
-    private int id;
+    private static String emailCoordinator = "coordenador@gmail.com";
 
     private BottomSheet(){
 
@@ -49,7 +49,7 @@ public class BottomSheet {
 
         int id = R.id.closebottom;
 
-        if(email.equalsIgnoreCase("coordenador")){
+        if(email.equalsIgnoreCase(emailCoordinator)){
             id = R.id.coordinatorbottom;
             view.findViewById(R.id.coordinator).setVisibility(View.VISIBLE);
             view.findViewById(R.id.external).setVisibility(View.GONE);
