@@ -38,8 +38,6 @@
     <string name="fb_login_protocol_scheme">fb414127435908289</string>
     <string name="salvar">Salvar</string>
     <string name="editar_perfil">Editar Perfil</string>
-    <string name="nome">Nome</string>
-    <string name="sobrenome">Sobrenome</string>
     <string name="voltar">Voltar</string>
     <string name="editar_senha">Editar Senha</string>
     <string name="senha_atual">Senha atual</string>
@@ -64,8 +62,6 @@
     <string name="sobrenome">Sobrenome</string>
     <string name="cre">CRE</string>
     <string name="matricula">Matricula</string>
-    <string name="cadastrar">Cadastrar</string>
-    <string name="periodo">Período:</string>
     <string name="curso">Curso:</string>
     <string name="save" color="FF08D487">Sim</string>
     <string name="cancel" color="">Não</string>
@@ -83,7 +79,6 @@
         <item>2º</item>
         <item>3º</item>
     </string-array>
-    <string name="facebook_app_id">414127435908289</string> <string name="fb_login_protocol_scheme">fb414127435908289</string>
     <string name="senha">Senha</string>
     <string name="user_name">Olá, usuário. Acompanhe as novidades!</string>
 
