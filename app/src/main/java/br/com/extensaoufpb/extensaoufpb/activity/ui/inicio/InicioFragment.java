@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -27,6 +29,8 @@ public class InicioFragment extends Fragment {
     private RecyclerView recyclerView;
 
     private List<Project> projects = new ArrayList<>();
+
+    private Toast toastMessage;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -53,12 +57,45 @@ public class InicioFragment extends Fragment {
         recyclerView.setAdapter(adapter);
 
 
+        // Evento de click
+        recyclerView.addOnItemTouchListener(
+            new RecyclerItemClickListener(
+                    getContext(),
+                    recyclerView,
+                    new RecyclerItemClickListener.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(View view, int position) {
+                            Project project = projects.get(position);
+                            showToastMessage(toastMessage, project.getTitle());
+                        }
+
+                        @Override
+                        public void onLongItemClick(View view, int position) {
+                            Project project = projects.get(position);
+                            showToastMessage(toastMessage, project.getTitle());
+                        }
+
+                        @Override
+                        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                        }
+                    }
+            )
+        );
+
         return view;
     }
 
 
     private void init() {
         this.recyclerView = view.findViewById(R.id.recyclerView);
+
+        this.toastMessage = Toast.makeText(getContext(), null, Toast.LENGTH_SHORT);
+    }
+
+    private void showToastMessage(Toast toast, String message) {
+        toast.setText(message);
+        toast.show();
     }
 
     private void addAllProjects() {
