@@ -40,23 +40,25 @@
 
             <TextView
                 android:id="@+id/title"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="left"
                 android:text="Pensamento Computacional"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/date"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="left"
                 android:text="28 de Agosto de 2019"
                 android:textSize="12sp" />
 
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnMenu"
+            android:id="@+id/btn_more"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
@@ -81,7 +83,7 @@
         android:textSize="14sp" />
 
     <Button
-        android:id="@+id/btnMenu2"
+        android:id="@+id/btn_more_text"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="55dp"
         android:layout_height="23dp"
