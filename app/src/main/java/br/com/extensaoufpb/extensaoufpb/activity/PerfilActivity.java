@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import br.com.extensaoufpb.extensaoufpb.R;
@@ -39,7 +38,7 @@ public class PerfilActivity extends AppCompatActivity {
         sobreNomeUser.setText("Napoleão");
         emailUser.setText("francivaldo.napoleao@dcx.ufpb.br");
 
-        btnVoltar = findViewById(R.id.btnVoltar);
+        btnVoltar = findViewById(R.id.btnReturnPerfil);
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
