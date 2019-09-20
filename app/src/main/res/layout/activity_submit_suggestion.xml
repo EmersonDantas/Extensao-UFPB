@@ -68,32 +68,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
-        <Spinner
-            android:id="@+id/spinner01"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/btnEnviar"
-            app:layout_constraintEnd_toEndOf="@+id/cursos"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cursos"
-            app:layout_constraintVertical_bias="0.0" />
-
-
-        <TextView
-            android:id="@+id/cursos"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="20dp"
-            android:text="@string/area_de_aplicacao"
-            android:textColor="@color/colorButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnEmail" />
 
         <TextView
             android:id="@+id/textView16"
@@ -101,10 +75,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:text="@string/descricao"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner01" />
+            app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
         <TextView
             android:id="@+id/textView"
@@ -113,7 +87,7 @@
             android:layout_marginTop="24dp"
             android:foregroundGravity="center"
             android:gravity="center"
-            android:text="@string/sugestao_novos_projetos"
+            android:text="@string/enviar_sugestoes"
             android:textColor="@color/colorButton"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -126,36 +100,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.18" />
+            app:layout_constraintGuide_percent="0.35" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/btnEmail"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        <ImageView
+            android:id="@+id/imgProjeto"
+            android:layout_width="82dp"
+            android:layout_height="83dp"
+            android:layout_marginTop="62dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:srcCompat="@drawable/projeto_logo" />
+
+        <TextView
+            android:id="@+id/textView18"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="70dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            app:boxBackgroundColor="@color/colorAccent"
-            app:boxStrokeColor="@color/colorButton"
+            android:layout_marginTop="32dp"
+            android:text="@string/descria_o_da_pergunta"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.068"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/titulo_sugestao"
-                android:imeOptions="actionNext"
-                android:inputType="textEmailAddress"
-                android:textColor="@color/textColor"
-                android:textColorHighlight="@color/textColor"
-                android:textColorHint="@color/textColor" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+            app:layout_constraintTop_toBottomOf="@+id/imgProjeto" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

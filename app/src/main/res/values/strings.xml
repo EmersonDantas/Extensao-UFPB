@@ -67,6 +67,16 @@
     <string name="cancel" color="">Não</string>
     <string name="confirmacao">Confirmação</string>
     <string name="dialogMenssegeDadosAcademicos">Você quer mesmo cadastrar esses dados acadêmicos?</string>
+    <string name="senha">Senha</string>
+    <string name="user_name">Olá, usuário. Acompanhe as novidades!</string>
+    <string name="sugestao_novos_projetos">Sugestão de novo projeto</string>
+    <string name="area_de_aplicacao">Área de aplicação</string>
+    <string name="enviar">Enviar</string>
+    <string name="titulo_sugestao">Titulo</string>
+    <string name="dialogMenssegeSugestaoProjetos">Deseja enviar essa sugestão para um novo projeto?</string>
+    <string name="enviar_sugestoes">Enviar Sugestões</string>
+    <string name="dialogMenssegeEnviarSugestao">Deseja enviar a sugestão ?</string>
+    <string name="descria_o_da_pergunta">Descriação da pergunta</string>
     <string-array name="selecione">
         <item>Selecione</item>
         <item>SI</item>
@@ -85,12 +95,5 @@
         <item>Ecologia</item>
         <item>Computação</item>
     </string-array>
-    <string name="senha">Senha</string>
-    <string name="user_name">Olá, usuário. Acompanhe as novidades!</string>
-    <string name="sugestao_novos_projetos">Sugestão de novo projeto</string>
-    <string name="area_de_aplicacao">Área de aplicação</string>
-    <string name="enviar">Enviar</string>
-    <string name="titulo_sugestao">Titulo</string>
-    <string name="dialogMenssegeSugestaoProjetos">Deseja enviar essa sugestão para um novo projeto?</string>
 
 </resources>
