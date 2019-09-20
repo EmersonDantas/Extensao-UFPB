@@ -79,7 +79,17 @@
         <item>2º</item>
         <item>3º</item>
     </string-array>
+    <string-array name="areaAplicacao">
+        <item>Selecione</item>
+        <item>Educação</item>
+        <item>Ecologia</item>
+        <item>Computação</item>
+    </string-array>
     <string name="senha">Senha</string>
     <string name="user_name">Olá, usuário. Acompanhe as novidades!</string>
+    <string name="sugestao_novos_projetos">Sugestão de novo projeto</string>
+    <string name="area_de_aplicacao">Área de aplicação</string>
+    <string name="enviar">Enviar</string>
+    <string name="titulo_sugestao">Titulo</string>
 
 </resources>
