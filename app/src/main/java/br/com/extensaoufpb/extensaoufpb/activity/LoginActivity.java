@@ -106,7 +106,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()){
             case (R.id.btnLoginBack):
-                //startActivity(new Intent(LoginActivity.this, BaseActivity.class));
+                startActivity(new Intent(LoginActivity.this, BaseActivity.class));
                 finish();
                 break;
             case (R.id.btnLogin):
