@@ -76,7 +76,9 @@
     <string name="dialogMenssegeSugestaoProjetos">Deseja enviar essa sugestão para um novo projeto?</string>
     <string name="enviar_sugestoes">Enviar Sugestões</string>
     <string name="dialogMenssegeEnviarSugestao">Deseja enviar a sugestão ?</string>
-    <string name="descria_o_da_pergunta">Descriação da pergunta</string>
+    <string name="descria_o_da_pergunta">Descrição da pergunta</string>
+    <string name="castrar_noticia">Cadastrar Notícia</string>
+    <string name="dialogMenssegeCadastrarNoticia">Você quer mesmo cadastrar essa notícia ?</string>
     <string-array name="selecione">
         <item>Selecione</item>
         <item>SI</item>
