@@ -30,7 +30,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide(); //remove a action bar apenas necessario nessa tela sdf
+        //getSupportActionBar().hide(); //remove a action bar apenas necessario nessa tela sdf #Tava crashando no meu celular
         setContentView(R.layout.activity_base);
 
         init();

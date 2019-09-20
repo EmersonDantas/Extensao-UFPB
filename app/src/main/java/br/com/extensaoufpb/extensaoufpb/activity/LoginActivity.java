@@ -12,10 +12,11 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import br.com.extensaoufpb.extensaoufpb.R;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button buttonLogin;
     private Button buttonBack;
+    private Button buttonGoToRegister;
 
     private TextInputLayout emailField;
     private TextInputLayout passwordField;
@@ -41,47 +42,23 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void init() {
-
         this.toastMessage = Toast.makeText(this, null, Toast.LENGTH_SHORT);
-
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                boolean validFields = verifyFields(emailField, passwordField);
-
-                if (validFields) {
-                    startIntent = new Intent(LoginActivity.this, BaseActivity.class);
-
-                    startIntent.putExtra("email", getEmail(emailField));
-
-                    startActivity(startIntent);
-                    finish();
-                }
-
-            }
-        });
-
-
-        buttonBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                startIntent = new Intent(LoginActivity.this, BaseActivity.class);
-
-                startActivity(startIntent);
-                finish();
-
-            }
-        });
 
     }
 
     private void findComponent() {
         buttonLogin = findViewById(R.id.btnLogin);
-        buttonBack = findViewById(R.id.btnBack);
+        buttonBack = findViewById(R.id.btnLoginBack);
+        buttonGoToRegister = findViewById(R.id.btnGoToRegister);
         emailField = findViewById(R.id.input_layout_email);
         passwordField = findViewById(R.id.input_layout_password);
+        setListeners();
+    }
+
+    private void setListeners(){
+        buttonLogin.setOnClickListener(this);
+        buttonBack.setOnClickListener(this);
+        buttonGoToRegister.setOnClickListener(this);
     }
 
     private boolean verifyFields(TextInputLayout email, TextInputLayout password) {
@@ -125,4 +102,30 @@ public class LoginActivity extends AppCompatActivity {
         toast.show();
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case (R.id.btnLoginBack):
+                //startActivity(new Intent(LoginActivity.this, BaseActivity.class));
+                finish();
+                break;
+            case (R.id.btnLogin):
+                boolean validFields = verifyFields(emailField, passwordField);
+
+                if (validFields) {
+                    startIntent = new Intent(LoginActivity.this, BaseActivity.class);
+
+                    startIntent.putExtra("email", getEmail(emailField));
+
+                    startActivity(startIntent);
+                    finish();
+                }
+
+                break;
+            case(R.id.btnGoToRegister):
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+                //finish();
+                break;
+        }
+    }
 }
