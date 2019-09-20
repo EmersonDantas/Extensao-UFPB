@@ -31,8 +31,10 @@
     <string name="title_notifications">Notifications</string>
     <string name="description">Description</string>
     <string name="email">Email</string>
-    <string name="password">Password</string>
+    <string name="password">Senha</string>
+    <string name="repeat_password">Repita a senha</string>
     <string name="login">Login</string>
+    <string name="register">Cadastrar</string>
     <string name="descriptionLogo">logo do curso do aplicativo</string>
     <string name="facebook_app_id">414127435908289</string>
     <string name="fb_login_protocol_scheme">fb414127435908289</string>
@@ -67,6 +69,9 @@
     <string name="cancel" color="">Não</string>
     <string name="confirmacao">Confirmação</string>
     <string name="dialogMenssegeDadosAcademicos">Você quer mesmo cadastrar esses dados acadêmicos?</string>
+    <string name="senha">Senha</string>
+    <string name="user_name">Olá, usuário. Acompanhe as novidades!</string>
+    <string name="title_activity_register">Cadastrar</string>
     <string-array name="selecione">
         <item>Selecione</item>
         <item>SI</item>
@@ -79,7 +84,5 @@
         <item>2º</item>
         <item>3º</item>
     </string-array>
-    <string name="senha">Senha</string>
-    <string name="user_name">Olá, usuário. Acompanhe as novidades!</string>
 
 </resources>
