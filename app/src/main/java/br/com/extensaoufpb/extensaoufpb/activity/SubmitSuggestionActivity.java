@@ -17,7 +17,7 @@ public class SubmitSuggestionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_project_suggestion);
+        setContentView(R.layout.activity_submit_suggestion);
 
         Button buttonEnviar =(Button) findViewById(R.id.btnEnviar);
 
