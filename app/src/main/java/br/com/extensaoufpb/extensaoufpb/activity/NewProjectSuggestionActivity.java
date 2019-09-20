@@ -44,7 +44,7 @@ public class NewProjectSuggestionActivity extends AppCompatActivity {
         AlertDialog.Builder alerta = new AlertDialog.Builder(this);
 
         alerta.setTitle(R.string.confirmacao);
-        alerta.setMessage(R.string.dialogMenssegeDadosAcademicos);
+        alerta.setMessage(R.string.dialogMenssegeSugestaoProjetos);
         alerta.setCancelable(false);
         alerta.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
         public void onClick(DialogInterface dialog, int id) {

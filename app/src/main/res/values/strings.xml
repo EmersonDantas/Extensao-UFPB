@@ -91,5 +91,6 @@
     <string name="area_de_aplicacao">Área de aplicação</string>
     <string name="enviar">Enviar</string>
     <string name="titulo_sugestao">Titulo</string>
+    <string name="dialogMenssegeSugestaoProjetos">Deseja enviar essa sugestão para um novo projeto?</string>
 
 </resources>
