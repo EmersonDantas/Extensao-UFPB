@@ -99,6 +99,7 @@
     <string name="descria_o_da_pergunta">Descrição da pergunta</string>
     <string name="castrar_noticia">Cadastrar Notícia</string>
     <string name="dialogMenssegeCadastrarNoticia">Você quer mesmo cadastrar essa notícia ?</string>
+    <string name="volutario">Voluntário</string>
     <string-array name="selecione">
         <item>Selecione</item>
         <item>SI</item>
