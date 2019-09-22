@@ -206,7 +206,7 @@
                 android:id="@+id/editAnswerFeedback"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="top"
+                android:gravity="bottom"
                 android:hint="Resposta"
                 android:imeOptions="actionDone"
                 android:inputType="textMultiLine"
