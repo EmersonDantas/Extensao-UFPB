@@ -29,8 +29,8 @@ public class ParticipantsActivity extends AppCompatActivity {
     }
 
     private void createAllParticipantes(){
-        participants.add(new Extensionist(R.drawable.emerson,"Emerson Dantas", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
-        participants.add(new Extensionist(R.drawable.francivaldo,"Francivaldo Napoleão", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
-        participants.add(new Extensionist(R.drawable.waldir,"Waldir Marques", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
+        participants.add(new Extensionist(R.drawable.emanoel,"Emerson Dantas", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
+        participants.add(new Extensionist(R.drawable.emanoel,"Francivaldo Napoleão", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
+        participants.add(new Extensionist(R.drawable.emanoel,"Waldir Marques", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
     }
 }
