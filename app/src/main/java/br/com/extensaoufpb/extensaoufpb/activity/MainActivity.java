@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-                final Intent startLogin = new Intent(MainActivity.this, EditProjectActivity.class);
+                final Intent startLogin = new Intent(MainActivity.this, MainActivity.class);
                 ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeCustomAnimation(MainActivity.this,R.anim.item_animation_slide_from_bottom , R.anim.item_animation_fall_down);
                 ActivityCompat.startActivity(MainActivity.this, startLogin,activityOptionsCompat.toBundle());
                 finish();
