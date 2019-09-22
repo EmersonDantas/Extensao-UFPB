@@ -23,11 +23,11 @@ public class LoginActivity extends AppCompatActivity {
     private Intent startIntent;
     private Toast toastMessage;
 
-    private String emailCoordinator = "coordenador@gmail.com";
-    private String passwordCoordinator = "coordenador";
+    private String emailCoordinator = "c1@gmail.com";
+    private String passwordCoordinator = "c1";
 
-    private String emailExtern = "externo@gmail.com";
-    private String passwordExtern = "externo";
+    private String emailExtern = "e1@gmail.com";
+    private String passwordExtern = "e1";
 
 
     @Override

@@ -40,7 +40,7 @@ public class InicioFragment extends Fragment {
         this.addAllProjects();
 
         // Configurar adapter
-        AdapterFeedGeneral adapter = new AdapterFeedGeneral(projects);
+        AdapterFeedGeneral adapter = new AdapterFeedGeneral(getContext(), projects);
 
         //Configurar Recyclerview
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext().getApplicationContext());
