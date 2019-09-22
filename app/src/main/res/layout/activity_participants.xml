@@ -59,14 +59,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView16">
 
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="Apps4Society"
-                android:textSize="18sp" />
-
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/foto_perfil"
                 android:layout_width="48dp"
@@ -74,6 +66,14 @@
                 android:layout_marginRight="8dp"
                 android:cropToPadding="false"
                 android:src="@drawable/logo_appps4" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Apps4Society"
+                android:textSize="18sp" />
 
         </LinearLayout>
 
