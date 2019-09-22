@@ -45,18 +45,18 @@ public class SuggestionsActivity extends AppCompatActivity {
     }
 
     private void addAllSuggestions(){
-        suggestionList.add(new Suggestion(R.drawable.perfil, "Oficinas de Programação", "18/09/2019",
+        suggestionList.add(new Suggestion(R.drawable.emanoel, "Oficinas de Programação", "18/09/2019",
                 "Francivaldo Napoleão", "Seria legal ter oficinas de jogos para o público geral...",
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the" +
                         " industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and " +
                         "scrambled it to make a type specimen book. It has survived not only five century. 300 caracteres."));
 
-        suggestionList.add(new Suggestion(R.drawable.perfil, "Oficinas de Python", "18/09/2019",
+        suggestionList.add(new Suggestion(R.drawable.emanoel, "Oficinas de Python", "18/09/2019",
                 "Francivaldo Napoleão", "Python parece ser uma linguagem venenosa. Queria saber...", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the" +
                 " industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and " +
                 "scrambled it to make a type specimen book. It has survived not only five century. 300 caracteres."));
 
-        suggestionList.add(new Suggestion(R.drawable.perfil, "Oficinas de montagem", "18/09/2019",
+        suggestionList.add(new Suggestion(R.drawable.emanoel, "Oficinas de montagem", "18/09/2019",
                 "Francivaldo Napoleão", "Como se monta um PC? Vocês bem que poderiam ensinar...",
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the" +
                         " industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and " +

@@ -33,7 +33,7 @@ public class PerfilActivity extends AppCompatActivity {
         sobreNomeUser = findViewById(R.id.txtSobrenome);
         emailUser = findViewById(R.id.txtEmail);
 
-        fotoUser.setImageResource(R.drawable.perfil);
+        fotoUser.setImageResource(R.drawable.emanoel);
         nomeUser.setText("Francivaldo");
         sobreNomeUser.setText("Napoleão");
         emailUser.setText("francivaldo.napoleao@dcx.ufpb.br");
