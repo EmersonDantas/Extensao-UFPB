@@ -24,7 +24,7 @@ public class EditPerfilActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_perfil);
 
         img = findViewById(R.id.foto_perfil);
-        img.setImageResource(R.drawable.perfil);
+        img.setImageResource(R.drawable.emanoel);
 
         btnSalvarEditPerfil = findViewById(R.id.btnSalvarEditPerfil);
         btnSalvarEditPerfil.setOnClickListener(new View.OnClickListener() {

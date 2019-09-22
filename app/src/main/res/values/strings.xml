@@ -65,7 +65,24 @@
     <string name="cre">CRE</string>
     <string name="matricula">Matricula</string>
     <string name="periodo">Período:</string>
-    <string name="curso">Curso:</string>
+    <string name="candidatos">Candidatos</string>
+    <string name="processos_seletivos">Processos Seletivos</string>
+    <string name="sugestoes">Sugestões</string>
+    <string name="curso">Curso</string>
+    <string name="cra">CRA</string>
+    <string name="areasInteresse">Áreas de Interesse</string>
+    <string name="nome_adapter">Nome:</string>
+    <string name="curso_adapter">Curso:</string>
+    <string name="cra_adapter">CRA:</string>
+    <string name="ver_candidatos">Ver Candidatos</string>
+    <string name="visualizar">Visualizar</string>
+    <string name="candidato">Candidato</string>
+    <string name="em_espera">Em Espera</string>
+    <string name="selecionar">Selecionar</string>
+    <string name="feedback">Feedback</string>
+    <string name="sugestao">Sugestão:</string>
+    <string name="enviar">Enviar</string>
+    <string name="cursos_com_ponto">Curso:</string>
     <string name="save" color="FF08D487">Sim</string>
     <string name="cancel" color="">Não</string>
     <string name="confirmacao">Confirmação</string>
@@ -73,6 +90,15 @@
     <string name="senha">Senha</string>
     <string name="user_name">Olá, usuário. Acompanhe as novidades!</string>
     <string name="title_activity_register">Cadastrar</string>
+    <string name="sugestao_novos_projetos">Sugestão de novo projeto</string>
+    <string name="area_de_aplicacao">Área de aplicação</string>
+    <string name="titulo_sugestao">Titulo</string>
+    <string name="dialogMenssegeSugestaoProjetos">Deseja enviar essa sugestão para um novo projeto?</string>
+    <string name="enviar_sugestoes">Enviar Sugestões</string>
+    <string name="dialogMenssegeEnviarSugestao">Deseja enviar a sugestão ?</string>
+    <string name="descria_o_da_pergunta">Descrição da pergunta</string>
+    <string name="castrar_noticia">Cadastrar Notícia</string>
+    <string name="dialogMenssegeCadastrarNoticia">Você quer mesmo cadastrar essa notícia ?</string>
     <string-array name="selecione">
         <item>Selecione</item>
         <item>SI</item>
@@ -85,5 +111,10 @@
         <item>2º</item>
         <item>3º</item>
     </string-array>
-
+  <string-array name="areaAplicacao">
+        <item>Selecione</item>
+        <item>Educação</item>
+        <item>Ecologia</item>
+        <item>Computação</item>
+   </string-array>
 </resources>
