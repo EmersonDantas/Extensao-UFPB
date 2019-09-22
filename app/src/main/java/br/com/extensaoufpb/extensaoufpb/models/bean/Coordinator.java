@@ -5,6 +5,10 @@ import br.com.extensaoufpb.extensaoufpb.models.bean.interfaces.FeedbackMananger;
 public class Coordinator extends User implements FeedbackMananger {
 
 
+    public Coordinator(int profilePhoto, String name, String password, String email) {
+        super(profilePhoto, name, password, email);
+    }
+
     public void registerProject(){}
 
     public void disclosureProjectSelectionProcess(){}

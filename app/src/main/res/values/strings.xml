@@ -34,6 +34,7 @@
     <string name="password">Senha</string>
     <string name="repeat_password">Repita a senha</string>
     <string name="login">Login</string>
+    <string name="participants">Participantes</string>
     <string name="register">Cadastrar</string>
     <string name="descriptionLogo">logo do curso do aplicativo</string>
     <string name="facebook_app_id">414127435908289</string>
@@ -98,6 +99,7 @@
     <string name="descria_o_da_pergunta">Descrição da pergunta</string>
     <string name="castrar_noticia">Cadastrar Notícia</string>
     <string name="dialogMenssegeCadastrarNoticia">Você quer mesmo cadastrar essa notícia ?</string>
+    <string name="volutario">Voluntário</string>
     <string-array name="selecione">
         <item>Selecione</item>
         <item>SI</item>
@@ -110,11 +112,10 @@
         <item>2º</item>
         <item>3º</item>
     </string-array>
-    <string-array name="areaAplicacao">
+  <string-array name="areaAplicacao">
         <item>Selecione</item>
         <item>Educação</item>
         <item>Ecologia</item>
         <item>Computação</item>
-    </string-array>
-
+   </string-array>
 </resources>
