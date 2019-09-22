@@ -11,7 +11,7 @@ public class BottomSheet {
     private static BottomSheet instance = null;
     private static BottomSheetBehavior myBottomSheetBehavior;
     private static View myView = null;
-    private static String emailCoordinator = "coordenador@gmail.com";
+    private static String emailCoordinator = "c1@gmail.com";
 
     private BottomSheet(){
 
@@ -45,11 +45,11 @@ public class BottomSheet {
 
     }
 
-    private static void initiBottomSheet(View view, String email){
+    private static void initiBottomSheet(View view, String email) {
 
         int id = R.id.closebottom;
 
-        if(email.equalsIgnoreCase(emailCoordinator)){
+        if (email.equalsIgnoreCase(emailCoordinator)) {
             id = R.id.coordinatorbottom;
             view.findViewById(R.id.coordinator).setVisibility(View.VISIBLE);
             view.findViewById(R.id.external).setVisibility(View.GONE);
@@ -61,11 +61,12 @@ public class BottomSheet {
         myBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
     }
 
-    public void changeStateBottom(){
+    public void changeStateBottom() {
 
-        if(myBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_COLLAPSED){
+        if(myBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_COLLAPSED) {
             myBottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
-        }else{
+
+        } else {
             myBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
         }
     }
