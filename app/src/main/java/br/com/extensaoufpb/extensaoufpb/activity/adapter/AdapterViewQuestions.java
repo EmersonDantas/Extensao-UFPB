@@ -3,7 +3,6 @@ package br.com.extensaoufpb.extensaoufpb.activity.adapter;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.OperationApplicationException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,11 +23,9 @@ import br.com.extensaoufpb.extensaoufpb.models.bean.Question;
 
 public class AdapterViewQuestions extends RecyclerView.Adapter<AdapterViewQuestions.MyViewHolder> {
 
-    private OperationApplicationException operationApplicationException;
     private Context myContext;
     private List<Question> questionList;
     private FacadeQuestion facadeQuestion;
-    private int positionClick;
 
     public AdapterViewQuestions(List<Question> list) {
 
@@ -43,7 +40,6 @@ public class AdapterViewQuestions extends RecyclerView.Adapter<AdapterViewQuesti
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapterquestion, parent, false);
         myContext = view.getContext();
-        operationApplicationException = new OperationApplicationException();
         return new AdapterViewQuestions.MyViewHolder(view);
     }
 
