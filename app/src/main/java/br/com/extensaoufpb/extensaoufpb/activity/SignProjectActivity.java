@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -38,7 +39,14 @@ public class SignProjectActivity extends AppCompatActivity {
                 "It has survived not only five centuries, but also the leap into electronic typesetting, " +
                 "remaining essentially unchanged. It was popularised in the 1960s with the release of " +
                 "Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing " +
+                "software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry" +
+                "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an" +
+                "unknown printer took a galley of type and scrambled it to make a type specimen book." +
+                "It has survived not only five centuries, but also the leap into electronic typesetting," +
+                "remaining essentially unchanged. It was popularised in the 1960s with the release of" +
+                "Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing" +
                 "software like Aldus PageMaker including versions of Lorem Ipsum.");
+        txtDescricao.setMovementMethod(new ScrollingMovementMethod());
 
         findViewById(R.id.btnCadastrarProjeto).setOnClickListener(new View.OnClickListener() {
             @Override

@@ -24,10 +24,26 @@
         app:layout_constraintVertical_bias="0.0">
 
         <Button
+            android:id="@+id/btnReturnEditProject"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/voltar"
+            android:drawableTop="@drawable/return_arrow_blue"
+            android:foregroundGravity="left|center"
+            android:tint="@color/colorPrimary"
+            app:backgroundTint="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
             android:id="@+id/btnSalvarEditProjeto"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:textSize="14sp"
             android:layout_marginBottom="16dp"
             android:padding="10dp"
@@ -37,21 +53,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
-        <ImageButton
-            android:id="@+id/btnVoltar3"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@android:color/transparent"
-            android:contentDescription="@string/voltar"
-            android:scaleType="centerCrop"
-            android:tint="@color/colorPrimary"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
 
         <ImageView
             android:id="@+id/imgProjectLogo"

@@ -103,10 +103,10 @@ public class BaseActivity extends AppCompatActivity {
     private int getUserID(String email) {
         int userID;
 
-        if (email.equals("coordenador@gmail.com")) {
+        if (email.equals("c1@gmail.com")) {
             userID = R.layout.bottom_sheet_coordinator_menu;
 
-        } else if (email.equals("externo@gmail.com")) {
+        } else if (email.equals("e1@gmail.com")) {
             userID = R.layout.bottom_sheet_menu_extern;
 
 
