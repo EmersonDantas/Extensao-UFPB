@@ -11,8 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-      
-        <uses-permission android:name="android.permission.INTERNET" />
 
         <activity android:name=".activity.ui.participant.ParticipantsActivity"
             android:screenOrientation="portrait">
@@ -123,5 +121,8 @@
             android:resource="@array/preloaded_fonts"
             android:screenOrientation="portrait" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
 
 </manifest>
