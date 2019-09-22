@@ -34,6 +34,7 @@
     <string name="password">Senha</string>
     <string name="repeat_password">Repita a senha</string>
     <string name="login">Login</string>
+    <string name="participants">Participantes</string>
     <string name="register">Cadastrar</string>
     <string name="descriptionLogo">logo do curso do aplicativo</string>
     <string name="facebook_app_id">414127435908289</string>
