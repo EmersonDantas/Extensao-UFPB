@@ -130,6 +130,8 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputDes"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:layout_marginStart="24dp"
@@ -138,18 +140,18 @@
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
             android:layout_marginBottom="32dp"
-            android:gravity="bottom"
-            android:hint="Descrição"
+            android:hint="@string/descricao"
             app:layout_constraintBottom_toTopOf="@+id/btnEnviar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spinner01"
-            app:layout_constraintVertical_bias="0.034">
+            app:layout_constraintVertical_bias="0.00999999">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent"
+                android:gravity="bottom" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
