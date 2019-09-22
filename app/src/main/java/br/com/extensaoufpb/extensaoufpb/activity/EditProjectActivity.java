@@ -1,12 +1,16 @@
 package br.com.extensaoufpb.extensaoufpb.activity;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -28,6 +32,7 @@ public class EditProjectActivity extends AppCompatActivity {
     private ImageView imgProjetoLogo;
     private DatePickerDialog datePickerDialog;
     private Calendar calendar;
+    private Button btnSave, btnReturnEditProject;
     private int year, month, day;
 
 
@@ -85,6 +90,24 @@ public class EditProjectActivity extends AppCompatActivity {
         imgProjetoLogo = findViewById(R.id.imgProjectLogo);
         imgProjetoLogo.setImageResource(R.drawable.projeto_logo);
 
+        btnSave = findViewById(R.id.btnSalvarEditProjeto);
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                exibirConfirmacao();
+            }
+        });
+
+        btnReturnEditProject = findViewById(R.id.btnReturnEditProject);
+        btnReturnEditProject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(EditProjectActivity.this, BaseActivity.class);
+                startActivity(it);
+                finish();
+            }
+        });
+
     }
 
     public void tratandoData(final EditText text){
@@ -99,5 +122,31 @@ public class EditProjectActivity extends AppCompatActivity {
             }
         },year, month, day);
         datePickerDialog.show();
+    }
+
+    public void exibirConfirmacao(){
+        AlertDialog.Builder mensagem = new AlertDialog.Builder(this);
+        mensagem.setTitle("Confirmação");
+        mensagem.setIcon(null);
+        mensagem.setMessage("Alterando dados do projeto. Tem certeza disso?");
+        mensagem.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(EditProjectActivity.this, "Projeto editado!", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(EditProjectActivity.this, BaseActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        mensagem.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(EditProjectActivity.this, "Alteração cancelada!", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(EditProjectActivity.this, BaseActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        mensagem.show();
     }
 }
