@@ -25,7 +25,7 @@
         app:layout_constraintVertical_bias="1.0">
 
         <Button
-            android:id="@+id/btnEnviar"
+            android:id="@+id/btnCadastrar"
             style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

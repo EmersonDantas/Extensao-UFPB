@@ -36,6 +36,7 @@ public class RegisterDataActivity extends AppCompatActivity {
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adapter2);
 
+
         Button buttonCadastrar =(Button) findViewById(R.id.btnCadastrar);
 
         buttonCadastrar.setOnClickListener(new View.OnClickListener() {
