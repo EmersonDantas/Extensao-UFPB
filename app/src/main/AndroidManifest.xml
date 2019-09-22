@@ -17,15 +17,12 @@
         <activity android:name=".activity.ui.participant.ParticipantsActivity"
             android:screenOrientation="portrait">
         </activity>
-        <activity
-            android:name=".activity.RegisterActivity"
+        <activity android:name=".activity.RegisterActivity"
             android:screenOrientation="portrait">
-
         </activity>
         <activity
             android:name=".activity.EditProjectActivity"
-            android:screenOrientation="portrait" />
-  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity.CandidatesActivity"
             android:screenOrientation="portrait" />
@@ -40,19 +37,19 @@
       
         <activity
             android:name=".activity.SignProjectActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
       
         <activity
             android:name=".activity.PerfilActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
       
         <activity
             android:name=".activity.EditPasswordActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
       
         <activity
             android:name=".activity.EditPerfilActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
       
         <activity
             android:name=".activity.RegisterDataActivity"
@@ -95,6 +92,7 @@
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_extensao"
             android:screenOrientation="portrait">
+          
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -113,13 +111,14 @@
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
-      
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
         <meta-data
             android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
             android:resource="@array/preloaded_fonts"
             android:screenOrientation="portrait" />
     </application>
