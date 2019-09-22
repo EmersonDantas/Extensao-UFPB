@@ -72,35 +72,38 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
 
+        <Button
             android:id="@+id/btnBack"
-            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="31dp"
+            android:layout_height="42dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:contentDescription="TODO"
             android:drawableTop="@drawable/ic_arrow_back_black_24dp"
             android:foregroundGravity="left|center"
-            app:backgroundTint="@android:color/transparent"
+            app:backgroundTint="@color/colorAccent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
             android:foregroundGravity="center"
             android:gravity="center"
             android:text="@string/castrar_noticia"
             android:textColor="@color/colorButton"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.41"
+            app:layout_constraintHorizontal_bias="0.50"
             app:layout_constraintStart_toEndOf="@+id/btnBack"
             app:layout_constraintTop_toTopOf="parent" />
 

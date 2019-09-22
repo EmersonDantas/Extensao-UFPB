@@ -36,28 +36,21 @@
             android:name=".activity.RegisterDataActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
-            android:name=".activity.MainActivity"
-            android:label="@string/title_activity_extensao"
+            android:name=".activity.RegisterNewsActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity
             android:name=".activity.NewProjectSuggestionActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-
         </activity>
         <activity
             android:name=".activity.SubmitSuggestionActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-
         </activity>
 
         <activity
@@ -78,10 +71,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.RegisterNewsActivity"
+            android:name=".activity.MainActivity"
+            android:label="@string/title_activity_extensao"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity
