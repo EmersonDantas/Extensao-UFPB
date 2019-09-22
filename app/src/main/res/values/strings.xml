@@ -62,6 +62,23 @@
     <string name="cre">CRE</string>
     <string name="matricula">Matricula</string>
     <string name="periodo">Período:</string>
+    <string name="candidatos">Candidatos</string>
+    <string name="processos_seletivos">Processos Seletivos</string>
+    <string name="sugestoes">Sugestões</string>
+    <string name="curso">Curso</string>
+    <string name="cra">Cra</string>
+    <string name="areasInteresse">Áreas de Interesse</string>
+    <string name="nome_adapter">Nome:</string>
+    <string name="curso_adapter">Curso:</string>
+    <string name="cra_adapter">CRA:</string>
+    <string name="ver_candidatos">Ver Candidatos</string>
+    <string name="visualizar">Visualizar</string>
+    <string name="candidato">Candidato</string>
+    <string name="em_espera">Em Espera</string>
+    <string name="selecionar">Selecionar</string>
+    <string name="feedback">Feedback</string>
+    <string name="sugestao">Sugestão:</string>
+    <string name="enviar">Enviar</string>
     <string name="curso">Curso:</string>
     <string name="save" color="FF08D487">Sim</string>
     <string name="cancel" color="">Não</string>
