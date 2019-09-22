@@ -4,33 +4,36 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.OperationApplicationException;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import br.com.extensaoufpb.extensaoufpb.Controller.FacadeQuestion;
 import br.com.extensaoufpb.extensaoufpb.R;
 import br.com.extensaoufpb.extensaoufpb.activity.OpenSelectionProcessActivity;
-import br.com.extensaoufpb.extensaoufpb.models.bean.Questions;
+import br.com.extensaoufpb.extensaoufpb.models.bean.Question;
 
 public class AdapterViewQuestions extends RecyclerView.Adapter<AdapterViewQuestions.MyViewHolder> {
 
     private OperationApplicationException operationApplicationException;
     private Context myContext;
-    private List<Questions> questionsList;
+    private List<Question> questionList;
+    private FacadeQuestion facadeQuestion;
     private int positionClick;
 
-    public AdapterViewQuestions(List<Questions> list) {
+    public AdapterViewQuestions(List<Question> list) {
 
-        questionsList = list;
+        facadeQuestion = FacadeQuestion.getInstance();
+        questionList = list;
 
     }
 
@@ -47,10 +50,9 @@ public class AdapterViewQuestions extends RecyclerView.Adapter<AdapterViewQuesti
     @Override
     public void onBindViewHolder(@NonNull AdapterViewQuestions.MyViewHolder holder, int position) {
 
-        Questions questions = questionsList.get(position);
-        holder.textQuestion.setText(questions.getQuestion());
-        holder.textType.setText(questions.getType());
-        positionClick = position;
+        Question question = questionList.get(position);
+        holder.textQuestion.setText(question.getQuestion());
+        holder.textType.setText(question.getType());
         clickButtons(holder);
     }
 
@@ -59,8 +61,11 @@ public class AdapterViewQuestions extends RecyclerView.Adapter<AdapterViewQuesti
         myViewHolder.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("log","click edit");
-                Toast.makeText(myContext,"clicou em editar",Toast.LENGTH_SHORT).show();
+
+                Question question = questionList.get(getItem(myViewHolder.textQuestion.getText().toString()));
+                FragmentManager manager = ((AppCompatActivity)myContext).getSupportFragmentManager();
+                facadeQuestion.openFragment(myViewHolder.textType.getText().toString(),manager,question);
+
             }
         });
 
@@ -84,7 +89,7 @@ public class AdapterViewQuestions extends RecyclerView.Adapter<AdapterViewQuesti
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        questionsList.remove(getItemRemove(myViewHolder.textQuestion.getText().toString()));
+                        questionList.remove(getItem(myViewHolder.textQuestion.getText().toString()));
                         OpenSelectionProcessActivity openSelectionProcessActivity = new OpenSelectionProcessActivity();
                         openSelectionProcessActivity.updateLimitQuestionAdapter();
                     }
@@ -106,12 +111,12 @@ public class AdapterViewQuestions extends RecyclerView.Adapter<AdapterViewQuesti
 
     @Override
     public int getItemCount() {
-        return questionsList.size();
+        return questionList.size();
     }
 
-    private int getItemRemove(String question){
-        for(int i = 0; i < questionsList.size();i++){
-            if(questionsList.get(i).getQuestion().equals(question)){
+    private int getItem(String question){
+        for(int i = 0; i < questionList.size(); i++){
+            if(questionList.get(i).getQuestion().equals(question)){
                 return i;
             }
         }
