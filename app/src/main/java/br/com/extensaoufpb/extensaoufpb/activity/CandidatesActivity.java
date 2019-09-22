@@ -43,17 +43,17 @@ public class CandidatesActivity extends AppCompatActivity {
     }
 
     private void addAllCandidates(){
-        candidateProcessList.add(new Applicant(R.drawable.perfil, "Francivaldo", "Napoleão", "Sistemas de Informação",
+        candidateProcessList.add(new Applicant(R.drawable.emanoel, "Emanoel", "Medeiros", "Sistemas de Informação",
                 "8.27", "IA - Mobile - Redes", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the" +
                 "industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and" +
                 "scrambled it to make a type specimen book. It has survived not only five century. 300 caracteres."));
 
-        candidateProcessList.add(new Applicant(R.drawable.perfil, "Francivaldo", "Napoleão", "Sistemas de Informação",
+        candidateProcessList.add(new Applicant(R.drawable.emanoel, "Emanoel", "Medeiros", "Sistemas de Informação",
                 "8.27", "IA - Redes", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the" +
                 "industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and" +
                 "scrambled it to make a type specimen book. It has survived not only five century. 300 caracteres."));
 
-        candidateProcessList.add(new Applicant(R.drawable.perfil, "Francivaldo", "Napoleão", "Sistemas de Informação",
+        candidateProcessList.add(new Applicant(R.drawable.emanoel, "Emanoel", "Medeiros", "Sistemas de Informação",
                 "8.27", "Mobile - Python - Redes", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the" +
                 "industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and" +
                 "scrambled it to make a type specimen book. It has survived not only five century. 300 caracteres."));
