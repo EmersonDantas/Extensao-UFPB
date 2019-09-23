@@ -5,11 +5,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.fragment.app.FragmentManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.extensaoufpb.extensaoufpb.Controller.BottomSheet;
 import br.com.extensaoufpb.extensaoufpb.R;
 import br.com.extensaoufpb.extensaoufpb.activity.adapter.SuggestionsAdapter;
 import br.com.extensaoufpb.extensaoufpb.models.bean.Suggestion;
@@ -20,14 +24,18 @@ public class SuggestionsActivity extends AppCompatActivity {
     private List<Suggestion> suggestionList = new ArrayList<>();
     private FragmentManager fragmentManager;
 
+    private Button btnBack;
+    private BottomSheet bottomSheet;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suggestions);
 
-        recyclerView = findViewById(R.id.recyclerView);
+        init();
 
-        fragmentManager = getSupportFragmentManager();
+        enableClickButtons();
 
         //Listagem de candidatos
         this.addAllSuggestions();
@@ -42,6 +50,23 @@ public class SuggestionsActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(suggestionsAdapter);
 
+    }
+
+    private void init() {
+        recyclerView = findViewById(R.id.recyclerView);
+        fragmentManager = getSupportFragmentManager();
+        btnBack = findViewById(R.id.btnVoltarSugestoes);
+        bottomSheet = BottomSheet.getInstance(getWindow().getDecorView().findViewById(android.R.id.content), null);
+    }
+
+    private void enableClickButtons() {
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bottomSheet.closeBottomSheeet();
+                finish();
+            }
+        });
     }
 
     private void addAllSuggestions(){
@@ -64,5 +89,9 @@ public class SuggestionsActivity extends AppCompatActivity {
     }
 
 
-
+    @Override
+    public void onBackPressed() {
+        bottomSheet.closeBottomSheeet();
+        finish();
+    }
 }

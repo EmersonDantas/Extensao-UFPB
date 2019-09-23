@@ -2,7 +2,6 @@ package br.com.extensaoufpb.extensaoufpb.activity;
 
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -20,9 +19,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import br.com.extensaoufpb.extensaoufpb.Controller.BottomSheet;
 import br.com.extensaoufpb.extensaoufpb.R;
-import br.com.extensaoufpb.extensaoufpb.activity.LoginActivity;
-import br.com.extensaoufpb.extensaoufpb.activity.PerfilActivity;
 import br.com.extensaoufpb.extensaoufpb.models.bean.Suggestion;
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -32,28 +30,43 @@ import de.hdodenhof.circleimageview.CircleImageView;
  */
 public class ViewSuggestionFragment extends Fragment {
 
+    private View view;
+
     private CircleImageView imgUserPhoto;
     private TextView userName, suggestionDate, suggestionTitle, suggestionText;
     private Suggestion suggestion;
     private Button btnReturn, btnSendAnswer;
     private EditText editAnswer;
+    private BottomSheet bottomSheet;
 
 
     public ViewSuggestionFragment(Suggestion suggestion) {
         this.suggestion = suggestion;
+
+        this.bottomSheet = BottomSheet.getInstance(view, null);
     }
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_view_suggestion, container, false);
+        view = inflater.inflate(R.layout.fragment_view_suggestion, container, false);
+
+        init();
+
+        enableClickButtons();
+
+        return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
+
+        super.onViewCreated(view, savedInstanceState);
+    }
+
+    private void init() {
         imgUserPhoto = view.findViewById(R.id.userPhotoFeedback);
         imgUserPhoto.setImageResource(suggestion.getUserPhoto());
 
@@ -73,40 +86,51 @@ public class ViewSuggestionFragment extends Fragment {
         editAnswer = view.findViewById(R.id.editAnswerFeedback);
 
         btnReturn = view.findViewById(R.id.btnReturnFeedback);
+        btnSendAnswer = view.findViewById(R.id.btnSendAnswer);
+    }
+
+    private void enableClickButtons() {
+
         btnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                bottomSheet.closeBottomSheeet();
                 getFragmentManager().popBackStack();
             }
         });
 
-        btnSendAnswer = view.findViewById(R.id.btnSendAnswer);
+
         btnSendAnswer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
+
                 editAnswer.onEditorAction(EditorInfo.IME_ACTION_DONE);
+
                 AlertDialog.Builder mensagem = new AlertDialog.Builder(v.getContext());
                 mensagem.setTitle("Confirmação");
                 mensagem.setIcon(null);
                 mensagem.setMessage("Deseja enviar a resposta?");
                 mensagem.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(v.getContext(), "Resposta enviada!", Toast.LENGTH_LONG).show();
                         getFragmentManager().popBackStack();
                     }
                 });
+
                 mensagem.setNegativeButton("Não", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(v.getContext(), "Envio cancelado", Toast.LENGTH_LONG).show();
                     }
                 });
+
                 mensagem.show();
             }
         });
-
-        super.onViewCreated(view, savedInstanceState);
     }
+
+
 
 }

@@ -13,12 +13,16 @@
     <string name="inicio">Inicio</string>
     <string name="perfil">Perfil</string>
 
+    <string name="processselection">Processos seletivos</string>
+    <string name="newprojects">Sugestões de novos projetos</string>
+    <string name="openprocess">Abrir processo seletivo</string>
+    <string name="regitsterproject">Cadastrar projetos</string>
+    <string name="projects">Projetos</string>
+
     <string name="processo_seletivo">Processos seletivos</string>
     <string name="ver_sugestoes_novos">Sugestões de novos projetos</string>
     <string name="enviar_sugestoes_novos">Envie sugestões de novos projetos</string>
-    <string name="abrirProcesso">Abrir processo seletivo</string>
     <string name="cadastrar_projeto">Cadastrar projetos</string>
-    <string name="projetos">Projetos</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
@@ -37,6 +41,66 @@
     <string name="participants">Participantes</string>
     <string name="register">Cadastrar</string>
     <string name="descriptionLogo">logo do curso do aplicativo</string>
+
+    <string name="title_open_process">Abrir Processo Seletivo</string>
+    <string name="projetctselection">Projeto Selecionado:</string>
+    <string name="amountvacancies">Quantidade vagas</string>
+    <string name="amountbags">Quantidade bolsas</string>
+    <string name="openingDate">Data abertura</string>
+    <string name="closeningDate">Data fechamento</string>
+    <string name="craMinimum">CRA mínimo</string>
+    <string name="limitiCampus">Limitar ao campus IV?</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
+    <string name="desiredQualifications">Qualificações desejadas</string>
+    <string name="differences">Diferenciais</string>
+    <string name="insertNewField">Inserir novos campos</string>
+    <string name="ready">PRONTO</string>
+    <string name="add">ADICIONAR</string>
+    <string name="newfield">Novo campo:</string>
+
+    <string name="nameField">Nome do campo</string>
+    <string name="characterAmount">Quantidade de caractere</string>
+    <string name="addField">Adicionar</string>
+    <string name="question01">Alternativa 01</string>
+    <string name="question02">Alternativa 02</string>
+    <string name="question03">Alternativa 03</string>
+    <string name="question04">Alternativa 04</string>
+    <string name="question05">Alternativa 05</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="input">input</string>
+    <string name="CRA">CRA</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="listNewFields">
+        <item>Selecione</item>
+        <item>Múltipla Escolha</item>
+        <item>Seleção</item>
+        <item>Texto</item>
+        <item>Numérico</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="listCRAMinimum">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    
+    <string-array name="projectList">
+        <item>Selecione</item>
+        <item>App4Society</item>
+        <item>Itgirl</item>
+    </string-array>
+
     <string name="facebook_app_id">414127435908289</string>
     <string name="fb_login_protocol_scheme">fb414127435908289</string>
     <string name="salvar">Salvar</string>
@@ -122,4 +186,7 @@
         <item>Ecologia</item>
         <item>Computação</item>
    </string-array>
+
+
+
 </resources>

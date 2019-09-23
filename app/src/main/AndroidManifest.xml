@@ -5,8 +5,8 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:icon="@drawable/app_logo"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
@@ -87,6 +87,10 @@
         </activity>
       
         <activity
+            android:name=".activity.OpenSelectionProcessActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_extensao"
             android:screenOrientation="portrait">
@@ -100,8 +104,8 @@
       
         <activity
             android:name=".activity.LoginActivity"
-            android:screenOrientation="portrait" />
-      
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />      
         <activity
             android:name=".activity.BaseActivity"
             android:screenOrientation="portrait" />
@@ -111,12 +115,10 @@
             android:value="@string/facebook_app_id" />
 
         <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
-
-        <meta-data
             android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts"/>
+            android:resource="@array/preloaded_fonts"
+            android:screenOrientation="portrait" />
+
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
