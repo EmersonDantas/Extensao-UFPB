@@ -16,7 +16,6 @@ import br.com.extensaoufpb.extensaoufpb.Controller.BottomSheet;
 import br.com.extensaoufpb.extensaoufpb.R;
 import br.com.extensaoufpb.extensaoufpb.activity.ui.inicio.InicioFragment;
 import br.com.extensaoufpb.extensaoufpb.activity.ui.perfil.PerfilFragment;
-import br.com.extensaoufpb.extensaoufpb.activity.ui.project_feed.ProjectFeedFragment;
 
 import static androidx.navigation.Navigation.findNavController;
 
@@ -104,7 +103,7 @@ public class BaseActivity extends AppCompatActivity {
     private void initializeFirstTabNavigation(){
 
         bottomSheet.closeBottomSheeet();
-        actualFragment = new ProjectFeedFragment();
+        actualFragment = new InicioFragment();
         replaceFragment();
     }
 
