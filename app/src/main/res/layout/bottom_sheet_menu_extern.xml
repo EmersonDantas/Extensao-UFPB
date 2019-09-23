@@ -38,26 +38,17 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/imageButton4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    app:srcCompat="@drawable/abrir_processo" />
-
-                <TextView
-                    android:id="@+id/textView6"
+                <Button
+                    android:id="@+id/btn_ver_processos_ext"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
-                    android:text="@string/processo_seletivo"
-                    android:textSize="12sp" />
+                    android:textColor="@color/textColorButton"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/colorAccent"
+                    android:drawableTop="@drawable/abrir_processo"
+                    android:text="Processos Seletivos" />
             </LinearLayout>
 
             <LinearLayout
@@ -66,25 +57,17 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/imageButton5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    app:srcCompat="@drawable/ic_nova_sugestao" />
-
-                <TextView
-                    android:id="@+id/textView7"
+                <Button
+                    android:id="@+id/btn_enviar_sugestoes_ext"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:text="@string/enviar_sugestoes_novos"
-                    android:textSize="12sp" />
+                    android:textColor="@color/textColorButton"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/colorAccent"
+                    android:drawableTop="@drawable/ic_nova_sugestao"
+                    android:text="@string/enviar_sugestoes_novos" />
             </LinearLayout>
 
             <LinearLayout
@@ -93,23 +76,17 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/imageButton6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    app:srcCompat="@drawable/projetos" />
-
-                <TextView
-                    android:id="@+id/textView8"
+                <Button
+                    android:id="@+id/btn_ver_projetos_ext"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/projetos"
-                    android:textSize="12sp" />
+                    android:textColor="@color/textColorButton"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/colorAccent"
+                    android:drawableTop="@drawable/projetos"
+                    android:text="@string/projetos" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

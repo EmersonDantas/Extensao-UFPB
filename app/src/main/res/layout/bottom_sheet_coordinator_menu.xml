@@ -41,26 +41,18 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/imageButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    app:srcCompat="@drawable/processos" />
-
-                <TextView
-                    android:id="@+id/textView3"
+                <Button
+                    android:id="@+id/btn_processo_seletivo_coord"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:foregroundGravity="center"
-                    android:gravity="center"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:text="@string/processo_seletivo"
-                    android:textSize="12sp" />
+                    android:textColor="@color/textColorButton"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/colorAccent"
+                    android:drawableTop="@drawable/processos"
+                    android:text="Processos Seletivos" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -69,25 +61,17 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/imageButton2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    app:srcCompat="@drawable/novosprojetos" />
-
-                <TextView
-                    android:id="@+id/textView4"
+                <Button
+                    android:id="@+id/btn_sugestoes_novos_projetos_coord"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="20dp"
-                    android:text="@string/ver_sugestoes_novos"
-                    android:textSize="12sp" />
+                    android:textColor="@color/textColorButton"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/colorAccent"
+                    android:drawableTop="@drawable/novosprojetos"
+                    android:text="Sugestões de novos projetos" />
             </LinearLayout>
 
             <LinearLayout
@@ -120,26 +104,17 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/imageButton4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    app:srcCompat="@drawable/ic_abrir_processo" />
-
-                <TextView
-                    android:id="@+id/textView6"
+                <Button
+                    android:id="@+id/btn_abrir_processo_coord"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
-                    android:text="@string/abrirProcesso"
-                    android:textSize="12sp" />
+                    android:textColor="@color/textColorButton"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/colorAccent"
+                    android:drawableTop="@drawable/ic_abrir_processo"
+                    android:text="@string/abrirProcesso" />
             </LinearLayout>
 
             <LinearLayout
@@ -148,25 +123,17 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/imageButton5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    app:srcCompat="@drawable/cadastrar_projeto" />
-
-                <TextView
-                    android:id="@+id/textView7"
+                <Button
+                    android:id="@+id/btn_cadastrar_projeto_coord"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:text="@string/cadastrar_projeto"
-                    android:textSize="12sp" />
+                    android:textColor="@color/textColorButton"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/colorAccent"
+                    android:drawableTop="@drawable/cadastrar_projeto"
+                    android:text="Cadastrar Projetos" />
             </LinearLayout>
 
             <LinearLayout
@@ -175,23 +142,17 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/imageButton6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    app:srcCompat="@drawable/projetos" />
-
-                <TextView
-                    android:id="@+id/textView8"
+                <Button
+                    android:id="@+id/btn_ver_projetos_coord"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/projetos"
-                    android:textSize="12sp" />
+                    android:textColor="@color/textColorButton"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/colorAccent"
+                    android:drawableTop="@drawable/processos"
+                    android:text="Projetos" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
