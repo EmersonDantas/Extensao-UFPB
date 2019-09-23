@@ -1,12 +1,12 @@
 package br.com.extensaoufpb.extensaoufpb.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +39,7 @@ public class SelectionProcessActivity extends AppCompatActivity {
 
         //Configurar adapter
         //Pegar os dados, montar a visualização e retornar para cada item do recycler view
-        ProcessSelectionAdapter suggestionsAdapter = new ProcessSelectionAdapter(processSelectionList);
+        ProcessSelectionAdapter suggestionsAdapter = new ProcessSelectionAdapter(processSelectionList,this);
 
         //Configurar RecyclerView
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
@@ -58,7 +58,6 @@ public class SelectionProcessActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bottomSheet.closeBottomSheeet();
                 finish();
             }
         });
