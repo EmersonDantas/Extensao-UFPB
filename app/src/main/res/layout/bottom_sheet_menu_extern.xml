@@ -83,10 +83,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textColor="@color/textColorButton"
-                    android:textSize="12sp"
                     app:backgroundTint="@color/colorAccent"
                     android:drawableTop="@drawable/projetos"
-                    android:text="@string/projetos"
                     android:gravity="center"
                     android:text="@string/projects"
                     android:textSize="12sp" />
