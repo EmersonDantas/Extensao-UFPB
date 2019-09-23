@@ -1,27 +1,38 @@
 package br.com.extensaoufpb.extensaoufpb.activity;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import br.com.extensaoufpb.extensaoufpb.R;
 
 public class SubmitSuggestionActivity extends AppCompatActivity {
+
+    private Button buttonBackSubmit, buttonSubmit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submit_suggestion);
 
-        Button buttonEnviar =(Button) findViewById(R.id.btnEnviar);
+        findViews();
+        clickButtons();
 
-        buttonEnviar.setOnClickListener(new View.OnClickListener() {
+    }
+
+    private void findViews(){
+
+        buttonBackSubmit = findViewById(R.id.btnBack);
+        buttonSubmit = findViewById(R.id.btnEnviar);
+    }
+
+    private void clickButtons(){
+
+        buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openDialog();
@@ -29,10 +40,18 @@ public class SubmitSuggestionActivity extends AppCompatActivity {
             }
         });
 
+        buttonBackSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                finish();
+
+            }
+        });
 
     }
 
-    public void openDialog(){
+    private void openDialog(){
 
         AlertDialog.Builder alerta = new AlertDialog.Builder(this);
 

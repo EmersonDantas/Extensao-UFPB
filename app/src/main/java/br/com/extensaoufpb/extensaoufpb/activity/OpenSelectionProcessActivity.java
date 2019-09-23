@@ -37,7 +37,7 @@ public class OpenSelectionProcessActivity extends AppCompatActivity implements A
     private String[] listNewFieldSpinner = new String[]{""};
     private String[] listCRAMinimum = new String[]{""};
     private String[] listProjects = new String[]{""};
-    private Button buttonNewFields, buttonAdd, buttonReady;
+    private Button buttonNewFields, buttonAdd, buttonReady, buttonBackSelectionProcess;
     private TextInputLayout inputLayoutCRA;
     private static TextView textNewField, textLimit;
     private static RecyclerView myRecyclerView;
@@ -71,6 +71,7 @@ public class OpenSelectionProcessActivity extends AppCompatActivity implements A
         buttonSpinnerNewFields =  findViewById(R.id.btnSpinnerNewFields);
         buttonNewFields = findViewById(R.id.btnInsertNewField);
         buttonReady = findViewById(R.id.btnReady);
+        buttonBackSelectionProcess = findViewById(R.id.btnBackProcessOpen);
         textNewField = findViewById(R.id.textNewfield);
         buttonAdd = findViewById(R.id.btnAdd);
         myRecyclerView = findViewById(R.id.recyclerViewQuestions);
@@ -133,6 +134,13 @@ public class OpenSelectionProcessActivity extends AppCompatActivity implements A
             }
         });
 
+        buttonBackSelectionProcess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         inputOpenDate.getEditText().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -170,6 +178,7 @@ public class OpenSelectionProcessActivity extends AppCompatActivity implements A
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
+                //ir para o projects a ser criado
 
             }
         });

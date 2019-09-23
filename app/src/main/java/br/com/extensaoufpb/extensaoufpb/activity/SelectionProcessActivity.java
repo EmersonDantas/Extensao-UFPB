@@ -50,7 +50,7 @@ public class SelectionProcessActivity extends AppCompatActivity {
 
     private void init() {
         this.recyclerView = findViewById(R.id.recyclerView);
-        this.bottomSheet = BottomSheet.getInstance(getWindow().getDecorView().findViewById(android.R.id.content), null);
+        this.bottomSheet = BottomSheet.getInstance(null, null);
         this.btnBack = findViewById(R.id.btnVoltarProcessosSeletivos);
     }
 

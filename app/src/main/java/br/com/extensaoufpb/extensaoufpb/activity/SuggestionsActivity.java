@@ -1,14 +1,13 @@
 package br.com.extensaoufpb.extensaoufpb.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +55,7 @@ public class SuggestionsActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         fragmentManager = getSupportFragmentManager();
         btnBack = findViewById(R.id.btnVoltarSugestoes);
-        bottomSheet = BottomSheet.getInstance(getWindow().getDecorView().findViewById(android.R.id.content), null);
+        bottomSheet = BottomSheet.getInstance(null, null);
     }
 
     private void enableClickButtons() {

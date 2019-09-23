@@ -1,8 +1,8 @@
 package br.com.extensaoufpb.extensaoufpb.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -40,6 +40,8 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnSeeSelectiveProcessExt;
     private Button btnSendSuggestionsExt;
     private Button btnSeeProjectsExt;
+    private String emailCoordinator = "c1@gmail.com";
+    private String emailExtern = "e1@gmail.com";
 
 
     @Override
@@ -64,7 +66,7 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
     private void init() {
 
         emailRecovery = getIntent().getExtras();
-        userEmail = emailRecovery.getString("email");
+        userEmail = emailExtern;//emailRecovery.getString("email");
 
         bottomSheet = BottomSheet.getInstance(getWindow().getDecorView().findViewById(android.R.id.content), userEmail);
         fragmentManager = getSupportFragmentManager();
@@ -99,10 +101,11 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
 
                 switch(menuItem.getItemId()){
                     case R.id.navigation_menu:
+                        Log.i("entrou","qual o navigation");
                         bottomSheet.changeStateBottom();
                         break;
-
                     case R.id.navigation_inicio:
+                        Log.i("entrou","qual o navigation2");
                         bottomSheet.closeBottomSheeet();
                         actualFragment = new InicioFragment();
 
@@ -111,8 +114,8 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
                         break;
 
                     case R.id.navigation_perfil:
+                        Log.i("entrou","qual o navigation3");
                         bottomSheet.closeBottomSheeet();
-
                         Intent perfil = new Intent(BaseActivity.this, PerfilActivity.class);
                         startActivity(perfil);
 
@@ -182,8 +185,10 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        Intent intent = bottomSheet.clickButtons(view.getId(), this);
 
-        startActivity(intent);
+        Log.i("entou","back          "+view.getId());
+        if(view.getId() != -1) {
+            bottomSheet.clickButtons(view.getId(), this);
+        }
     }
 }
