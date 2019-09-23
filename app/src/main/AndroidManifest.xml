@@ -105,7 +105,7 @@
         <activity
             android:name=".activity.LoginActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" />      
         <activity
             android:name=".activity.BaseActivity"
             android:screenOrientation="portrait" />
@@ -118,6 +118,12 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts"
             android:screenOrientation="portrait" />
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts"/>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

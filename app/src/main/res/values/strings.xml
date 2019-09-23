@@ -18,6 +18,7 @@
     <string name="openprocess">Abrir processo seletivo</string>
     <string name="regitsterproject">Cadastrar projetos</string>
     <string name="projects">Projetos</string>
+
     <string name="processo_seletivo">Processos seletivos</string>
     <string name="ver_sugestoes_novos">Sugestões de novos projetos</string>
     <string name="enviar_sugestoes_novos">Envie sugestões de novos projetos</string>
@@ -42,6 +43,7 @@
     <string name="participants">Participantes</string>
     <string name="register">Cadastrar</string>
     <string name="descriptionLogo">logo do curso do aplicativo</string>
+
     <string name="title_open_process">Abrir Processo Seletivo</string>
     <string name="projetctselection">Projeto Selecionado:</string>
     <string name="amountvacancies">Quantidade vagas</string>
@@ -182,5 +184,7 @@
         <item>Ecologia</item>
         <item>Computação</item>
    </string-array>
-</resources>
 
+
+
+</resources>
