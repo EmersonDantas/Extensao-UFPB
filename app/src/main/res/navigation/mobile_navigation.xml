@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_menu">
+    app:startDestination="@+id/navigation_project_feed">
 
     <fragment
         android:id="@+id/navigation_menu"
@@ -27,6 +27,6 @@
         android:id="@+id/navigation_project_feed"
         android:name="br.com.extensaoufpb.extensaoufpb.activity.ui.project_feed.ProjectFeedFragment"
         android:label="@string/project_file"
-        tools:layout="@layout/fragment_perfil" />
+        tools:layout="@layout/fragment_project_feed" />
 
 </navigation>

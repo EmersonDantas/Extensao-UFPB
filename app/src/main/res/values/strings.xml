@@ -67,7 +67,7 @@
     <string name="periodo">Período:</string>
     <string name="candidatos">Candidatos</string>
     <string name="processos_seletivos">Processos Seletivos</string>
-    <string name="sugestoes">Sugestões</string>
+    <string name="suggestions">Sugestões</string>
     <string name="curso">Curso</string>
     <string name="cra">CRA</string>
     <string name="areasInteresse">Áreas de Interesse</string>
@@ -101,6 +101,9 @@
     <string name="dialogMenssegeCadastrarNoticia">Você quer mesmo cadastrar essa notícia ?</string>
     <string name="volutario">Voluntário</string>
     <string name="project_file">Feed do projeto</string>
+    <string name="noticies">Notícias</string>
+    <string name="events">Eventos</string>
+    <string name="sugestoes">Sugestões</string>
     <string-array name="selecione">
         <item>Selecione</item>
         <item>SI</item>

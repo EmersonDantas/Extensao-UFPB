@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -15,6 +16,10 @@ import br.com.extensaoufpb.extensaoufpb.Controller.BottomSheet;
 import br.com.extensaoufpb.extensaoufpb.R;
 import br.com.extensaoufpb.extensaoufpb.activity.ui.inicio.InicioFragment;
 import br.com.extensaoufpb.extensaoufpb.activity.ui.perfil.PerfilFragment;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.project_feed.ProjectFeedFragment;
+
+import static androidx.navigation.Navigation.findNavController;
+
 
 public class BaseActivity extends AppCompatActivity {
 
@@ -26,6 +31,8 @@ public class BaseActivity extends AppCompatActivity {
 
     private Fragment actualFragment;
     private FragmentManager fragmentManager;
+
+    private NavController navController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +53,9 @@ public class BaseActivity extends AppCompatActivity {
     private void init() {
 
         emailRecovery = getIntent().getExtras();
-        userEmail = emailRecovery.getString("email");
+        //userEmail = emailRecovery.getString("email");
 
-        bottomSheet = BottomSheet.getInstance(getWindow().getDecorView().findViewById(android.R.id.content), userEmail);
+        bottomSheet = BottomSheet.getInstance(getWindow().getDecorView().findViewById(android.R.id.content), "c1@gmail.com");
         fragmentManager = getSupportFragmentManager();
 
         emailRecovery = getIntent().getExtras();
@@ -57,6 +64,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     private void findViews() {
+
         navView = findViewById(R.id.nav_view);
     }
 
@@ -96,7 +104,7 @@ public class BaseActivity extends AppCompatActivity {
     private void initializeFirstTabNavigation(){
 
         bottomSheet.closeBottomSheeet();
-        actualFragment = new InicioFragment();
+        actualFragment = new ProjectFeedFragment();
         replaceFragment();
     }
 

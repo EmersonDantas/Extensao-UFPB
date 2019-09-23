@@ -6,4 +6,5 @@
     <color name="colorButton">#007DCB</color>
     <color name="textColor">#000000</color>
     <color name="textColorNameFeed">#818181</color>
+    <color name="notSelectedItem">#B2FFFFFF</color>
 </resources>

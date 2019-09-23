@@ -91,11 +91,7 @@
             android:label="@string/title_activity_extensao"
             android:screenOrientation="portrait">
           
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
       
         <activity
@@ -104,7 +100,13 @@
       
         <activity
             android:name=".activity.BaseActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
