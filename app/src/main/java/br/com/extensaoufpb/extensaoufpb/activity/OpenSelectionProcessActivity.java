@@ -25,7 +25,7 @@ import java.util.Locale;
 import br.com.extensaoufpb.extensaoufpb.Controller.FacadeQuestion;
 import br.com.extensaoufpb.extensaoufpb.R;
 import br.com.extensaoufpb.extensaoufpb.activity.adapter.AdapterViewQuestions;
-import br.com.extensaoufpb.extensaoufpb.models.bean.Questions;
+import br.com.extensaoufpb.extensaoufpb.models.bean.Question;
 
 public class OpenSelectionProcessActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -46,21 +46,16 @@ public class OpenSelectionProcessActivity extends AppCompatActivity implements A
     private FacadeQuestion facadeQuestion;
     private TextInputLayout inputOpenDate, inputCloseDate;
     private  Calendar myCalendar;
-    private DatePickerDialog datePickerDialog;
 
     //temporario
-    private static List<Questions> listaTemp;
+    private static List<Question> listaTemp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_open_selection_process);
         listaTemp = new ArrayList<>();
-        listaTemp.add(new Questions("Diferenciais","Texto"));
-        listaTemp.add(new Questions("Qualificações desejadas","Texto"));
-        listaTemp.add(new Questions("Tempo Livre","Numerico"));
-        listaTemp.add(new Questions("Areas que gosta","Multipla Escolha"));
-        listaTemp.add(new Questions("Ja esta em projeto","Seleção"));
 
         findComponents();
         init();
@@ -119,7 +114,7 @@ public class OpenSelectionProcessActivity extends AppCompatActivity implements A
             @Override
             public void onClick(View v) {
 
-                facadeQuestion.openFragment(newFieldActual, getSupportFragmentManager());
+                facadeQuestion.openFragment(newFieldActual, getSupportFragmentManager(),null);
 
             }
         });
@@ -170,7 +165,8 @@ public class OpenSelectionProcessActivity extends AppCompatActivity implements A
 
     }
 
-    //remover e usar padrão de projeto obsevable
+    //remover e usar padrão de projeto obsevable////////////////////////////////////////////////////
+
     public void updateLimitQuestionAdapter(){
 
         myRecyclerView.setAdapter(adapterViewQuestions);
@@ -178,12 +174,24 @@ public class OpenSelectionProcessActivity extends AppCompatActivity implements A
         textLimit.setText(lenghtListQuestions+"/10");
     }
 
-    public void addQuestion(Questions question){
+    public void addQuestion(Question question){
 
         listaTemp.add(question);
         myRecyclerView.setAdapter(adapterViewQuestions);
         updateLimitQuestionAdapter();
 
+    }
+
+    public void setQuestions(List<Question> questions){
+
+        listaTemp = questions;
+        myRecyclerView.setAdapter(adapterViewQuestions);
+        updateLimitQuestionAdapter();
+
+    }
+
+    public List<Question> getList(){
+        return listaTemp;
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
