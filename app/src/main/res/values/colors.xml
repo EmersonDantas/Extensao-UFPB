@@ -7,4 +7,5 @@
     <color name="textColor">#000000</color>
     <color name="colorButtonAdd">#08d487</color>
     <color name="backgroundfragments">#9F000000</color>
+    <color name="textColorNameFeed">#818181</color>
 </resources>

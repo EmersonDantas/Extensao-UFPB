@@ -11,18 +11,19 @@ public class BottomSheet {
     private static BottomSheet instance = null;
     private static BottomSheetBehavior myBottomSheetBehavior;
     private static View myView = null;
+    private static String emailCoordinator = "c1@gmail.com";
 
     private BottomSheet(){
 
     }
 
-    public static BottomSheet getInstance(View view){
+    public static BottomSheet getInstance(View view, String email){
 
         if(instance == null){
 
             instance = new BottomSheet();
 
-            initiBottomSheet(view);
+            initiBottomSheet(view, email);
         }
 
         return instance;
@@ -44,18 +45,28 @@ public class BottomSheet {
 
     }
 
-    private static void initiBottomSheet(View view){
+    private static void initiBottomSheet(View view, String email) {
 
-        myView = view.findViewById(R.id.closebottom);
+        int id = R.id.closebottom;
+
+        if (email.equalsIgnoreCase(emailCoordinator)) {
+            id = R.id.coordinatorbottom;
+            view.findViewById(R.id.coordinator).setVisibility(View.VISIBLE);
+            view.findViewById(R.id.external).setVisibility(View.GONE);
+
+        }
+
+        myView = view.findViewById(id);
         myBottomSheetBehavior = BottomSheetBehavior.from(myView);
         myBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
     }
 
-    public void changeStateBottom(){
+    public void changeStateBottom() {
 
-        if(myBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_COLLAPSED){
+        if(myBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_COLLAPSED) {
             myBottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
-        }else{
+
+        } else {
             myBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
         }
     }

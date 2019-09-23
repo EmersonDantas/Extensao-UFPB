@@ -18,6 +18,12 @@
     <string name="openprocess">Abrir processo seletivo</string>
     <string name="regitsterproject">Cadastrar projetos</string>
     <string name="projects">Projetos</string>
+    <string name="processo_seletivo">Processos seletivos</string>
+    <string name="ver_sugestoes_novos">Sugestões de novos projetos</string>
+    <string name="enviar_sugestoes_novos">Envie sugestões de novos projetos</string>
+    <string name="abrirProcesso">Abrir processo seletivo</string>
+    <string name="cadastrar_projeto">Cadastrar projetos</string>
+    <string name="projetos">Projetos</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
@@ -30,8 +36,11 @@
     <string name="title_notifications">Notifications</string>
     <string name="description">Description</string>
     <string name="email">Email</string>
-    <string name="password">Password</string>
+    <string name="password">Senha</string>
+    <string name="repeat_password">Repita a senha</string>
     <string name="login">Login</string>
+    <string name="participants">Participantes</string>
+    <string name="register">Cadastrar</string>
     <string name="descriptionLogo">logo do curso do aplicativo</string>
     <string name="title_open_process">Abrir Processo Seletivo</string>
     <string name="projetctselection">Projeto Selecionado:</string>
@@ -52,7 +61,6 @@
 
     <string name="nameField">Nome do campo</string>
     <string name="characterAmount">Quantidade de caractere</string>
-    <string name="cancel">Cancelar</string>
     <string name="addField">Adicionar</string>
     <string name="question01">Alternativa 01</string>
     <string name="question02">Alternativa 02</string>
@@ -93,4 +101,86 @@
         <item>Itgirl</item>
     </string-array>
 
+    <string name="facebook_app_id">414127435908289</string>
+    <string name="fb_login_protocol_scheme">fb414127435908289</string>
+    <string name="salvar">Salvar</string>
+    <string name="editar_perfil">Editar Perfil</string>
+    <string name="nome">Nome</string>
+    <string name="sobrenome">Sobrenome</string>
+    <string name="voltar">Voltar</string>
+    <string name="editar_senha">Editar Senha</string>
+    <string name="senha_atual">Senha atual</string>
+    <string name="nova_senha">Nova Senha</string>
+    <string name="confirmar_nova_senha">Confirmar nova senha</string>
+    <string name="sair">Sair</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="cadastro_projeto">Cadastro de Projeto</string>
+    <string name="situacao">Situação</string>
+    <string name="coordenador_text">Coordenador:</string>
+    <string name="status_projeto">Status do projeto:</string>
+    <string name="descricao">Descricão:</string>
+    <string name="ano">Ano:</string>
+    <string name="editar_projeto">Editar Projeto</string>
+    <string name="coordenador">Coordenador(a)</string>
+    <string name="projeto_selecionado">Projeto selecionado:</string>
+    <string name="final_text">Final</string>
+
+    <string name="Cadastrar_Dados">Cadastrar Dados</string>
+    <string name="cre">CRE</string>
+    <string name="matricula">Matricula</string>
+    <string name="periodo">Período:</string>
+    <string name="candidatos">Candidatos</string>
+    <string name="processos_seletivos">Processos Seletivos</string>
+    <string name="sugestoes">Sugestões</string>
+    <string name="curso">Curso</string>
+    <string name="cra">CRA</string>
+    <string name="areasInteresse">Áreas de Interesse</string>
+    <string name="nome_adapter">Nome:</string>
+    <string name="curso_adapter">Curso:</string>
+    <string name="cra_adapter">CRA:</string>
+    <string name="ver_candidatos">Ver Candidatos</string>
+    <string name="visualizar">Visualizar</string>
+    <string name="candidato">Candidato</string>
+    <string name="em_espera">Em Espera</string>
+    <string name="selecionar">Selecionar</string>
+    <string name="feedback">Feedback</string>
+    <string name="sugestao">Sugestão:</string>
+    <string name="enviar">Enviar</string>
+    <string name="cursos_com_ponto">Curso:</string>
+    <string name="save" color="FF08D487">Sim</string>
+    <string name="cancel" color="">Não</string>
+    <string name="confirmacao">Confirmação</string>
+    <string name="dialogMenssegeDadosAcademicos">Você quer mesmo cadastrar esses dados acadêmicos?</string>
+    <string name="senha">Senha</string>
+    <string name="user_name">Olá, usuário. Acompanhe as novidades!</string>
+    <string name="title_activity_register">Cadastrar</string>
+    <string name="sugestao_novos_projetos">Sugestão de novo projeto</string>
+    <string name="area_de_aplicacao">Área de aplicação</string>
+    <string name="titulo_sugestao">Titulo</string>
+    <string name="dialogMenssegeSugestaoProjetos">Deseja enviar essa sugestão para um novo projeto?</string>
+    <string name="enviar_sugestoes">Enviar Sugestões</string>
+    <string name="dialogMenssegeEnviarSugestao">Deseja enviar a sugestão ?</string>
+    <string name="descria_o_da_pergunta">Descrição da pergunta</string>
+    <string name="castrar_noticia">Cadastrar Notícia</string>
+    <string name="dialogMenssegeCadastrarNoticia">Você quer mesmo cadastrar essa notícia ?</string>
+    <string name="volutario">Voluntário</string>
+    <string-array name="selecione">
+        <item>Selecione</item>
+        <item>SI</item>
+        <item>LCC</item>
+        <item>ECO</item>
+    </string-array>
+    <string-array name="periodo">
+        <item>Selecione</item>
+        <item>1º</item>
+        <item>2º</item>
+        <item>3º</item>
+    </string-array>
+  <string-array name="areaAplicacao">
+        <item>Selecione</item>
+        <item>Educação</item>
+        <item>Ecologia</item>
+        <item>Computação</item>
+   </string-array>
 </resources>
+
