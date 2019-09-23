@@ -111,5 +111,10 @@ public class SignProjectActivity extends AppCompatActivity {
 
         mensagem.show();
     }
-    
+
+    @Override
+    public void onBackPressed() {
+        bottomSheet.closeBottomSheeet();
+        finish();
+    }
 }
