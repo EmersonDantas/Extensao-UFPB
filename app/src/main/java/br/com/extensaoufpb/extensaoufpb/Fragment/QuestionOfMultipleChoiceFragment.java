@@ -12,24 +12,39 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.extensaoufpb.extensaoufpb.Controller.FacadeQuestion;
 import br.com.extensaoufpb.extensaoufpb.R;
 import br.com.extensaoufpb.extensaoufpb.activity.OpenSelectionProcessActivity;
-import br.com.extensaoufpb.extensaoufpb.models.bean.Questions;
+import br.com.extensaoufpb.extensaoufpb.models.bean.Answer;
+import br.com.extensaoufpb.extensaoufpb.models.bean.Question;
+import br.com.extensaoufpb.extensaoufpb.models.bean.interfaces.MountAnswer;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class QuestionOfMultipleChoiceFragment extends Fragment {
+public class QuestionOfMultipleChoiceFragment extends Fragment implements MountAnswer {
 
     private View view;
     private TextInputLayout inputNameField, inputQuestion01, inputQuestion02,inputQuestion03, inputQuestion04, inputQuestion05;
     private Button buttonAdd,buttonCancel;
-    private Questions questions;
+    private Question question;
     private final String TYPE = "Múltipla Escolha";
+    private FacadeQuestion facadeQuestion;
+    private boolean recovered;
 
-    public QuestionOfMultipleChoiceFragment() {
+    public QuestionOfMultipleChoiceFragment(Question question) {
         // Required empty public constructor
-        questions = new Questions();
+        facadeQuestion = FacadeQuestion.getInstance();
+        if(question == null){
+            this.question = new Question();
+            recovered = false;
+        }else{
+            this.question = question;
+            recovered = true;
+        }
     }
 
 
@@ -40,6 +55,7 @@ public class QuestionOfMultipleChoiceFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_question_of_multiple_choice, container, false);
         findComponents();
         clickButtons();
+        mountAnswerQuestion(recovered);
         return view;
     }
 
@@ -62,12 +78,49 @@ public class QuestionOfMultipleChoiceFragment extends Fragment {
             public void onClick(View v) {
 
                 if(checkValues()) {
-                    questions.setQuestion(inputNameField.getEditText().getText().toString());
-                    questions.setType(TYPE);
+
                     OpenSelectionProcessActivity openSelectionProcessActivity = new OpenSelectionProcessActivity();
-                    openSelectionProcessActivity.addQuestion(questions);
+
+                    String nameFiled = inputNameField.getEditText().getText().toString();
+                    String question01 = inputQuestion01.getEditText().getText().toString();
+                    String question02 = inputQuestion02.getEditText().getText().toString();
+                    String question03 = inputQuestion03.getEditText().getText().toString();
+                    String question04  = inputQuestion04.getEditText().getText().toString();
+                    String question05 = inputQuestion05.getEditText().getText().toString();
+                    String[] listQuestion = new String[]{question01,question02,question03,question04,question05};
+
+                    question.setQuestion(nameFiled);
+                    question.setType(TYPE);
+
+                    List<Answer> answers = new ArrayList<>();
+
+                    for(int i = 0; i < 5; i++){
+
+                        Answer newAnswer = new Answer(listQuestion[i]);
+                        answers.add(newAnswer);
+
+                    }
+
+                    question.setAnswer(answers);
+
+                    if(recovered){
+
+                        final int index = openSelectionProcessActivity.getList().indexOf(question);
+                        List<Question> newList = openSelectionProcessActivity.getList();
+
+                        newList.get(index).setQuestion(nameFiled);
+                        openSelectionProcessActivity.setQuestions(newList);
+
+                    }else{
+
+                        openSelectionProcessActivity.addQuestion(question);
+
+                    }
+
                     assert getFragmentManager() != null;
                     getFragmentManager().popBackStack();
+
+
                 }else{
                     Toast.makeText(getContext(),"preencha no minimo os 3 primeiros campos para adicionar ",Toast.LENGTH_LONG).show();
                 }
@@ -89,5 +142,21 @@ public class QuestionOfMultipleChoiceFragment extends Fragment {
     public boolean checkValues(){
 
         return (!inputNameField.getEditText().getText().toString().isEmpty() && !inputQuestion01.getEditText().getText().toString().isEmpty() && !inputQuestion02.getEditText().getText().toString().isEmpty() && !inputQuestion03.getEditText().getText().toString().isEmpty());
+    }
+
+    @Override
+    public void mountAnswerQuestion(boolean recovered) {
+
+        if(recovered){
+
+            inputNameField.getEditText().setText(question.getQuestion());
+            inputQuestion01.getEditText().setText(question.getAnswer().get(0).getAnswerQuestion());
+            inputQuestion02.getEditText().setText(question.getAnswer().get(1).getAnswerQuestion());
+            inputQuestion03.getEditText().setText(question.getAnswer().get(2).getAnswerQuestion());
+            inputQuestion04.getEditText().setText(question.getAnswer().get(3).getAnswerQuestion());
+            inputQuestion05.getEditText().setText(question.getAnswer().get(4).getAnswerQuestion());
+
+        }
+
     }
 }

@@ -12,24 +12,39 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.extensaoufpb.extensaoufpb.Controller.FacadeQuestion;
 import br.com.extensaoufpb.extensaoufpb.R;
 import br.com.extensaoufpb.extensaoufpb.activity.OpenSelectionProcessActivity;
-import br.com.extensaoufpb.extensaoufpb.models.bean.Questions;
+import br.com.extensaoufpb.extensaoufpb.models.bean.Answer;
+import br.com.extensaoufpb.extensaoufpb.models.bean.Question;
+import br.com.extensaoufpb.extensaoufpb.models.bean.interfaces.MountAnswer;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class QuestionOfTextFragment extends Fragment {
+public class QuestionOfTextFragment extends Fragment implements MountAnswer {
 
     private Button buttonAdd,buttonCancel;
     private View view;
     private TextInputLayout inputNameField, inputCharacterAmount;
-    private Questions questions;
+    private Question question;
     private final String TYPE = "Texto";
+    private FacadeQuestion facadeQuestion;
+    private boolean recovered;
 
-    public QuestionOfTextFragment() {
+    public QuestionOfTextFragment(Question question) {
         // Required empty public constructor
-        questions = new Questions();
+        facadeQuestion = FacadeQuestion.getInstance();
+        if(question == null){
+            this.question = new Question();
+            recovered = false;
+        }else{
+            this.question = question;
+            recovered = true;
+        }
     }
 
 
@@ -40,6 +55,7 @@ public class QuestionOfTextFragment extends Fragment {
         view =  inflater.inflate(R.layout.fragment_question_of_text, container, false);
         findComponets();
         clickButtons();
+        mountAnswerQuestion(recovered);
         return view;
     }
 
@@ -50,12 +66,38 @@ public class QuestionOfTextFragment extends Fragment {
             public void onClick(View v) { ;
 
                 if(!inputNameField.getEditText().getText().toString().isEmpty() && !inputCharacterAmount.getEditText().getText().toString().isEmpty()) {
-                    questions.setQuestion(inputNameField.getEditText().getText().toString());
-                    questions.setType(TYPE);
+
                     OpenSelectionProcessActivity openSelectionProcessActivity = new OpenSelectionProcessActivity();
-                    openSelectionProcessActivity.addQuestion(questions);
+                    List<Answer> list = new ArrayList<>();
+
+                    String nameQuestion = inputNameField.getEditText().getText().toString();
+                    String amount = inputCharacterAmount.getEditText().getText().toString();
+
+                    question.setQuestion(nameQuestion);
+                    question.setType(TYPE);
+
+                    Answer answer = new Answer();
+                    answer.setAnswerQuestion("");
+                    answer.setAmountCharacter(amount);
+                    list.add(answer);
+                    question.setAnswer(list);
+
+                    if(recovered){
+
+                        final int index = openSelectionProcessActivity.getList().indexOf(question);
+                        List<Question> newList = openSelectionProcessActivity.getList();
+                        newList.get(index).setQuestion(nameQuestion);
+                        openSelectionProcessActivity.setQuestions(newList);
+
+                    }else{
+
+                        openSelectionProcessActivity.addQuestion(question);
+
+                    }
+
                     assert getFragmentManager() != null;
                     getFragmentManager().popBackStack();
+
                 }else{
                     Toast.makeText(getContext(),"preencha os campos para adicionar ",Toast.LENGTH_LONG).show();
                 }
@@ -80,6 +122,16 @@ public class QuestionOfTextFragment extends Fragment {
         buttonCancel = view.findViewById(R.id.btnCancelField);
         inputNameField = view.findViewById(R.id.textInputNameFieldText);
         inputCharacterAmount = view.findViewById(R.id.textInputCharacterAmount);
+
+    }
+
+    @Override
+    public void mountAnswerQuestion(boolean recovered) {
+
+        if(recovered){
+            inputNameField.getEditText().setText(this.question.getQuestion());
+            inputCharacterAmount.getEditText().setText(this.question.getAnswer().get(0).getAmountCharacter());
+        }
 
     }
 
