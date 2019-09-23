@@ -80,14 +80,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
     private String getEmail(TextInputLayout emailField) {
-        return emailExtern;
-
-        //return emailField.getEditText().getText().toString();
+        return emailField.getEditText().getText().toString();
     }
 
     private String getPassword (TextInputLayout emailField) {
-        return passwordExtern;
-//        return emailField.getEditText().getText().toString();
+        return emailField.getEditText().getText().toString();
     }
 
     private boolean emailIsEmpty(TextInputLayout input_email) {

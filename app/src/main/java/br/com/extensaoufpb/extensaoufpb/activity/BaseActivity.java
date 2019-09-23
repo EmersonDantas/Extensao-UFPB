@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -43,7 +44,6 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
     private String emailCoordinator = "c1@gmail.com";
     private String emailExtern = "e1@gmail.com";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +68,7 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
         emailRecovery = getIntent().getExtras();
         userEmail = emailExtern;//emailRecovery.getString("email");
 
-        bottomSheet = BottomSheet.getInstance(getWindow().getDecorView().findViewById(android.R.id.content), userEmail);
+        bottomSheet = BottomSheet.getInstance(getWindow().getDecorView().findViewById(android.R.id.content), "c1@gmail.com");
         fragmentManager = getSupportFragmentManager();
 
         emailRecovery = getIntent().getExtras();
@@ -78,6 +78,7 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private void findViews() {
+
         navView = findViewById(R.id.nav_view);
 
 

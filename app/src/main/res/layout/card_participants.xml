@@ -82,7 +82,7 @@
             app:layout_constraintTop_toTopOf="@+id/participant_photo">
 
             <TextView
-                android:id="@+id/tVparticipantName"
+                android:id="@+id/tvParticipantName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
