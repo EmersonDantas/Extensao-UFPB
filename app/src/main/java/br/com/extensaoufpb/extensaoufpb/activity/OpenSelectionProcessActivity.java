@@ -1,6 +1,7 @@
 package br.com.extensaoufpb.extensaoufpb.activity;
 
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,6 +11,7 @@ import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,7 +37,7 @@ public class OpenSelectionProcessActivity extends AppCompatActivity implements A
     private String[] listNewFieldSpinner = new String[]{""};
     private String[] listCRAMinimum = new String[]{""};
     private String[] listProjects = new String[]{""};
-    private Button buttonNewFields, buttonAdd;
+    private Button buttonNewFields, buttonAdd, buttonReady;
     private TextInputLayout inputLayoutCRA;
     private static TextView textNewField, textLimit;
     private static RecyclerView myRecyclerView;
@@ -45,7 +47,7 @@ public class OpenSelectionProcessActivity extends AppCompatActivity implements A
     private String newFieldActual;
     private FacadeQuestion facadeQuestion;
     private TextInputLayout inputOpenDate, inputCloseDate;
-    private  Calendar myCalendar;
+    private Calendar myCalendar;
 
     //temporario
     private static List<Question> listaTemp;
@@ -68,6 +70,7 @@ public class OpenSelectionProcessActivity extends AppCompatActivity implements A
         inputLayoutCRA = findViewById(R.id.inputCRA);
         buttonSpinnerNewFields =  findViewById(R.id.btnSpinnerNewFields);
         buttonNewFields = findViewById(R.id.btnInsertNewField);
+        buttonReady = findViewById(R.id.btnReady);
         textNewField = findViewById(R.id.textNewfield);
         buttonAdd = findViewById(R.id.btnAdd);
         myRecyclerView = findViewById(R.id.recyclerViewQuestions);
@@ -84,6 +87,7 @@ public class OpenSelectionProcessActivity extends AppCompatActivity implements A
     private void init(){
 
         adapterSpinner(buttonSpinnerNewFields,R.array.listNewFields);
+        adapterSpinner(buttonSpinnerProjections,R.array.projectList);
         myRecyclerView.setLayoutManager(layoutManager);
         myRecyclerView.setHasFixedSize(true);
         myRecyclerView.setAdapter(adapterViewQuestions);
@@ -97,6 +101,7 @@ public class OpenSelectionProcessActivity extends AppCompatActivity implements A
     private void clickButtons() {
 
         buttonSpinnerNewFields.setOnItemSelectedListener(this);
+        buttonSpinnerProjections.setOnItemSelectedListener(this);
 
         buttonNewFields.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,6 +120,44 @@ public class OpenSelectionProcessActivity extends AppCompatActivity implements A
             public void onClick(View v) {
 
                 facadeQuestion.openFragment(newFieldActual, getSupportFragmentManager(),null);
+
+            }
+        });
+
+        buttonReady.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+
+                builder.setTitle("Confirmar");
+//              definir mensagem
+                builder.setMessage("Deseja abrir processo seletivo ? ");
+//                configura cancelamento
+                builder.setCancelable(false);
+
+//                Configura icone
+//                builder.setIcon(android.R.drawable.);
+
+//                Configurar opções de butoes sim ou nao
+                builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+
+                    }
+                });
+
+                builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+//                                       nao faz nada
+                    }
+                });
+
+//              Criar e exibir dialog
+                builder.create();
+                builder.show();
 
             }
         });
@@ -159,6 +202,10 @@ public class OpenSelectionProcessActivity extends AppCompatActivity implements A
             listCRAMinimum = getResources().getStringArray(id);
             return listCRAMinimum;
 
+        }else if(id == R.array.projectList){
+
+            listProjects = getResources().getStringArray(id);
+            return listProjects;
         }
 
         return new String[]{""};
@@ -196,9 +243,9 @@ public class OpenSelectionProcessActivity extends AppCompatActivity implements A
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    //take name of spinner new fields
     public void onItemSelected(AdapterView<?> parent, View view,
                                int pos, long id) {
-
         newFieldActual = listNewFieldSpinner[pos];
     }
 
