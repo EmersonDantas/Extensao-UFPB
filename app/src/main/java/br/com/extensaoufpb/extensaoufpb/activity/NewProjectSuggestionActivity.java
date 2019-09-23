@@ -10,33 +10,23 @@ import android.widget.Spinner;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import br.com.extensaoufpb.extensaoufpb.Controller.BottomSheet;
 import br.com.extensaoufpb.extensaoufpb.R;
 
 public class NewProjectSuggestionActivity extends AppCompatActivity {
+
+    private Button buttonCadastrar;
+    private Spinner spinner;
+    private BottomSheet bottomSheet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_project_suggestion);
 
+        init();
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinner01);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.areaAplicacao, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-
-        Button buttonCadastrar =(Button) findViewById(R.id.btnEnviar);
-
-        buttonCadastrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openDialog();
-
-            }
-        });
-
-
+        enableClickButtons();
     }
 
     public void openDialog(){
@@ -61,6 +51,32 @@ public class NewProjectSuggestionActivity extends AppCompatActivity {
         alerta.show();
     }
 
+    private void init() {
+        spinner = findViewById(R.id.spinner01);
+        buttonCadastrar = findViewById(R.id.btnEnviar);
 
+        bottomSheet = BottomSheet.getInstance(getWindow().getDecorView().findViewById(android.R.id.content), null);
 
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.areaAplicacao, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+    }
+
+    private void enableClickButtons() {
+
+        buttonCadastrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog();
+
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        bottomSheet.closeBottomSheeet();
+        finish();
+    }
 }

@@ -28,6 +28,12 @@ public class PerfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
+
+        init();
+        enableAllClicks();
+    }
+
+    private void init() {
         fotoUser = findViewById(R.id.foto_perfil);
         nomeUser = findViewById(R.id.txtNome);
         sobreNomeUser = findViewById(R.id.txtSobrenome);
@@ -36,18 +42,21 @@ public class PerfilActivity extends AppCompatActivity {
         nomeUser.setText("Francivaldo");
         sobreNomeUser.setText("Napoleão");
         emailUser.setText("francivaldo.napoleao@dcx.ufpb.br");
-
         btnVoltar = findViewById(R.id.btnReturnPerfil);
+        btnSair = findViewById(R.id.btnSair);
+        btnEditarPerfil = findViewById(R.id.btnEditPerfil);
+        btnEditarSenha = findViewById(R.id.btnEditSenha);
+    }
+
+    private void enableAllClicks() {
+
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(PerfilActivity.this, BaseActivity.class);
-                startActivity(intent);
                 finish();
             }
         });
 
-        btnEditarPerfil = findViewById(R.id.btnEditPerfil);
         btnEditarPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +66,6 @@ public class PerfilActivity extends AppCompatActivity {
             }
         });
 
-        btnEditarSenha = findViewById(R.id.btnEditSenha);
         btnEditarSenha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +75,6 @@ public class PerfilActivity extends AppCompatActivity {
             }
         });
 
-        btnSair = findViewById(R.id.btnSair);
         btnSair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,11 +83,13 @@ public class PerfilActivity extends AppCompatActivity {
         });
     }
 
-    public void exibirConfirmacao(){
+    public void exibirConfirmacao() {
+
         AlertDialog.Builder mensagem = new AlertDialog.Builder(this);
         mensagem.setTitle("Confirmação");
         mensagem.setIcon(null);
         mensagem.setMessage("Deseja sair do sistema?");
+
         mensagem.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -90,12 +99,17 @@ public class PerfilActivity extends AppCompatActivity {
                 finish();
             }
         });
+
         mensagem.setNegativeButton("Não", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(PerfilActivity.this, "Continuando...", Toast.LENGTH_LONG).show();
-            }
+            public void onClick(DialogInterface dialog, int which) {}
         });
         mensagem.show();
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }
