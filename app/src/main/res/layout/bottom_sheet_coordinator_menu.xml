@@ -139,7 +139,6 @@
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
                     android:text="@string/openprocess"
-                    android:text="@string/abrirProcesso"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -192,7 +191,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/projects"
-                    android:text="@string/projetos"
                     android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
