@@ -18,7 +18,7 @@ import br.com.extensaoufpb.extensaoufpb.R;
 import br.com.extensaoufpb.extensaoufpb.activity.adapter.AdapterFeedGeneral;
 import br.com.extensaoufpb.extensaoufpb.models.bean.Project;
 
-public class InicioFragment extends Fragment {
+public class InicioFragment extends Fragment  {
 
     private View view;
 
@@ -97,6 +97,13 @@ public class InicioFragment extends Fragment {
                 "O projeto de extensão proposto consiste em uma evolução do atual sistema do Cursos UFPB, de forma a atualizar e desenvolver novas interfaces de apresentação das informações, web e Android, e evoluir as tecnologias utilizadas no desenvolvimento do sistema.",
                 R.drawable.ufpb_campus_iv));
     }
+
+
+
+    public void onBackPressed() {
+        init();
+    }
+
 
 
 }
