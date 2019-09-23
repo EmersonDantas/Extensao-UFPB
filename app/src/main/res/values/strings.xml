@@ -62,6 +62,7 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="input">input</string>
+    <string name="CRA">CRA</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string-array name="listNewFields">
@@ -84,6 +85,12 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
+    </string-array>
+    
+    <string-array name="projectList">
+        <item>Selecione</item>
+        <item>App$Society</item>
+        <item>Itgirl</item>
     </string-array>
 
 </resources>
