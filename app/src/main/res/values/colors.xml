@@ -6,4 +6,6 @@
     <color name="colorButton">#007DCB</color>
     <color name="textColor">#000000</color>
     <color name="textColorNameFeed">#818181</color>
+    <color name="textColorButton">#797878</color>
+
 </resources>
