@@ -22,4 +22,11 @@
         android:name="br.com.extensaoufpb.extensaoufpb.activity.ui.perfil.PerfilFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_perfil" />
+
+    <fragment
+        android:id="@+id/navigation_project_feed"
+        android:name="br.com.extensaoufpb.extensaoufpb.activity.ui.project_feed.ProjectFeedFragment"
+        android:label="@string/project_file"
+        tools:layout="@layout/fragment_perfil" />
+
 </navigation>
