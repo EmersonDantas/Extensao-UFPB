@@ -1,11 +1,13 @@
 package br.com.extensaoufpb.extensaoufpb.activity;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +21,7 @@ public class CandidatesActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<Applicant> candidateProcessList = new ArrayList<>();
     private FragmentManager fragmentManager;
+    private Button buttonBackCandidate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,14 @@ public class CandidatesActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         fragmentManager = getSupportFragmentManager();
+        buttonBackCandidate = findViewById(R.id.btnVoltarCandidatos);
+
+        buttonBackCandidate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         //Listagem de candidatos
         this.addAllCandidates();

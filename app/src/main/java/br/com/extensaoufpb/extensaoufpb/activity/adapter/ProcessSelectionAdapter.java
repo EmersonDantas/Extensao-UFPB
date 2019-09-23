@@ -1,8 +1,11 @@
 package br.com.extensaoufpb.extensaoufpb.activity.adapter;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import br.com.extensaoufpb.extensaoufpb.R;
+import br.com.extensaoufpb.extensaoufpb.activity.CandidatesActivity;
+import br.com.extensaoufpb.extensaoufpb.activity.SelectionProcessActivity;
 import br.com.extensaoufpb.extensaoufpb.models.bean.ProcessSelection;
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -18,10 +23,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ProcessSelectionAdapter extends RecyclerView.Adapter<ProcessSelectionAdapter.ProcessViewHolder> {
 
     private List<ProcessSelection> processSelectionList;
+    private Activity activity;
 
-
-    public ProcessSelectionAdapter(List<ProcessSelection> lista) {
+    public ProcessSelectionAdapter(List<ProcessSelection> lista,Activity activity) {
         this.processSelectionList = lista;
+        this.activity = activity;
     }
 
     @NonNull
@@ -41,6 +47,14 @@ public class ProcessSelectionAdapter extends RecyclerView.Adapter<ProcessSelecti
         myViewHolder.projectName.setText(processSelection.getProjectName());
         myViewHolder.projectArea.setText(processSelection.getProjectArea());
         myViewHolder.opportunitys.setText(processSelection.getOpportunitys());
+
+        myViewHolder.buttonSeeCandidate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentCandidates = new Intent(activity, CandidatesActivity.class);
+                activity.startActivity(intentCandidates);
+            }
+        });
     }
 
     @Override
@@ -53,7 +67,7 @@ public class ProcessSelectionAdapter extends RecyclerView.Adapter<ProcessSelecti
 
         CircleImageView projectLogo;
         TextView projectName, projectArea, opportunitys;
-
+        Button buttonSeeCandidate;
 
         public ProcessViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -62,6 +76,7 @@ public class ProcessSelectionAdapter extends RecyclerView.Adapter<ProcessSelecti
             projectName = itemView.findViewById(R.id.projectNameProcess);
             projectArea = itemView.findViewById(R.id.projectAreaProcess);
             opportunitys = itemView.findViewById(R.id.projectOportunitys);
+            buttonSeeCandidate = itemView.findViewById(R.id.btnVisualizar);
         }
     }
 

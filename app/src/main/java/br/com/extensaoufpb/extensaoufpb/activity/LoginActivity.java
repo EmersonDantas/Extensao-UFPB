@@ -80,13 +80,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
     private String getEmail(TextInputLayout emailField) {
-        //return emailCoordinator;
-
         return emailField.getEditText().getText().toString();
     }
 
     private String getPassword (TextInputLayout emailField) {
-        //return passwordCoordinator;
         return emailField.getEditText().getText().toString();
     }
 

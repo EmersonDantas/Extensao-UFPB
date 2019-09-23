@@ -1,6 +1,7 @@
 package br.com.extensaoufpb.extensaoufpb.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -15,7 +16,7 @@ import br.com.extensaoufpb.extensaoufpb.R;
 
 public class NewProjectSuggestionActivity extends AppCompatActivity {
 
-    private Button buttonCadastrar;
+    private Button buttonCadastrar, buttonBack;
     private Spinner spinner;
     private BottomSheet bottomSheet;
 
@@ -40,6 +41,9 @@ public class NewProjectSuggestionActivity extends AppCompatActivity {
         public void onClick(DialogInterface dialog, int id) {
             // FIRE ZE MISSILES!
 
+            Intent save = new Intent(NewProjectSuggestionActivity.this, BaseActivity.class);
+            startActivity(save);
+
         }
     })
     .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
@@ -53,9 +57,12 @@ public class NewProjectSuggestionActivity extends AppCompatActivity {
 
     private void init() {
         spinner = findViewById(R.id.spinner01);
+
         buttonCadastrar = findViewById(R.id.btnEnviar);
 
-        bottomSheet = BottomSheet.getInstance(getWindow().getDecorView().findViewById(android.R.id.content), null);
+        buttonBack = findViewById(R.id.btnBack);
+
+        bottomSheet = BottomSheet.getInstance(null, null);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.areaAplicacao, android.R.layout.simple_spinner_item);
@@ -69,6 +76,15 @@ public class NewProjectSuggestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openDialog();
+
+            }
+        });
+
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                finish();
 
             }
         });

@@ -154,8 +154,8 @@
                     android:textColor="@color/textColorButton"
                     app:backgroundTint="@color/colorAccent"
                     android:drawableTop="@drawable/processos"
-                    android:gravity="center"
                     android:text="@string/projects"
+                    android:gravity="center"
                     android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>

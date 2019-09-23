@@ -43,7 +43,7 @@ public class ViewSuggestionFragment extends Fragment {
     public ViewSuggestionFragment(Suggestion suggestion) {
         this.suggestion = suggestion;
 
-        this.bottomSheet = BottomSheet.getInstance(view, null);
+        this.bottomSheet = BottomSheet.getInstance(null, null);
     }
 
 

@@ -1,10 +1,6 @@
 package br.com.extensaoufpb.extensaoufpb.activity;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
@@ -12,6 +8,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import br.com.extensaoufpb.extensaoufpb.Controller.BottomSheet;
 import br.com.extensaoufpb.extensaoufpb.R;
@@ -47,7 +46,7 @@ public class SignProjectActivity extends AppCompatActivity {
         btnClose = findViewById(R.id.btn_close_register_project);
         btnRegisterProject = findViewById(R.id.btn_cadastrar_projeto);
 
-        bottomSheet = BottomSheet.getInstance(getWindow().getDecorView().findViewById(android.R.id.content), null);
+        bottomSheet = BottomSheet.getInstance(null, null);
     }
 
     private void setAllTexts() {
