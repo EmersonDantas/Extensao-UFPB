@@ -5,10 +5,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.extensaoufpb.extensaoufpb.Controller.BottomSheet;
 import br.com.extensaoufpb.extensaoufpb.R;
 import br.com.extensaoufpb.extensaoufpb.activity.adapter.ProcessSelectionAdapter;
 import br.com.extensaoufpb.extensaoufpb.models.bean.ProcessSelection;
@@ -17,13 +20,19 @@ public class SelectionProcessActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private List<ProcessSelection> processSelectionList = new ArrayList<>();
+    private Button btnBack;
+
+    private BottomSheet bottomSheet;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection_process);
 
-        recyclerView = findViewById(R.id.recyclerView);
+        init();
+
+        enableClickButtons();
 
         //Listagem de processos seletivos
         this.addAllProcessSelection();
@@ -39,6 +48,22 @@ public class SelectionProcessActivity extends AppCompatActivity {
         recyclerView.setAdapter(suggestionsAdapter);
     }
 
+    private void init() {
+        this.recyclerView = findViewById(R.id.recyclerView);
+        this.bottomSheet = BottomSheet.getInstance(getWindow().getDecorView().findViewById(android.R.id.content), null);
+        this.btnBack = findViewById(R.id.btnVoltarProcessosSeletivos);
+    }
+
+    private void enableClickButtons() {
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bottomSheet.closeBottomSheeet();
+                finish();
+            }
+        });
+    }
+
     private void addAllProcessSelection(){
 
         processSelectionList.add(new ProcessSelection(R.drawable.projeto_logo, "Apps4Society", "Computação",
@@ -49,5 +74,11 @@ public class SelectionProcessActivity extends AppCompatActivity {
 
         processSelectionList.add(new ProcessSelection(R.drawable.projeto_logo, "Apps4Society", "Computação",
                 "4 vagas, 1 com bolsas" ));
+    }
+
+    @Override
+    public void onBackPressed() {
+        bottomSheet.closeBottomSheeet();
+        finish();
     }
 }
