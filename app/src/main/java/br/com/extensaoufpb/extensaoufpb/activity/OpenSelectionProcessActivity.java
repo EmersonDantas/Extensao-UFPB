@@ -1,5 +1,6 @@
 package br.com.extensaoufpb.extensaoufpb.activity;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -11,7 +12,6 @@ import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -128,36 +128,7 @@ public class OpenSelectionProcessActivity extends AppCompatActivity implements A
             @Override
             public void onClick(View v) {
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
-
-                builder.setTitle("Confirmar");
-//              definir mensagem
-                builder.setMessage("Deseja abrir processo seletivo ? ");
-//                configura cancelamento
-                builder.setCancelable(false);
-
-//                Configura icone
-//                builder.setIcon(android.R.drawable.);
-
-//                Configurar opções de butoes sim ou nao
-                builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-
-                    }
-                });
-
-                builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-//                                       nao faz nada
-                    }
-                });
-
-//              Criar e exibir dialog
-                builder.create();
-                builder.show();
+                openDialog();
 
             }
         });
@@ -181,6 +152,40 @@ public class OpenSelectionProcessActivity extends AppCompatActivity implements A
         });
     }
 
+    private void openDialog(){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("Confirmar");
+//              definir mensagem
+        builder.setMessage("Deseja abrir processo seletivo ? ");
+//                configura cancelamento
+        builder.setCancelable(false);
+
+//                Configura icone
+//                builder.setIcon(android.R.drawable.);
+
+//                Configurar opções de butoes sim ou nao
+        builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+
+            }
+        });
+
+        builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+//                                       nao faz nada
+            }
+        });
+
+//              Criar e exibir dialog
+        builder.create();
+        builder.show();
+
+    }
 
     private void adapterSpinner(Spinner spinnerSelect, int id){
 
