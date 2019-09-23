@@ -61,7 +61,7 @@ public class ParticipantsAdapter extends RecyclerView.Adapter<ParticipantsAdapte
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             this.participant_photo = itemView.findViewById(R.id.participant_photo);
-            this.participant_name = itemView.findViewById(R.id.tVparticipantName);
+            this.participant_name = itemView.findViewById(R.id.tvParticipantName);
             this.participant_course = itemView.findViewById(R.id.tvParticipantCourse);
             this.participant_state = itemView.findViewById(R.id.tvParticipantState);
         }
