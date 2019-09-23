@@ -114,7 +114,12 @@
                     android:textSize="12sp"
                     app:backgroundTint="@color/colorAccent"
                     android:drawableTop="@drawable/ic_abrir_processo"
-                    android:text="@string/abrirProcesso" />
+                    android:text="@string/abrirProcesso"
+                    android:gravity="center"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="@string/openprocess"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -152,7 +157,10 @@
                     android:textSize="12sp"
                     app:backgroundTint="@color/colorAccent"
                     android:drawableTop="@drawable/processos"
-                    android:text="Projetos" />
+                    android:text="Projetos"
+                    android:gravity="center"
+                    android:text="@string/projects"
+                    android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

@@ -86,7 +86,10 @@
                     android:textSize="12sp"
                     app:backgroundTint="@color/colorAccent"
                     android:drawableTop="@drawable/projetos"
-                    android:text="@string/projetos" />
+                    android:text="@string/projetos"
+                    android:gravity="center"
+                    android:text="@string/projects"
+                    android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
