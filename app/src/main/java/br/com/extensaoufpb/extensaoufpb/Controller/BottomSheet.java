@@ -2,7 +2,6 @@ package br.com.extensaoufpb.extensaoufpb.Controller;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.util.Log;
 import android.view.View;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
@@ -27,14 +26,11 @@ public class BottomSheet {
 
     public static BottomSheet getInstance(View view, String email) {
 
-        Log.i("entrou", "bottom "+instance);
         if (instance == null) {
-            Log.i("entrou", "bottom  if");
             instance = new BottomSheet();
 
             initiBottomSheet(view, email);
         }
-        Log.i("entrou", "bottom saiu do if "+email);
         return instance;
     }
 
@@ -46,10 +42,8 @@ public class BottomSheet {
 
     public void closeBottomSheeet() {
 
-        Log.i("entrou","if do fechar bottom "+(myBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_HIDDEN));
         if (myBottomSheetBehavior.getState()  != BottomSheetBehavior.STATE_HIDDEN){
 
-            Log.i("entrou","fechando bottom");
             myBottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
 
         }
@@ -60,16 +54,12 @@ public class BottomSheet {
 
         int id = R.id.closebottom;
 
-        Log.i("entrou", "bottom init2");
-
         if (email.equalsIgnoreCase(emailCoordinator)) {
-            Log.i("entrou", "bottominit method");
             id = R.id.coordinatorbottom;
             view.findViewById(R.id.coordinator).setVisibility(View.VISIBLE);
             view.findViewById(R.id.external).setVisibility(View.GONE);
 
         }
-        Log.i("entrou", "bottom fora do if2");
         myView = view.findViewById(id);
         myBottomSheetBehavior = BottomSheetBehavior.from(myView);
         myBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -77,8 +67,6 @@ public class BottomSheet {
 
     public void changeStateBottom() {
 
-        Log.i("entrou", "state "+myBottomSheetBehavior.getState());
-        Log.i("entrou", "state2 "+BottomSheetBehavior.STATE_COLLAPSED);
         if(myBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_COLLAPSED) {
             myBottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
 
@@ -140,7 +128,6 @@ public class BottomSheet {
 
         }
 
-        Log.i("entrou","xxxxxxxxxxxxxxxx" +intent);
 
         activity.startActivity(intent);
 
