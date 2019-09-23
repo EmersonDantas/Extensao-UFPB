@@ -30,7 +30,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private String emailExtern = "e1@gmail.com";
     private String passwordExtern = "e1";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +42,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void init() {
         this.toastMessage = Toast.makeText(this, null, Toast.LENGTH_SHORT);
-
     }
 
     private void findComponent() {
@@ -82,11 +80,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
     private String getEmail(TextInputLayout emailField) {
-        return emailField.getEditText().getText().toString();
+        return emailCoordinator;
+
+        //return emailField.getEditText().getText().toString();
     }
 
     private String getPassword (TextInputLayout emailField) {
-        return emailField.getEditText().getText().toString();
+        return passwordCoordinator;
+//        return emailField.getEditText().getText().toString();
     }
 
     private boolean emailIsEmpty(TextInputLayout input_email) {
@@ -104,11 +105,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
+
         switch (v.getId()){
+
             case (R.id.btnLoginBack):
                 startActivity(new Intent(LoginActivity.this, BaseActivity.class));
                 finish();
                 break;
+
             case (R.id.btnLogin):
                 boolean validFields = verifyFields(emailField, passwordField);
 
@@ -122,10 +126,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
 
                 break;
-            case(R.id.btnGoToRegister):
+
+            case (R.id.btnGoToRegister):
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
-                //finish();
                 break;
+
         }
     }
+
 }
