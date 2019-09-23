@@ -1,10 +1,12 @@
 package br.com.extensaoufpb.extensaoufpb.activity.ui.participant;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,7 @@ import br.com.extensaoufpb.extensaoufpb.models.bean.Extensionist;
 public class ParticipantsActivity extends AppCompatActivity {
 
     private List<Extensionist> participants = new ArrayList<>();
+    private Button buttonBackParticipant;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,16 @@ public class ParticipantsActivity extends AppCompatActivity {
         RecyclerView rv = findViewById(R.id.rvParticipants);
         rv.setLayoutManager(lm);
         rv.setAdapter(adapter);
+
+        buttonBackParticipant = findViewById(R.id.btnParticipantsBack);
+        buttonBackParticipant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                finish();
+
+            }
+        });
     }
 
     private void createAllParticipantes(){

@@ -1,5 +1,6 @@
 package br.com.extensaoufpb.extensaoufpb.activity.ui.project_feed;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,11 +21,14 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.extensaoufpb.extensaoufpb.Controller.BottomSheet;
 import br.com.extensaoufpb.extensaoufpb.R;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.participant.ParticipantsActivity;
 import br.com.extensaoufpb.extensaoufpb.models.bean.Extensionist;
 
 public class ProjectFeedFragment extends Fragment implements View.OnClickListener {
-    private Button btnOpenBottomSheet;
+
+    private Button btnOpenBottomSheet, buttonSeeAll, buttonBack;
     private TabMenuAdapter menuAdapter;
     private ViewPager viewPager;
     private TabLayout tabLayoutTabMenu;
@@ -50,7 +54,11 @@ public class ProjectFeedFragment extends Fragment implements View.OnClickListene
     }
 
     public void fillTabMenu(View view){
+        buttonBack = view.findViewById(R.id.btnProjectFeedBack);
+        buttonSeeAll = view.findViewById(R.id.btnSeeAll);
         viewPager = view.findViewById(R.id.vpTabMenu);
+        buttonSeeAll.setOnClickListener(this);
+        buttonBack.setOnClickListener(this);
         viewPager.setAdapter(menuAdapter);
         tabLayoutTabMenu = view.findViewById(R.id.tlTabMenu);
         tabLayoutTabMenu.setupWithViewPager(viewPager);
@@ -84,6 +92,15 @@ public class ProjectFeedFragment extends Fragment implements View.OnClickListene
                     layoutBottonSheetRoot.setVisibility(layoutBottonSheetRoot.VISIBLE);
                     btnOpenBottomSheet.setCompoundDrawablesWithIntrinsicBounds(null, null, getContext().getResources().getDrawable(R.drawable.ic_keyboard_arrow_up_black_24dp),null);
                 }
+                break;
+            case R.id.btnSeeAll:
+
+                BottomSheet.getInstance(v,null).closeBottomSheeet();
+                Intent intent = new Intent(getActivity(), ParticipantsActivity.class);
+                getActivity().startActivity(intent);
+                break;
+            case R.id.btnProjectFeedBack:
+                getFragmentManager().popBackStack();
                 break;
         }
     }

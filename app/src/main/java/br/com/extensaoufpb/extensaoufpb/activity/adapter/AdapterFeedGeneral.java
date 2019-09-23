@@ -7,14 +7,17 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import br.com.extensaoufpb.extensaoufpb.Controller.BottomSheet;
 import br.com.extensaoufpb.extensaoufpb.R;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.project_feed.ProjectFeedFragment;
 import br.com.extensaoufpb.extensaoufpb.models.bean.Project;
 
 
@@ -22,10 +25,11 @@ public class AdapterFeedGeneral extends RecyclerView.Adapter<AdapterFeedGeneral.
 
     private List<Project> projects;
     private Context context;
-
-    public AdapterFeedGeneral(Context context, List<Project> allProjects) {
+    private FragmentManager fragmentManager;
+    public AdapterFeedGeneral(Context context, List<Project> allProjects, FragmentManager fragmentManager) {
         this.projects = allProjects;
         this.context = context;
+        this.fragmentManager = fragmentManager;
     }
 
     @NonNull
@@ -67,23 +71,30 @@ public class AdapterFeedGeneral extends RecyclerView.Adapter<AdapterFeedGeneral.
         myViewHolder.postImage.setOnClickListener(this);
 
 
-        myViewHolder.btn_more.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        myViewHolder.btn_more.setOnClickListener(this);
 
-            }
-        });
+        myViewHolder.btn_more_text.setOnClickListener(this);
 
+        myViewHolder.logo.setOnClickListener(this);
 
-        myViewHolder.btn_more_text.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
+        myViewHolder.title.setOnClickListener(this);
+
     }
 
     @Override
     public void onClick(View view) {
+
+        switch (view.getId()){
+            case R.id.logo:
+            case R.id.title:
+
+                BottomSheet.getInstance(view,null).closeBottomSheeet();
+                final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.replace(R.id.nav_host_fragment, new ProjectFeedFragment()).commit();
+
+                break;
+        }
     }
 
 
