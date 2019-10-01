@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -102,11 +101,9 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
 
                 switch(menuItem.getItemId()){
                     case R.id.navigation_menu:
-                        Log.i("entrou","qual o navigation");
                         bottomSheet.changeStateBottom();
                         break;
                     case R.id.navigation_inicio:
-                        Log.i("entrou","qual o navigation2");
                         bottomSheet.closeBottomSheeet();
                         actualFragment = new InicioFragment();
 
@@ -115,7 +112,6 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
                         break;
 
                     case R.id.navigation_perfil:
-                        Log.i("entrou","qual o navigation3");
                         bottomSheet.closeBottomSheeet();
                         Intent perfil = new Intent(BaseActivity.this, PerfilActivity.class);
                         startActivity(perfil);
