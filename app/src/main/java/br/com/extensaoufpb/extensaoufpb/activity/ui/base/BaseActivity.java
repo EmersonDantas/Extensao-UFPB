@@ -66,12 +66,11 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
     private void init() {
 
         emailRecovery = getIntent().getExtras();
-        userEmail = emailExtern;//emailRecovery.getString("email");
+        userEmail = emailRecovery.getString("email");
 
-        bottomSheet = BottomSheet.getInstance(getWindow().getDecorView().findViewById(android.R.id.content), "c1@gmail.com");
+        bottomSheet = BottomSheet.getInstance(getWindow().getDecorView().findViewById(android.R.id.content), userEmail);
         fragmentManager = getSupportFragmentManager();
 
-        emailRecovery = getIntent().getExtras();
     }
 
 

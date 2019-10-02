@@ -27,10 +27,17 @@ public class BottomSheet {
     public static BottomSheet getInstance(View view, String email) {
 
         if (instance == null) {
+
             instance = new BottomSheet();
 
-            initiBottomSheet(view, email);
         }
+
+        if(email != null){
+
+            initiBottomSheet(view,email);
+
+        }
+
         return instance;
     }
 

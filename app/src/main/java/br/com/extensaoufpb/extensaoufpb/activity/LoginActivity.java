@@ -23,14 +23,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private TextInputLayout emailField;
     private TextInputLayout passwordField;
 
-    private Intent startIntent;
     private Toast toastMessage;
 
-    private String emailCoordinator = "c1@gmail.com";
-    private String passwordCoordinator = "c1";
+    private final String emailCoordinator = "c1@gmail.com";
+    private final String passwordCoordinator = "c1";
 
-    private String emailExtern = "e1@gmail.com";
-    private String passwordExtern = "e1";
+    private final String emailExtern = "e1@gmail.com";
+    private final String passwordExtern = "e1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,20 +38,24 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         findComponent();
         init();
+        setListeners();
 
     }
 
     private void init() {
+
         this.toastMessage = Toast.makeText(this, null, Toast.LENGTH_SHORT);
+
     }
 
     private void findComponent() {
+
         buttonLogin = findViewById(R.id.btnLogin);
         buttonBack = findViewById(R.id.btnLoginBack);
         buttonGoToRegister = findViewById(R.id.btnGoToRegister);
         emailField = findViewById(R.id.input_layout_email);
         passwordField = findViewById(R.id.input_layout_password);
-        setListeners();
+
     }
 
     private void setListeners(){
@@ -61,40 +64,30 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         buttonGoToRegister.setOnClickListener(this);
     }
 
-    private boolean verifyFields(TextInputLayout email, TextInputLayout password) {
+    private boolean verifyFields(TextInputLayout inputEmail, TextInputLayout inputPassword) {
 
-        if (emailIsEmpty(email) || passwordIsEmpty(password)) {
+        final String email = inputEmail.getEditText().getText().toString();
+        final String password = inputPassword.getEditText().getText().toString();
+
+        boolean verify = false;
+
+        if (email.isEmpty() || password.isEmpty()) {
+
             showToastMessage(toastMessage, "Há campos vazios!");
 
-            return false;
+        }else if ((!email.equalsIgnoreCase(emailCoordinator) || !password.equalsIgnoreCase(passwordCoordinator)) && (!email.equalsIgnoreCase(emailExtern) || !password.equalsIgnoreCase(passwordExtern))){
 
-        } else if ((!getEmail(email).equals(emailCoordinator) || !getPassword(password).equals(passwordCoordinator)) && (!getEmail(email).equals(emailExtern) || !getPassword(password).equals(passwordExtern))) {
             showToastMessage(toastMessage, "Email ou senha inválidos!");
 
-            return false;
+        }else{
 
-        } else {
-            showToastMessage(toastMessage, "Você logou com " + getEmail(email));
+            showToastMessage(toastMessage, "Você logou com " + email);
 
-            return true;
+            verify = true;
+
         }
-    }
 
-
-    private String getEmail(TextInputLayout emailField) {
-        return emailCoordinator;
-    }
-
-    private String getPassword (TextInputLayout emailField) {
-        return passwordCoordinator;
-    }
-
-    private boolean emailIsEmpty(TextInputLayout input_email) {
-        return getEmail(input_email).isEmpty();
-    }
-
-    private boolean passwordIsEmpty(TextInputLayout input_password) {
-        return getPassword(input_password).isEmpty();
+        return verify;
     }
 
     private void showToastMessage(Toast toast, String message) {
@@ -105,30 +98,44 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
 
+        Intent user = null;
+
         switch (v.getId()){
 
             case (R.id.btnLoginBack):
-                startActivity(new Intent(LoginActivity.this, BaseActivity.class));
-                finish();
+
+                user = new Intent(LoginActivity.this,BaseActivity.class);
+
+                user.putExtra("email",emailExtern);
+
                 break;
 
             case (R.id.btnLogin):
+
                 boolean validFields = verifyFields(emailField, passwordField);
 
                 if (validFields) {
-                    startIntent = new Intent(LoginActivity.this, BaseActivity.class);
 
-                    startIntent.putExtra("email", getEmail(emailField));
+                    user = new Intent(LoginActivity.this, BaseActivity.class);
 
-                    startActivity(startIntent);
-                    finish();
+                    user.putExtra("email", emailField.getEditText().getText().toString());
+
                 }
 
                 break;
 
             case (R.id.btnGoToRegister):
-                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+
+                user = new Intent(LoginActivity.this, RegisterActivity.class);
+
                 break;
+
+        }
+
+        if(user != null){
+
+            startActivity(user);
+            finish();
 
         }
     }
