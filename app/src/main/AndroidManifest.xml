@@ -15,56 +15,56 @@
         <activity android:name=".activity.ui.participant.ParticipantsActivity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".activity.RegisterActivity"
+        <activity android:name=".activity.ui.register.RegisterActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".activity.EditProjectActivity"
+            android:name=".activity.ui.project.EditProjectActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activity.CandidatesActivity"
+            android:name=".activity.ui.candidate.CandidatesActivity"
             android:screenOrientation="portrait" />
       
         <activity
-            android:name=".activity.SelectionProcessActivity"
+            android:name=".activity.ui.process_selection.SelectionProcessActivity"
             android:screenOrientation="portrait" />
       
         <activity
-            android:name=".activity.SuggestionsActivity"
+            android:name=".activity.ui.suggestions.SuggestionsActivity"
             android:screenOrientation="portrait" />
       
         <activity
-            android:name=".activity.SignProjectActivity"
+            android:name=".activity.ui.project.SignProjectActivity"
             android:screenOrientation="portrait"/>
       
         <activity
-            android:name=".activity.PerfilActivity"
+            android:name=".activity.ui.profile.PerfilActivity"
             android:screenOrientation="portrait"/>
       
         <activity
-            android:name=".activity.EditPasswordActivity"
+            android:name=".activity.ui.profile.EditPasswordActivity"
             android:screenOrientation="portrait"/>
       
         <activity
-            android:name=".activity.EditPerfilActivity"
+            android:name=".activity.ui.profile.EditPerfilActivity"
             android:screenOrientation="portrait"/>
       
         <activity
-            android:name=".activity.RegisterDataActivity"
+            android:name=".activity.ui.register.RegisterDataActivity"
             android:screenOrientation="portrait" />
       
         <activity
-            android:name=".activity.RegisterNewsActivity"
-            android:screenOrientation="portrait">
-        </activity>
-      
-        <activity
-            android:name=".activity.NewProjectSuggestionActivity"
+            android:name=".activity.ui.register.RegisterNewsActivity"
             android:screenOrientation="portrait">
         </activity>
       
         <activity
-            android:name=".activity.SubmitSuggestionActivity"
+            android:name=".activity.ui.suggestions.NewProjectSuggestionActivity"
+            android:screenOrientation="portrait">
+        </activity>
+      
+        <activity
+            android:name=".activity.ui.suggestions.SubmitSuggestionActivity"
             android:screenOrientation="portrait">
         </activity>
 
@@ -87,7 +87,7 @@
         </activity>
       
         <activity
-            android:name=".activity.OpenSelectionProcessActivity"
+            android:name=".activity.ui.process_selection.OpenSelectionProcessActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -107,7 +107,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />      
         <activity
-            android:name=".activity.BaseActivity"
+            android:name=".activity.ui.base.BaseActivity"
             android:screenOrientation="portrait" />
 
         <meta-data

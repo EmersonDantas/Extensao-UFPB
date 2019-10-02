@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg"
     android:theme="@style/AppTheme.NoActionBar"
-    tools:context=".activity.RegisterDataActivity">
+    tools:context=".activity.ui.register.RegisterDataActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"

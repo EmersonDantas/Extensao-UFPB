@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundfragments"
-    tools:context=".Fragment.QuestionOfMultipleChoiceFragment" >
+    tools:context=".activity.ui.question.QuestionOfMultipleChoiceFragment" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

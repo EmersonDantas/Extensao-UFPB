@@ -4,10 +4,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import br.com.extensaoufpb.extensaoufpb.Fragment.QuestionOfMultipleChoiceFragment;
-import br.com.extensaoufpb.extensaoufpb.Fragment.QuestionOfNumberFragment;
-import br.com.extensaoufpb.extensaoufpb.Fragment.QuestionOfSelectionChoiceFragment;
-import br.com.extensaoufpb.extensaoufpb.Fragment.QuestionOfTextFragment;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.question.QuestionOfMultipleChoiceFragment;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.question.QuestionOfNumberFragment;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.question.QuestionOfSelectionChoiceFragment;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.question.QuestionOfTextFragment;
 import br.com.extensaoufpb.extensaoufpb.R;
 import br.com.extensaoufpb.extensaoufpb.models.bean.Question;
 

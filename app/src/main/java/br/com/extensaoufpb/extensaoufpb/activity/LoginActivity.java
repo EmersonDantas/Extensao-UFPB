@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputLayout;
 
 import br.com.extensaoufpb.extensaoufpb.R;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.base.BaseActivity;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.register.RegisterActivity;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 

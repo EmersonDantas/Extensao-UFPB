@@ -7,11 +7,11 @@ import android.view.View;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import br.com.extensaoufpb.extensaoufpb.R;
-import br.com.extensaoufpb.extensaoufpb.activity.NewProjectSuggestionActivity;
-import br.com.extensaoufpb.extensaoufpb.activity.OpenSelectionProcessActivity;
-import br.com.extensaoufpb.extensaoufpb.activity.SelectionProcessActivity;
-import br.com.extensaoufpb.extensaoufpb.activity.SignProjectActivity;
-import br.com.extensaoufpb.extensaoufpb.activity.SuggestionsActivity;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.suggestions.NewProjectSuggestionActivity;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.process_selection.OpenSelectionProcessActivity;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.process_selection.SelectionProcessActivity;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.project.SignProjectActivity;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.suggestions.SuggestionsActivity;
 
 public class BottomSheet {
 
