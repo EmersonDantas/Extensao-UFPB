@@ -1,8 +1,10 @@
 package br.com.extensaoufpb.extensaoufpb.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -45,6 +47,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void init() {
 
         this.toastMessage = Toast.makeText(this, null, Toast.LENGTH_SHORT);
+
+    }
+
+    private void hideKeyboard() {
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
 
     }
 
@@ -131,6 +142,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
         }
+
+        hideKeyboard();
 
         if(user != null){
 
