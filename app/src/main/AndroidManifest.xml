@@ -108,7 +108,8 @@
             android:theme="@style/AppTheme.NoActionBar" />      
         <activity
             android:name=".activity.ui.base.BaseActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|adjustPan"/>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
