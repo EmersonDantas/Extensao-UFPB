@@ -1,17 +1,20 @@
 package br.com.extensaoufpb.extensaoufpb.activity.ui.register;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import br.com.extensaoufpb.extensaoufpb.R;
+import br.com.extensaoufpb.extensaoufpb.activity.LoginActivity;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnRegisterBack;
     private Button btnRegister;
     private Button btnGoToLogin;
+    private Intent intent = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +38,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case(R.id.btnRegisterBack):
-                finish();
-                break;
-            case(R.id.btnRegister):
-                break;
-            case(R.id.btnGoToLogin):
-                break;
-        }
+
+        intent = new Intent(RegisterActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
+
     }
 }

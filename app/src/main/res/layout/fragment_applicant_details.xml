@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="525dp" />
+            app:layout_constraintGuide_percent="0.85227275" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline13"
@@ -46,7 +46,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:contentDescription="@string/voltar"
-            android:drawableTop="@drawable/return_arrow_blue"
+            android:drawableTop="@drawable/ic_close_black_24dp"
             android:foregroundGravity="left|center"
             android:tint="@color/colorPrimary"
             app:backgroundTint="@color/colorAccent"

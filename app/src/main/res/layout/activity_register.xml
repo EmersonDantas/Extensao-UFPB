@@ -38,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/top"
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
@@ -230,6 +230,7 @@
             android:id="@+id/linearLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -248,14 +249,16 @@
 
             <Button
                 android:id="@+id/btnGoToLogin"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                 android:layout_width="wrap_content"
-                android:layout_height="22dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1  "
                 android:gravity="center|left"
                 android:text="Fazer Login"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:textColor="@color/colorButton"
+                app:backgroundTint="@color/colorAccent"/>
 
         </LinearLayout>
 
@@ -284,7 +287,7 @@
         app:layout_constraintGuide_percent="0.23823975" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
+        android:id="@+id/top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
