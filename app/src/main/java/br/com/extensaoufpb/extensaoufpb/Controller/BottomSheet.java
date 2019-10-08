@@ -9,6 +9,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import br.com.extensaoufpb.extensaoufpb.R;
 import br.com.extensaoufpb.extensaoufpb.activity.ui.process_selection.OpenSelectionProcessActivity;
 import br.com.extensaoufpb.extensaoufpb.activity.ui.process_selection.SelectionProcessActivity;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.project.ProjectsActivity;
 import br.com.extensaoufpb.extensaoufpb.activity.ui.project.SignProjectActivity;
 import br.com.extensaoufpb.extensaoufpb.activity.ui.suggestions.NewProjectSuggestionActivity;
 import br.com.extensaoufpb.extensaoufpb.activity.ui.suggestions.SuggestionsActivity;
@@ -19,6 +20,7 @@ public class BottomSheet {
     private static BottomSheetBehavior myBottomSheetBehavior;
     private static View myView = null;
     private static String emailCoordinator = "c1@gmail.com";
+    private static boolean checkCoordinetor = false;
 
     private BottomSheet(){
 
@@ -63,6 +65,7 @@ public class BottomSheet {
             id = R.id.coordinatorbottom;
             view.findViewById(R.id.coordinator).setVisibility(View.VISIBLE);
             view.findViewById(R.id.external).setVisibility(View.GONE);
+            checkCoordinetor = true;
 
         }
         myView = view.findViewById(id);
@@ -120,13 +123,8 @@ public class BottomSheet {
                 break;
 
             case R.id.btn_ver_projetos_coord:
-                //
-
-                break;
-
-            case R.id.btn_ver_processos_ext:
-
-               //class faltando
+             case R.id.btn_ver_projetos_ext:
+                intent = new Intent(activity, ProjectsActivity.class);
 
                 break;
 
@@ -136,7 +134,8 @@ public class BottomSheet {
 
                 break;
 
-            case R.id.btn_ver_projetos_ext:
+            case R.id.btn_ver_processos_ext:
+                //vazio
                 break;
 
 
@@ -145,6 +144,7 @@ public class BottomSheet {
 
         if(intent != null){
 
+            intent.putExtra("check",checkCoordinetor);
             activity.startActivity(intent);
 
             closeBottomSheeet();
