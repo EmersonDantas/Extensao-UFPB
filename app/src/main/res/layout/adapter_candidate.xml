@@ -28,7 +28,7 @@
             android:paddingBottom="0dp"
             android:text="@string/visualizar"
             android:textColor="@android:color/white"
-            android:textSize="12sp"
+            android:textSize="14sp"
             app:backgroundTint="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
