@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +22,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private Button buttonLogin;
     private Button buttonBack;
     private Button buttonGoToRegister;
+
+    private CheckBox remenberCheckBox;
 
     private TextInputLayout emailField;
     private TextInputLayout passwordField;
@@ -66,6 +69,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         buttonGoToRegister = findViewById(R.id.btnGoToRegister);
         emailField = findViewById(R.id.input_layout_email);
         passwordField = findViewById(R.id.input_layout_password);
+        remenberCheckBox = findViewById(R.id.remenberCheckBox);
 
     }
 
@@ -73,6 +77,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         buttonLogin.setOnClickListener(this);
         buttonBack.setOnClickListener(this);
         buttonGoToRegister.setOnClickListener(this);
+        remenberCheckBox.setOnClickListener(this);
     }
 
     private boolean verifyFields(TextInputLayout inputEmail, TextInputLayout inputPassword) {
@@ -140,6 +145,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 user = new Intent(LoginActivity.this, RegisterActivity.class);
 
                 break;
+
+            case (R.id.remenberCheckBox):
+
+                emailField.getEditText().setText(emailCoordinator);
+                passwordField.getEditText().setText(passwordCoordinator);
 
         }
 
