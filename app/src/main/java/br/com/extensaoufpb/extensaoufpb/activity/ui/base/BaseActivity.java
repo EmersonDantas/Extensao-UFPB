@@ -15,6 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import br.com.extensaoufpb.extensaoufpb.Controller.BottomSheet;
+import br.com.extensaoufpb.extensaoufpb.Controller.FacadeQuestion;
 import br.com.extensaoufpb.extensaoufpb.R;
 import br.com.extensaoufpb.extensaoufpb.activity.ui.inicio.InicioFragment;
 import br.com.extensaoufpb.extensaoufpb.activity.ui.profile.PerfilActivity;
@@ -26,7 +27,6 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
     private BottomNavigationView navView;
     private BottomSheet bottomSheet;
 
-    private Bundle emailRecovery;
     private String userEmail;
 
     private Fragment actualFragment;
@@ -63,8 +63,7 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
 
     private void init() {
 
-        emailRecovery = getIntent().getExtras();
-        userEmail = emailRecovery.getString("email");
+        userEmail = FacadeQuestion.getInstance(null).getUser().getEmail();
 
         bottomSheet = BottomSheet.getInstance(getWindow().getDecorView().findViewById(android.R.id.content), userEmail);
         fragmentManager = getSupportFragmentManager();
