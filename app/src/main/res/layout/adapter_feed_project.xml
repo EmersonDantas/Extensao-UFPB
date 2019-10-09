@@ -16,6 +16,7 @@
         android:id="@+id/projectPhoto"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_marginTop="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_weight="1"
@@ -33,7 +34,7 @@
         android:layout_marginRight="8dp"
         android:text="temp"
         android:textColor="@color/textColor"
-        app:layout_constraintEnd_toStartOf="@+id/moreProject"
+        app:layout_constraintEnd_toStartOf="@+id/menuProject"
         app:layout_constraintStart_toEndOf="@+id/projectPhoto"
         app:layout_constraintTop_toTopOf="@+id/projectPhoto" />
 
@@ -50,7 +51,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/moreProject"
+        android:id="@+id/menuProject"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="30dp"
         android:layout_height="0dp"
@@ -75,11 +76,11 @@
     <TextView
         android:id="@+id/textDescription"
         android:layout_width="0dp"
-        android:layout_height="124dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
-        android:maxLength="150"
-        android:text="texto descrição"
+        android:maxLength="300"
+        android:text="texto descrisdação"
         android:textColor="@color/textColorNameFeed"
         app:layout_constraintLeft_toLeftOf="@+id/description"
         app:layout_constraintRight_toRightOf="parent"
@@ -115,7 +116,8 @@
         android:layout_height="23dp"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
-        android:gravity="center"
+        android:foregroundGravity="left"
+        android:gravity="center|left"
         android:text="mais ..."
         android:textColor="@color/textColorNameFeed"
         android:textSize="10sp"
