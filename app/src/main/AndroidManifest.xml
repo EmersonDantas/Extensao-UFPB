@@ -78,6 +78,7 @@
         <activity
             android:name=".activity.ui.process_selection.OpenSelectionProcessActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|adjustPan"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.MainActivity"
