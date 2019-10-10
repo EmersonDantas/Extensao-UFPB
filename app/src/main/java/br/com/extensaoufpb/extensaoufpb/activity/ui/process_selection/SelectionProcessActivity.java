@@ -73,10 +73,4 @@ public class SelectionProcessActivity extends AppCompatActivity {
         processSelectionList.add(new ProcessSelection(R.drawable.projeto_logo, "Apps4Society", "Computação",
                 "4 vagas, 1 com bolsas" ));
     }
-
-    @Override
-    public void onBackPressed() {
-        bottomSheet.closeBottomSheeet();
-        finish();
-    }
 }
