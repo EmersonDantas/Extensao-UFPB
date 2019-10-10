@@ -15,7 +15,6 @@ import com.google.android.material.textfield.TextInputLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.extensaoufpb.extensaoufpb.Controller.FacadeQuestion;
 import br.com.extensaoufpb.extensaoufpb.R;
 import br.com.extensaoufpb.extensaoufpb.activity.ui.process_selection.OpenSelectionProcessActivity;
 import br.com.extensaoufpb.extensaoufpb.models.bean.Answer;
@@ -32,12 +31,11 @@ public class QuestionOfNumberFragment extends Fragment implements MountAnswer {
     private TextInputLayout inputNameField, inputLayout;
     private Question question;
     private final String TYPE = "numérico";
-    private FacadeQuestion facadeQuestion;
     private boolean recovered;
 
     public QuestionOfNumberFragment(Question question) {
         // Required empty public constructor
-        facadeQuestion = FacadeQuestion.getInstance();
+
         if(question == null){
             this.question = new Question();
             recovered = false;
