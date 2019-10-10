@@ -63,7 +63,7 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
 
     private void init() {
 
-        userEmail = FacadeQuestion.getInstance(null).getUser().getEmail();
+        userEmail = FacadeQuestion.getInstance().getUser().getEmail();
 
         bottomSheet = BottomSheet.getInstance(getWindow().getDecorView().findViewById(android.R.id.content), userEmail);
         fragmentManager = getSupportFragmentManager();
