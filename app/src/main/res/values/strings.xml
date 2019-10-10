@@ -168,6 +168,7 @@
     <string name="noticies">Notícias</string>
     <string name="events">Eventos</string>
     <string name="sugestoes">Sugestões</string>
+    <string name="proponentUnit">Unidade proponente</string>
     <string-array name="selecione">
         <item>Selecione</item>
         <item>SI</item>
