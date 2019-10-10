@@ -11,11 +11,12 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import br.com.extensaoufpb.extensaoufpb.Controller.FacadeQuestion;
 import br.com.extensaoufpb.extensaoufpb.R;
 import br.com.extensaoufpb.extensaoufpb.activity.LoginActivity;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class PerfilActivity extends AppCompatActivity {
+public class PerfilActivity extends AppCompatActivity implements View.OnClickListener{
 
     private CircleImageView fotoUser;
     private EditText nomeUser;
@@ -51,37 +52,13 @@ public class PerfilActivity extends AppCompatActivity {
 
     private void enableAllClicks() {
 
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        btnVoltar.setOnClickListener(this);
 
-        btnEditarPerfil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intent = new Intent(PerfilActivity.this, EditPerfilActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+        btnEditarPerfil.setOnClickListener(this);
 
-        btnEditarSenha.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intent = new Intent(PerfilActivity.this, EditPasswordActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+        btnEditarSenha.setOnClickListener(this);
 
-        btnSair.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                exibirConfirmacao();
-            }
-        });
+        btnSair.setOnClickListener(this);
     }
 
     public void exibirConfirmacao() {
@@ -94,6 +71,9 @@ public class PerfilActivity extends AppCompatActivity {
         mensagem.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+
+                FacadeQuestion.getInstance().logout();
+
                 Toast.makeText(PerfilActivity.this, "Até a próxima!", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(PerfilActivity.this, LoginActivity.class);
                 startActivity(intent);
@@ -112,5 +92,43 @@ public class PerfilActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         finish();
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        switch(v.getId()){
+
+            case R.id.btnSair:
+
+                exibirConfirmacao();
+
+                break;
+            case R.id.btnEditPerfil:
+
+                intent = new Intent(PerfilActivity.this, EditPerfilActivity.class);
+
+                break;
+            case R.id.btnEditSenha:
+
+                intent = new Intent(PerfilActivity.this, EditPasswordActivity.class);
+
+                break;
+
+            case R.id.btnReturnPerfil:
+
+                finish();
+
+                break;
+
+        }
+
+        if(intent != null){
+
+            startActivity(intent);
+            finish();
+
+        }
+
     }
 }
