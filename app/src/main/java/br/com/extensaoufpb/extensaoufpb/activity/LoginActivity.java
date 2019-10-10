@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import br.com.extensaoufpb.extensaoufpb.Controller.FacadeQuestion;
 import br.com.extensaoufpb.extensaoufpb.R;
 import br.com.extensaoufpb.extensaoufpb.activity.ui.base.BaseActivity;
 import br.com.extensaoufpb.extensaoufpb.activity.ui.register.RegisterActivity;
@@ -115,14 +116,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
 
         Intent user = null;
+        String email = emailField.getEditText().getText().toString();
 
         switch (v.getId()){
 
             case (R.id.btnLoginBack):
 
                 user = new Intent(LoginActivity.this,BaseActivity.class);
-
-                user.putExtra("email",emailExtern);
+                email = "notUser";
 
                 break;
 
@@ -133,8 +134,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 if (validFields) {
 
                     user = new Intent(LoginActivity.this, BaseActivity.class);
-
-                    user.putExtra("email", emailField.getEditText().getText().toString());
 
                 }
 
@@ -157,6 +156,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         if(user != null){
 
+            FacadeQuestion.getInstance().login(email);
             startActivity(user);
             finish();
 
