@@ -4,27 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".activity.LoginActivity">
 
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/imageView7"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@mipmap/nav_hdpi"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        android:layout_gravity="center|top"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/top"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="224dp"
-            android:layout_height="68dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            app:srcCompat="@drawable/logo_horizontaly_xxxhdpi" />
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_horizontaly_xxxhdpi" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -40,31 +39,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/top"
         app:layout_constraintVertical_bias="0.0">
 
         <Button
             android:id="@+id/btnLostPassword"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:text="Esqueceu a senha?"
+            android:textColor="@color/colorButton"
             android:textSize="12sp"
+            app:backgroundTint="@color/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/input_layout_password" />
 
         <Button
             android:id="@+id/btnLogin"
             style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="88dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:text="@string/login"
             android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@+id/fim"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnLostPassword" />
@@ -83,15 +83,15 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/remenberCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:text="Lembrar"
             android:textColor="@color/colorButton"
-            android:textSize="10sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/input_layout_password" />
 
@@ -99,7 +99,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="17dp"
+            android:layout_marginTop="16dp"
             android:foregroundGravity="center"
             android:gravity="center"
             android:text="@string/login"
@@ -127,6 +127,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -146,37 +147,18 @@
 
             <Button
                 android:id="@+id/btnGoToRegister"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="119dp"
-                android:layout_height="22dp"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1  "
                 android:gravity="center|left"
                 android:text="Criar uma conta"
-                android:textSize="12sp" />
+                android:textColor="@color/colorButton"
+                android:textSize="12sp"
+                app:backgroundTint="@color/colorAccent" />
 
         </LinearLayout>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/inicio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.14237288" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/fim"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.7" />
 
         <com.facebook.login.widget.LoginButton
             android:id="@+id/login_button"
@@ -202,6 +184,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
+            android:foregroundGravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
@@ -215,6 +198,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             app:boxBackgroundColor="@color/colorAccent"
@@ -224,13 +208,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/inicio">
+            app:layout_constraintTop_toBottomOf="@+id/textView">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/email"
-                android:imeOptions="normal|actionGo|actionNext"
+                android:imeOptions="actionNext"
                 android:inputType="text"
                 android:textColor="@color/textColor"
                 android:textColorHighlight="@color/textColor"
@@ -261,7 +245,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/senha"
-                android:imeOptions="actionDone"
+                android:imeOptions="actionGo"
                 android:inputType="textPassword"
                 android:textColor="@color/textColor"
                 android:textColorHighlight="@color/textColor"
@@ -271,17 +255,10 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+        android:id="@+id/top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.23823975" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15629742" />
+        app:layout_constraintGuide_percent="0.13" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

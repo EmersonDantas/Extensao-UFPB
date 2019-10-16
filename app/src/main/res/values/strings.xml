@@ -33,7 +33,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="description">Description</string>
+    <string name="description">Descrição</string>
     <string name="email">Email</string>
     <string name="password">Senha</string>
     <string name="repeat_password">Repita a senha</string>
@@ -94,7 +94,7 @@
         <item>9</item>
         <item>10</item>
     </string-array>
-    
+
     <string-array name="projectList">
         <item>Selecione</item>
         <item>App4Society</item>
@@ -168,6 +168,7 @@
     <string name="noticies">Notícias</string>
     <string name="events">Eventos</string>
     <string name="sugestoes">Sugestões</string>
+    <string name="proponentUnit">Unidade proponente</string>
     <string-array name="selecione">
         <item>Selecione</item>
         <item>SI</item>
@@ -180,13 +181,12 @@
         <item>2º</item>
         <item>3º</item>
     </string-array>
-  <string-array name="areaAplicacao">
+    <string-array name="areaAplicacao">
         <item>Selecione</item>
         <item>Educação</item>
         <item>Ecologia</item>
         <item>Computação</item>
-   </string-array>
-
+    </string-array>
 
 
 </resources>

@@ -1,16 +1,22 @@
 package br.com.extensaoufpb.extensaoufpb.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import br.com.extensaoufpb.extensaoufpb.Controller.FacadeQuestion;
 import br.com.extensaoufpb.extensaoufpb.R;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.base.BaseActivity;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.register.RegisterActivity;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -18,17 +24,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private Button buttonBack;
     private Button buttonGoToRegister;
 
+    private CheckBox remenberCheckBox;
+
     private TextInputLayout emailField;
     private TextInputLayout passwordField;
 
-    private Intent startIntent;
     private Toast toastMessage;
 
-    private String emailCoordinator = "c1@gmail.com";
-    private String passwordCoordinator = "c1";
+    private final String emailCoordinator = "c1@gmail.com";
+    private final String passwordCoordinator = "c1";
 
-    private String emailExtern = "e1@gmail.com";
-    private String passwordExtern = "e1";
+    private final String emailExtern = "e1@gmail.com";
+    private final String passwordExtern = "e1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,62 +44,67 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         findComponent();
         init();
+        setListeners();
 
     }
 
     private void init() {
+
         this.toastMessage = Toast.makeText(this, null, Toast.LENGTH_SHORT);
+
+    }
+
+    private void hideKeyboard() {
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
+
     }
 
     private void findComponent() {
+
         buttonLogin = findViewById(R.id.btnLogin);
         buttonBack = findViewById(R.id.btnLoginBack);
         buttonGoToRegister = findViewById(R.id.btnGoToRegister);
         emailField = findViewById(R.id.input_layout_email);
         passwordField = findViewById(R.id.input_layout_password);
-        setListeners();
+        remenberCheckBox = findViewById(R.id.remenberCheckBox);
+
     }
 
     private void setListeners(){
         buttonLogin.setOnClickListener(this);
         buttonBack.setOnClickListener(this);
         buttonGoToRegister.setOnClickListener(this);
+        remenberCheckBox.setOnClickListener(this);
     }
 
-    private boolean verifyFields(TextInputLayout email, TextInputLayout password) {
+    private boolean verifyFields(TextInputLayout inputEmail, TextInputLayout inputPassword) {
 
-        if (emailIsEmpty(email) || passwordIsEmpty(password)) {
+        final String email = inputEmail.getEditText().getText().toString();
+        final String password = inputPassword.getEditText().getText().toString();
+
+        boolean verify = false;
+
+        if (email.isEmpty() || password.isEmpty()) {
+
             showToastMessage(toastMessage, "Há campos vazios!");
 
-            return false;
+        }else if ((!email.equalsIgnoreCase(emailCoordinator) || !password.equalsIgnoreCase(passwordCoordinator)) && (!email.equalsIgnoreCase(emailExtern) || !password.equalsIgnoreCase(passwordExtern))){
 
-        } else if ((!getEmail(email).equals(emailCoordinator) || !getPassword(password).equals(passwordCoordinator)) && (!getEmail(email).equals(emailExtern) || !getPassword(password).equals(passwordExtern))) {
             showToastMessage(toastMessage, "Email ou senha inválidos!");
 
-            return false;
+        }else{
 
-        } else {
-            showToastMessage(toastMessage, "Você logou com " + getEmail(email));
+            showToastMessage(toastMessage, "Você logou com " + email);
 
-            return true;
+            verify = true;
+
         }
-    }
 
-
-    private String getEmail(TextInputLayout emailField) {
-        return emailCoordinator;
-    }
-
-    private String getPassword (TextInputLayout emailField) {
-        return passwordCoordinator;
-    }
-
-    private boolean emailIsEmpty(TextInputLayout input_email) {
-        return getEmail(input_email).isEmpty();
-    }
-
-    private boolean passwordIsEmpty(TextInputLayout input_password) {
-        return getPassword(input_password).isEmpty();
+        return verify;
     }
 
     private void showToastMessage(Toast toast, String message) {
@@ -103,30 +115,50 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
 
+        Intent user = null;
+        String email = emailField.getEditText().getText().toString();
+
         switch (v.getId()){
 
             case (R.id.btnLoginBack):
-                startActivity(new Intent(LoginActivity.this, BaseActivity.class));
-                finish();
+
+                user = new Intent(LoginActivity.this,BaseActivity.class);
+                email = "notUser";
+
                 break;
 
             case (R.id.btnLogin):
+
                 boolean validFields = verifyFields(emailField, passwordField);
 
                 if (validFields) {
-                    startIntent = new Intent(LoginActivity.this, BaseActivity.class);
 
-                    startIntent.putExtra("email", getEmail(emailField));
+                    user = new Intent(LoginActivity.this, BaseActivity.class);
 
-                    startActivity(startIntent);
-                    finish();
                 }
 
                 break;
 
             case (R.id.btnGoToRegister):
-                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+
+                user = new Intent(LoginActivity.this, RegisterActivity.class);
+
                 break;
+
+            case (R.id.remenberCheckBox):
+
+                emailField.getEditText().setText(emailCoordinator);
+                passwordField.getEditText().setText(passwordCoordinator);
+
+        }
+
+        hideKeyboard();
+
+        if(user != null){
+
+            FacadeQuestion.getInstance().login(email);
+            startActivity(user);
+            finish();
 
         }
     }

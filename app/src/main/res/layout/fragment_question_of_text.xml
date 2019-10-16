@@ -8,7 +8,7 @@
     android:background="@color/backgroundfragments"
     android:foregroundGravity="center"
     app:layout_anchorGravity="center"
-    tools:context=".Fragment.QuestionOfTextFragment">
+    tools:context=".activity.ui.question.QuestionOfTextFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"

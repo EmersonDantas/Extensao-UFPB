@@ -7,11 +7,12 @@ import android.view.View;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import br.com.extensaoufpb.extensaoufpb.R;
-import br.com.extensaoufpb.extensaoufpb.activity.NewProjectSuggestionActivity;
-import br.com.extensaoufpb.extensaoufpb.activity.OpenSelectionProcessActivity;
-import br.com.extensaoufpb.extensaoufpb.activity.SelectionProcessActivity;
-import br.com.extensaoufpb.extensaoufpb.activity.SignProjectActivity;
-import br.com.extensaoufpb.extensaoufpb.activity.SuggestionsActivity;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.process_selection.OpenSelectionProcessActivity;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.process_selection.SelectionProcessActivity;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.project.ProjectsActivity;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.project.SignProjectActivity;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.suggestions.NewProjectSuggestionActivity;
+import br.com.extensaoufpb.extensaoufpb.activity.ui.suggestions.SuggestionsActivity;
 
 public class BottomSheet {
 
@@ -19,6 +20,7 @@ public class BottomSheet {
     private static BottomSheetBehavior myBottomSheetBehavior;
     private static View myView = null;
     private static String emailCoordinator = "c1@gmail.com";
+    private static boolean checkCoordinetor = false;
 
     private BottomSheet(){
 
@@ -27,10 +29,17 @@ public class BottomSheet {
     public static BottomSheet getInstance(View view, String email) {
 
         if (instance == null) {
+
             instance = new BottomSheet();
 
-            initiBottomSheet(view, email);
         }
+
+        if(email != null){
+
+            initiBottomSheet(view,email);
+
+        }
+
         return instance;
     }
 
@@ -43,9 +52,7 @@ public class BottomSheet {
     public void closeBottomSheeet() {
 
         if (myBottomSheetBehavior.getState()  != BottomSheetBehavior.STATE_HIDDEN){
-
             myBottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
-
         }
 
     }
@@ -58,6 +65,7 @@ public class BottomSheet {
             id = R.id.coordinatorbottom;
             view.findViewById(R.id.coordinator).setVisibility(View.VISIBLE);
             view.findViewById(R.id.external).setVisibility(View.GONE);
+            checkCoordinetor = true;
 
         }
         myView = view.findViewById(id);
@@ -68,11 +76,20 @@ public class BottomSheet {
     public void changeStateBottom() {
 
         if(myBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_COLLAPSED) {
+
             myBottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
 
         } else {
+
             myBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
         }
+
+    }
+
+    public boolean isHidden(){
+
+        return myBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_HIDDEN;
+
     }
 
     public void clickButtons(int id, Activity activity) {
@@ -106,13 +123,8 @@ public class BottomSheet {
                 break;
 
             case R.id.btn_ver_projetos_coord:
-                //
-
-                break;
-
-            case R.id.btn_ver_processos_ext:
-
-               //class faltando
+             case R.id.btn_ver_projetos_ext:
+                intent = new Intent(activity, ProjectsActivity.class);
 
                 break;
 
@@ -122,16 +134,22 @@ public class BottomSheet {
 
                 break;
 
-            case R.id.btn_ver_projetos_ext:
+            case R.id.btn_ver_processos_ext:
+                //vazio
                 break;
 
 
         }
 
 
-        activity.startActivity(intent);
+        if(intent != null){
 
-        closeBottomSheeet();
+            intent.putExtra("check",checkCoordinetor);
+            activity.startActivity(intent);
+
+            closeBottomSheeet();
+
+        }
 
     }
 

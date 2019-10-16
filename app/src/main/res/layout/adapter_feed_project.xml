@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="12dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginRight="12dp"
+    android:layout_marginBottom="4dp"
+    android:background="@drawable/recycler_view"
+    android:orientation="vertical"
+    android:padding="2dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/projectPhoto"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameProject"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="temp"
+        android:textColor="@color/textColor"
+        app:layout_constraintEnd_toStartOf="@+id/menuProject"
+        app:layout_constraintStart_toEndOf="@+id/projectPhoto"
+        app:layout_constraintTop_toTopOf="@+id/projectPhoto" />
+
+    <TextView
+        android:id="@+id/dateProject"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="date"
+        android:textColor="@color/textColorNameFeed"
+        app:layout_constraintBottom_toBottomOf="@+id/projectPhoto"
+        app:layout_constraintEnd_toEndOf="@+id/nameProject"
+        app:layout_constraintStart_toStartOf="@+id/nameProject"
+        app:layout_constraintTop_toBottomOf="@+id/nameProject"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/menuProject"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="30dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:drawableBottom="@drawable/ic_more_vert_blue_24dp"
+        app:backgroundTint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@+id/dateProject"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nameProject" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/description"
+        android:textColor="@color/textColor"
+        app:layout_constraintStart_toStartOf="@+id/projectPhoto"
+        app:layout_constraintTop_toBottomOf="@+id/projectPhoto" />
+
+    <TextView
+        android:id="@+id/textDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:maxLength="300"
+        android:text="texto descrisdação"
+        android:textColor="@color/textColorNameFeed"
+        app:layout_constraintLeft_toLeftOf="@+id/description"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
+    <TextView
+        android:id="@+id/proponentUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/proponentUnit"
+        android:textColor="@color/textColor"
+        app:layout_constraintStart_toStartOf="@+id/textDescription"
+        app:layout_constraintTop_toBottomOf="@+id/textDescription" />
+
+    <TextView
+        android:id="@+id/textProponentUnit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:maxLength="80"
+        android:text="asdfasdfasdfasdfasdfasfffffffffffa"
+        android:textColor="@color/textColorNameFeed"
+        app:layout_constraintLeft_toLeftOf="@+id/proponentUnit"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/proponentUnit" />
+
+    <Button
+        android:id="@+id/buttonMore"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="55dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:foregroundGravity="left"
+        android:gravity="center|left"
+        android:text="mais ..."
+        android:textColor="@color/textColorNameFeed"
+        android:textSize="10sp"
+        app:backgroundTint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/textProponentUnit"
+        app:layout_constraintTop_toBottomOf="@+id/textProponentUnit" />
+</androidx.constraintlayout.widget.ConstraintLayout>

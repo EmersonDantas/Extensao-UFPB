@@ -21,8 +21,10 @@
 
     <SearchView
         android:id="@+id/searchView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
+        android:maxWidth="200sp"
+        android:iconifiedByDefault="true"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"

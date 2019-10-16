@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.extensaoufpb.extensaoufpb.R;
-import br.com.extensaoufpb.extensaoufpb.activity.adapter.AdapterFeedGeneral;
+import br.com.extensaoufpb.extensaoufpb.activity.AdapterFeedGeneral;
 import br.com.extensaoufpb.extensaoufpb.models.bean.Project;
 
 public class InicioFragment extends Fragment  {
