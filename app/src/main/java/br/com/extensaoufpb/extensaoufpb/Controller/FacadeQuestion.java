@@ -41,11 +41,11 @@ public class FacadeQuestion {
 
             if(login == null || !login.equals(emailCoordinator)){
 
-                user = new ExternalPublic(R.drawable.emanoel,"emanoel","senha123",emailExtern);
+                user = new ExternalPublic(R.drawable.ic_default,"emanoel","senha123",emailExtern);
 
             }else {
 
-                user = new Coordinator(R.drawable.emanoel,"emanoel","senha123",emailCoordinator);
+                user = new Coordinator(R.drawable.ic_default,"emanoel","senha123",emailCoordinator);
 
             }
         }

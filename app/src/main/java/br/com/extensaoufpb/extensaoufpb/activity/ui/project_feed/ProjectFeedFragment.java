@@ -106,12 +106,12 @@ public class ProjectFeedFragment extends Fragment implements View.OnClickListene
     }
 
     private void createAllParticipantes(){
-        participants.add(new Extensionist(R.drawable.emerson,"Emerson Dantas", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
-        participants.add(new Extensionist(R.drawable.francivaldo,"Francivaldo Napoleão", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
-        participants.add(new Extensionist(R.drawable.waldir,"Waldir Marques", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
-        participants.add(new Extensionist(R.drawable.emanoel,"Emanoel Medeiros", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
-        participants.add(new Extensionist(R.drawable.emerson,"Emanoel Medeiros", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
-        participants.add(new Extensionist(R.drawable.francivaldo,"Francivaldo Napoleão", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
-        participants.add(new Extensionist(R.drawable.waldir,"Waldir Marques", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
+        participants.add(new Extensionist(R.drawable.ic_default,"Emerson Dantas", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
+        participants.add(new Extensionist(R.drawable.ic_default,"Francivaldo Napoleão", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
+        participants.add(new Extensionist(R.drawable.ic_default,"Waldir Marques", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
+        participants.add(new Extensionist(R.drawable.ic_default,"Emanoel Medeiros", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
+        participants.add(new Extensionist(R.drawable.ic_default,"Emanoel Medeiros", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
+        participants.add(new Extensionist(R.drawable.ic_default,"Francivaldo Napoleão", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
+        participants.add(new Extensionist(R.drawable.ic_default,"Waldir Marques", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
     }
 }

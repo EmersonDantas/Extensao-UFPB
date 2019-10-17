@@ -40,7 +40,7 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
         nomeUser = findViewById(R.id.txtNome);
         sobreNomeUser = findViewById(R.id.txtSobrenome);
         emailUser = findViewById(R.id.txtEmail);
-        fotoUser.setImageResource(R.drawable.emanoel);
+        fotoUser.setImageResource(R.drawable.ic_default);
         nomeUser.setText("Francivaldo");
         sobreNomeUser.setText("Napoleão");
         emailUser.setText("francivaldo.napoleao@dcx.ufpb.br");
