@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.extensaoufpb.extensaoufpb.Controller.BottomSheet;
+import br.com.extensaoufpb.extensaoufpb.Controller.LoadingItem;
 import br.com.extensaoufpb.extensaoufpb.R;
 import br.com.extensaoufpb.extensaoufpb.activity.ui.participant.ParticipantsActivity;
 import br.com.extensaoufpb.extensaoufpb.models.bean.Extensionist;
@@ -38,85 +39,70 @@ public class ProjectFeedFragment extends Fragment implements View.OnClickListene
     private int offSetParticipant = 0;
     private final int SUM = 5;
     private ParticipantsPhotosAdapter adapter;
+    private RecyclerView rv;
+    private LinearLayoutManager lm;
+    private LoadingItem<Extensionist> loadingExtensionist;
 
     List<Extensionist> teste;
     private int totalExtensionist;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_project_feed, container, false);
-        btnOpenBottomSheet = root.findViewById(R.id.btnHideShow);
-        btnOpenBottomSheet.setOnClickListener(this);
-        layoutBottonSheetRoot = root.findViewById(R.id.bottomSheetRootLayout);
-        menuAdapter = new TabMenuAdapter(getChildFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        fillTabMenu(root);
 
-        teste();
+        findViewAll(root);
 
-        adapter = new ParticipantsPhotosAdapter(participants);
+        init();
 
-        loadingParticipant(SUM);
+        return root;
+    }
 
-        final LinearLayoutManager lm = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-        RecyclerView rv = root.findViewById(R.id.rvParticipatsPhotos);
+    private void init(){
+
         rv.setLayoutManager(lm);
         rv.setAdapter(adapter);
         rv.hasFixedSize();
 
-        rv.addOnScrollListener(new RecyclerView.OnScrollListener() {
 
-            @Override
-            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
+        viewPager.setAdapter(menuAdapter);
 
-                if(dx > 0){
+        tabLayoutTabMenu.setupWithViewPager(viewPager);
 
-                    final int visibleItemCount = lm.getChildCount();
-                    final int pastItemCount = lm.findFirstCompletelyVisibleItemPosition();
-                    final int comparator =(visibleItemCount + pastItemCount);
+        adapter.addList(loadingExtensionist.loadingParticipant(SUM));
 
-                    if(comparator <= totalExtensionist){
-                        offSetParticipant += SUM;
-                        loadingParticipant(offSetParticipant);
+        onClickAll();
 
-                    }
-
-                }
-            }
-        });
-        return root;
     }
 
-    private void loadingParticipant(int offset){
+    private void findViewAll(View view){
 
-        if(participants.size() < teste.size()){
+        teste();
 
-            if((participants.size() + offset) > teste.size()) {
+        btnOpenBottomSheet = view.findViewById(R.id.btnHideShow);
+        layoutBottonSheetRoot = view.findViewById(R.id.bottomSheetRootLayout);
+        menuAdapter = new TabMenuAdapter(getChildFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
 
-                    offset = teste.size();
+        adapter = new ParticipantsPhotosAdapter(participants);
 
-            }
+        loadingExtensionist  = new LoadingItem<>(participants,teste);
 
-            for(int i = participants.size(); i < offset; i++){
+        lm = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
 
-                participants.add(teste.get(i));
+        rv = view.findViewById(R.id.rvParticipatsPhotos);
 
-            }
-
-            adapter.addList(participants);
-
-        }
-    }
-
-    public void fillTabMenu(View view){
         buttonBack = view.findViewById(R.id.btnProjectFeedBack);
         buttonSeeAll = view.findViewById(R.id.btnSeeAll);
         viewPager = view.findViewById(R.id.vpTabMenu);
+        tabLayoutTabMenu = view.findViewById(R.id.tlTabMenu);
+    }
+
+    private void onClickAll(){
+
         buttonSeeAll.setOnClickListener(this);
         buttonBack.setOnClickListener(this);
-        viewPager.setAdapter(menuAdapter);
-        tabLayoutTabMenu = view.findViewById(R.id.tlTabMenu);
-        tabLayoutTabMenu.setupWithViewPager(viewPager);
+        btnOpenBottomSheet.setOnClickListener(this);
+
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayoutTabMenu));
+
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -133,6 +119,29 @@ public class ProjectFeedFragment extends Fragment implements View.OnClickListene
                 Log.i(TAG,"Page Changed");
             }
         });
+
+        rv.addOnScrollListener(new RecyclerView.OnScrollListener() {
+
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                if(dx > 0){
+
+                    final int visibleItemCount = lm.getChildCount();
+                    final int pastItemCount = lm.findFirstCompletelyVisibleItemPosition();
+                    final int comparator =(visibleItemCount + pastItemCount);
+
+                    if(comparator <= totalExtensionist){
+                        offSetParticipant += SUM;
+//                        loadingParticipant(offSetParticipant);
+                        adapter.addList(loadingExtensionist.loadingParticipant(offSetParticipant));
+                    }
+
+                }
+            }
+        });
+
     }
 
     @Override
