@@ -35,6 +35,12 @@ public class ProjectFeedFragment extends Fragment implements View.OnClickListene
     private ConstraintLayout layoutBottonSheetRoot;
     private List<Extensionist> participants = new ArrayList<>();
     private String TAG = "ProjectFeedFragment";
+    private int offSetParticipant = 0;
+    private final int SUM = 5;
+    private ParticipantsPhotosAdapter adapter;
+
+    List<Extensionist> teste;
+    private int totalExtensionist;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_project_feed, container, false);
@@ -44,13 +50,61 @@ public class ProjectFeedFragment extends Fragment implements View.OnClickListene
         menuAdapter = new TabMenuAdapter(getChildFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         fillTabMenu(root);
 
-        createAllParticipantes();
-        ParticipantsPhotosAdapter adapter = new ParticipantsPhotosAdapter(participants);
-        RecyclerView.LayoutManager lm = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        teste();
+
+        adapter = new ParticipantsPhotosAdapter(participants);
+
+        loadingParticipant(SUM);
+
+        final LinearLayoutManager lm = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView rv = root.findViewById(R.id.rvParticipatsPhotos);
         rv.setLayoutManager(lm);
         rv.setAdapter(adapter);
+        rv.hasFixedSize();
+
+        rv.addOnScrollListener(new RecyclerView.OnScrollListener() {
+
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                if(dx > 0){
+
+                    final int visibleItemCount = lm.getChildCount();
+                    final int pastItemCount = lm.findFirstCompletelyVisibleItemPosition();
+                    final int comparator =(visibleItemCount + pastItemCount);
+
+                    if(comparator <= totalExtensionist){
+                        offSetParticipant += SUM;
+                        loadingParticipant(offSetParticipant);
+
+                    }
+
+                }
+            }
+        });
         return root;
+    }
+
+    private void loadingParticipant(int offset){
+
+        if(participants.size() < teste.size()){
+
+            if((participants.size() + offset) > teste.size()) {
+
+                    offset = teste.size();
+
+            }
+
+            for(int i = participants.size(); i < offset; i++){
+
+                participants.add(teste.get(i));
+
+            }
+
+            adapter.addList(participants);
+
+        }
     }
 
     public void fillTabMenu(View view){
@@ -105,13 +159,22 @@ public class ProjectFeedFragment extends Fragment implements View.OnClickListene
         }
     }
 
-    private void createAllParticipantes(){
-        participants.add(new Extensionist(R.drawable.ic_default,"Emerson Dantas", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
-        participants.add(new Extensionist(R.drawable.ic_default,"Francivaldo Napoleão", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
-        participants.add(new Extensionist(R.drawable.ic_default,"Waldir Marques", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
-        participants.add(new Extensionist(R.drawable.ic_default,"Emanoel Medeiros", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
-        participants.add(new Extensionist(R.drawable.ic_default,"Emanoel Medeiros", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
-        participants.add(new Extensionist(R.drawable.ic_default,"Francivaldo Napoleão", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
-        participants.add(new Extensionist(R.drawable.ic_default,"Waldir Marques", null, null, "Bacharelado em Sistemas de Informação", "Voluntário"));
+    private void teste(){
+        teste = new ArrayList<>();;
+        teste.add(new Extensionist(R.drawable.ic_default,"Fist Last Name", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
+        teste.add(new Extensionist(R.drawable.ic_default,"Fist Last Name", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
+        teste.add(new Extensionist(R.drawable.ic_default,"Fist Last Name", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
+        teste.add(new Extensionist(R.drawable.ic_default,"Fist Last Name", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
+        teste.add(new Extensionist(R.drawable.ic_default,"Fist Last Name", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
+        teste.add(new Extensionist(R.drawable.ic_default,"Fist Last Name", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
+        teste.add(new Extensionist(R.drawable.ic_default,"Fist Last Name", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
+        teste.add(new Extensionist(R.drawable.ic_default,"Fist Last Name", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
+        teste.add(new Extensionist(R.drawable.ic_default,"Fist Last Name", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
+        teste.add(new Extensionist(R.drawable.ic_default,"Fist Last Name", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
+        teste.add(new Extensionist(R.drawable.ic_default,"Fist Last Name", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
+        teste.add(new Extensionist(R.drawable.ic_default,"Fist Last Name", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
+        teste.add(new Extensionist(R.drawable.ic_default,"Fist Last Name", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
+
+        totalExtensionist = teste.size();
     }
 }
