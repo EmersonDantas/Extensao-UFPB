@@ -23,7 +23,7 @@ public class LoadingItem<Item> {
     }
 
 
-    public List<Item> loadingParticipant(int offset){
+    public List<Item> loading(int offset){
 
         if(items.size() < listDate.size()){
 
