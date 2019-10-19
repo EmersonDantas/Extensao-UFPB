@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,6 +40,12 @@ public class ParticipantsPhotosAdapter extends RecyclerView.Adapter<Participants
         holder.participant_photo.setImageResource(this.participants.get(position).getProfilePhoto());
     }
 
+    public void addList(List<Extensionist> extensionists){
+
+        participants = extensionists;
+        notifyDataSetChanged();
+
+    }
     @Override
     public int getItemCount() {
         return this.participants.size();
