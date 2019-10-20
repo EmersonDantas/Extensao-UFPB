@@ -65,6 +65,12 @@ public class AdapterFeedGeneral extends RecyclerView.Adapter<AdapterFeedGeneral.
         onAllClicks(holder);
     }
 
+    public void addList(List<Project> projectList){
+
+        projects = projectList;
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getItemCount() {
         return projects.size();
