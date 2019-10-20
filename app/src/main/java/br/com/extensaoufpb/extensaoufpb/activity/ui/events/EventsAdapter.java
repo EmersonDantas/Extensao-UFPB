@@ -43,6 +43,10 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
         holder.certify.setText(this.events.get(position).isCertify() ? "Gera certificado de participação" : "Não gera certificado de participação");
     }
 
+    public void addList(List<Event> listEvent){
+        events = listEvent;
+        notifyDataSetChanged();
+    }
     @Override
     public int getItemCount() {
         return this.events.size();
