@@ -52,7 +52,7 @@ public class ProjectFeedFragment extends Fragment implements View.OnClickListene
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_project_feed4, container, false);
+        View root = inflater.inflate(R.layout.fragment_project_feed, container, false);
 
         findViewAll(root);
 
@@ -97,7 +97,7 @@ public class ProjectFeedFragment extends Fragment implements View.OnClickListene
         viewPager = view.findViewById(R.id.vpTabMenu);
         tabLayoutTabMenu = view.findViewById(R.id.tlTabMenu);
 
-        fabAdd = view.findViewById(R.id.fbAddProject2);
+        fabAdd = view.findViewById(R.id.fbAddProject);
 
         collapsingToolbarLayout =view.findViewById(R.id.collapsing_toolbar);
 
