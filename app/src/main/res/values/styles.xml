@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -23,4 +23,7 @@
         <item name="windowNoTitle" />
     </style>
 
+    <style name="themeAppBar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:colorPrimary" tools:targetApi="lollipop">@color/colorAccent</item>
+    </style>
 </resources>
