@@ -1,6 +1,7 @@
 package br.com.extensaoufpb.extensaoufpb.activity.ui.project_feed;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +10,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
 
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
@@ -31,11 +33,10 @@ import br.com.extensaoufpb.extensaoufpb.models.bean.Extensionist;
 
 public class ProjectFeedFragment extends Fragment implements View.OnClickListener {
 
-    private Button btnOpenBottomSheet, buttonSeeAll, buttonBack;
+    private Button buttonSeeAll, buttonBack;
     private TabMenuAdapter menuAdapter;
     private ViewPager viewPager;
     private TabLayout tabLayoutTabMenu;
-    private ConstraintLayout layoutBottonSheetRoot;
     private List<Extensionist> participants = new ArrayList<>();
     private String TAG = "ProjectFeedFragment";
     private int offSetParticipant = 0;
@@ -45,12 +46,13 @@ public class ProjectFeedFragment extends Fragment implements View.OnClickListene
     private LinearLayoutManager lm;
     private static FloatingActionButton fabAdd;
     private LoadingItem<Extensionist> loadingExtensionist;
+    private CollapsingToolbarLayout collapsingToolbarLayout;
 
     List<Extensionist> teste;
-    private int totalExtensionist;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_project_feed, container, false);
+        View root = inflater.inflate(R.layout.fragment_project_feed4, container, false);
 
         findViewAll(root);
 
@@ -80,8 +82,6 @@ public class ProjectFeedFragment extends Fragment implements View.OnClickListene
 
         teste();
 
-        btnOpenBottomSheet = view.findViewById(R.id.btnHideShow);
-        layoutBottonSheetRoot = view.findViewById(R.id.bottomSheetRootLayout);
         menuAdapter = new TabMenuAdapter(getChildFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
 
         adapter = new ParticipantsPhotosAdapter(participants);
@@ -97,7 +97,9 @@ public class ProjectFeedFragment extends Fragment implements View.OnClickListene
         viewPager = view.findViewById(R.id.vpTabMenu);
         tabLayoutTabMenu = view.findViewById(R.id.tlTabMenu);
 
-        fabAdd = view.findViewById(R.id.fbAddProject);
+        fabAdd = view.findViewById(R.id.fbAddProject2);
+
+        collapsingToolbarLayout =view.findViewById(R.id.collapsing_toolbar);
 
     }
 
@@ -105,7 +107,6 @@ public class ProjectFeedFragment extends Fragment implements View.OnClickListene
 
         buttonSeeAll.setOnClickListener(this);
         buttonBack.setOnClickListener(this);
-        btnOpenBottomSheet.setOnClickListener(this);
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayoutTabMenu));
 
@@ -157,15 +158,6 @@ public class ProjectFeedFragment extends Fragment implements View.OnClickListene
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case(R.id.btnHideShow):
-                if(layoutBottonSheetRoot.getVisibility() == layoutBottonSheetRoot.VISIBLE){
-                    layoutBottonSheetRoot.setVisibility(layoutBottonSheetRoot.GONE);
-                    btnOpenBottomSheet.setCompoundDrawablesWithIntrinsicBounds(null, null, getContext().getResources().getDrawable(R.drawable.ic_keyboard_arrow_down_black_24dp),null);
-                }else{
-                    layoutBottonSheetRoot.setVisibility(layoutBottonSheetRoot.VISIBLE);
-                    btnOpenBottomSheet.setCompoundDrawablesWithIntrinsicBounds(null, null, getContext().getResources().getDrawable(R.drawable.ic_keyboard_arrow_up_black_24dp),null);
-                }
-                break;
             case R.id.btnSeeAll:
 
                 BottomSheet.getInstance(v,null).closeBottomSheeet();
@@ -232,8 +224,5 @@ public class ProjectFeedFragment extends Fragment implements View.OnClickListene
         teste.add(new Extensionist(R.drawable.ic_default,"Fist Last Name", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
         teste.add(new Extensionist(R.drawable.ic_default,"Fist Last Name", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
         teste.add(new Extensionist(R.drawable.ic_default,"Fist Last Name", null, null, "Bacharelado em Sistemas de Informação", "Bolsista"));
-
-
-        totalExtensionist = teste.size();
     }
 }
