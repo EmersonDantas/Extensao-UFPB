@@ -14,8 +14,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/backgroundradio"
+        android:background="@drawable/backgroundradio_top_rounded"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -44,11 +43,11 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
             android:layout_marginBottom="16dp"
             android:padding="10dp"
             android:text="@string/salvar"
             android:textColor="@android:color/white"
+            android:textSize="14sp"
             app:backgroundTint="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -198,9 +197,9 @@
                 android:id="@+id/txtDataInicio"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:focusable="false"
                 android:hint="@string/inicio"
                 android:imeOptions="actionDone"
-                android:focusable="false"
                 android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -224,8 +223,8 @@
                 android:id="@+id/txtNomeCoordenador"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="@string/coordenador"
                 android:focusable="false"
+                android:hint="@string/coordenador"
                 android:imeOptions="actionDone"
                 android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>

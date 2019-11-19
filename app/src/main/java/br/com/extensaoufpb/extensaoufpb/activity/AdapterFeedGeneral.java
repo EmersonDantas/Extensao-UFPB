@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,10 +27,15 @@ public class AdapterFeedGeneral extends RecyclerView.Adapter<AdapterFeedGeneral.
     private List<Project> projects;
     private Context context;
     private FragmentManager fragmentManager;
+    private FragmentTransaction fragmentTransaction;
+    private Fragment projectFeedFragment;
+
     public AdapterFeedGeneral(Context context, List<Project> allProjects, FragmentManager fragmentManager) {
         this.projects = allProjects;
         this.context = context;
         this.fragmentManager = fragmentManager;
+        this.fragmentTransaction = fragmentManager.beginTransaction();
+        this.projectFeedFragment = new ProjectFeedFragment();
     }
 
     @NonNull
@@ -59,25 +65,28 @@ public class AdapterFeedGeneral extends RecyclerView.Adapter<AdapterFeedGeneral.
         onAllClicks(holder);
     }
 
+    public void addList(List<Project> projectList){
+
+        projects = projectList;
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getItemCount() {
         return projects.size();
     }
 
     private void onAllClicks(MyViewHolder myViewHolder) {
-        myViewHolder.logo.setOnClickListener(this);
-        myViewHolder.title.setOnClickListener(this);
-        myViewHolder.date.setOnClickListener(this);
-        myViewHolder.postImage.setOnClickListener(this);
 
+        myViewHolder.logo.setOnClickListener(this);
+
+        myViewHolder.title.setOnClickListener(this);
+
+        myViewHolder.postImage.setOnClickListener(this);
 
         myViewHolder.btn_more.setOnClickListener(this);
 
         myViewHolder.btn_more_text.setOnClickListener(this);
-
-        myViewHolder.logo.setOnClickListener(this);
-
-        myViewHolder.title.setOnClickListener(this);
 
     }
 
@@ -89,9 +98,9 @@ public class AdapterFeedGeneral extends RecyclerView.Adapter<AdapterFeedGeneral.
             case R.id.title:
 
                 BottomSheet.getInstance(view,null).closeBottomSheeet();
-                final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.replace(R.id.nav_host_fragment, new ProjectFeedFragment()).commit();
+                fragmentTransaction.replace(R.id.nav_host_fragment, projectFeedFragment);
+                fragmentTransaction.commit();
 
                 break;
         }

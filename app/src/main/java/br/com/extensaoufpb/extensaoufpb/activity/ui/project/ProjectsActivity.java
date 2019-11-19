@@ -31,9 +31,9 @@ public class ProjectsActivity extends AppCompatActivity  implements View.OnClick
 
     private void findView(){
 
-        projectList.add(new Project(R.drawable.emanoel, "app 4 society", "22/10/19", "App feito pelo curso de Sistemas de Informação ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffsddddddddddddddddddddddddddddddddddddddddddddddddd", 0));
-        projectList.add(new Project(R.drawable.emanoel, "app 4 society", "22/10/19", "App feito pelo curso de Sistemas de Informação", 0));
-        projectList.add(new Project(R.drawable.emanoel, "app 4 society", "22/10/19", "App feito pelo curso de Sistemas de Informação ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffsddddddddddddddddddddddddddddddddddddddddddddddddd", 0));
+        projectList.add(new Project(R.drawable.ic_default, "app 4 society", "22/10/19", "App feito pelo curso de Sistemas de Informação ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffsddddddddddddddddddddddddddddddddddddddddddddddddd", 0));
+        projectList.add(new Project(R.drawable.ic_default, "app 4 society", "22/10/19", "App feito pelo curso de Sistemas de Informação", 0));
+        projectList.add(new Project(R.drawable.ic_default, "app 4 society", "22/10/19", "App feito pelo curso de Sistemas de Informação ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffsddddddddddddddddddddddddddddddddddddddddddddddddd", 0));
 
         btnBack = findViewById(R.id.btnReturn);
         myRecyclerViewProject = findViewById(R.id.recyclerView_project);
